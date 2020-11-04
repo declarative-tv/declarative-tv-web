@@ -8,7 +8,6 @@ import Fpers.Capability.Navigate (class Navigate)
 import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
 import Fpers.Component.HTML.Footer (footer)
 import Fpers.Component.HTML.Header (header)
-import Fpers.Component.HTML.Utils (css)
 import Fpers.Data.Route (Route(..))
 import Fpers.Data.Stream (Stream)
 import Halogen as H
@@ -66,7 +65,7 @@ component = H.mkComponent
   handleAction :: forall slots. Action -> H.HalogenM State Action slots o m Unit
   handleAction = case _ of
     Initialize -> do
-      let streamers = ["CmdvTv", "gillchristian", "gernaderjake", "BaldBeardedBuilder"]
+      let streamers = ["CmdvTv", "gillchristian", "gernaderjake", "baldbeardedbuilder", "ifrostbolt", "zkmushroom"]
       void $ H.fork $ handleAction $ LoadStreams streamers
 
     LoadStreams streamers -> do
@@ -79,7 +78,7 @@ component = H.mkComponent
     HH.div_
       [ header Home
       , HH.div
-          [ css "home-page" ]
+          [ HP.classes [T.container] ]
           case streams of
             NotAsked -> [HH.text "..."]
             Loading -> [HH.text "..."]
@@ -90,12 +89,19 @@ component = H.mkComponent
       ]
     where
       stream :: Stream -> H.ComponentHTML Action slots m
-      stream { title, user_name } =
+      stream { title, user_name, viewer_count } =
         HH.div
-          [ HP.classes [T.m4] ]
-          [ HH.text title
-          , HH.br_
-          , HH.text user_name
-          , HH.hr_
+          [ HP.classes [T.mdFlex, T.m4]]
+          [ HH.div
+              [ HP.classes [T.mdFlexShrink0]]
+              [ HH.img [HP.classes [T.roundedLg, T.mdW56], HP.src "", HP.width 448, HP.height 299 ] ]
+          , HH.div
+              [ HP.classes [T.mt4, T.mdMt0, T.mdMl6] ]
+              [ HH.div
+                  [ HP.classes [T.trackingWide, T.textSm, T.textIndigo600, T.fontBold ] ]
+                  [ HH.text $ user_name <> " <> " <> show viewer_count  ]
+              , HH.div
+                  [ HP.classes [T.block, T.mt1, T.textLg, T.leadingTight, T.fontSemibold, T.textGray900, T.hoverUnderline] ]
+                  [ HH.text title ]
+              ]
           ]
-
