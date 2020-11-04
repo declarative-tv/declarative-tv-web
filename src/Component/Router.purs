@@ -3,31 +3,32 @@
 -- | given a particular `Route` and to manage the user's location in the application.
 -- |
 -- | See `Main` to understand how this component is used as the root of the application.
-module Conduit.Component.Router where
+module Fpers.Component.Router where
 
 import Prelude
 
 import Component.HOC.Connect (WithCurrentUser)
 import Component.HOC.Connect as Connect
-import Conduit.Capability.LogMessages (class LogMessages)
-import Conduit.Capability.Navigate (class Navigate, navigate, locationState)
-import Conduit.Capability.Now (class Now)
-import Conduit.Capability.Resource.Article (class ManageArticle)
-import Conduit.Capability.Resource.Comment (class ManageComment)
-import Conduit.Capability.Resource.Tag (class ManageTag)
-import Conduit.Capability.Resource.User (class ManageUser)
-import Conduit.Component.Utils (OpaqueSlot)
-import Conduit.Data.Profile (Profile)
-import Conduit.Data.Route (Route(..), routeCodec)
-import Conduit.Env (UserEnv)
-import Conduit.Page.Editor as Editor
-import Conduit.Page.Home as Home
-import Conduit.Page.Login as Login
-import Conduit.Page.Profile (Tab(..))
-import Conduit.Page.Profile as Profile
-import Conduit.Page.Register as Register
-import Conduit.Page.Settings as Settings
-import Conduit.Page.ViewArticle as ViewArticle
+import Fpers.Capability.LogMessages (class LogMessages)
+import Fpers.Capability.Navigate (class Navigate, navigate, locationState)
+import Fpers.Capability.Now (class Now)
+import Fpers.Capability.Resource.Article (class ManageArticle)
+import Fpers.Capability.Resource.Comment (class ManageComment)
+import Fpers.Capability.Resource.Stream (class ManageStream)
+import Fpers.Capability.Resource.Tag (class ManageTag)
+import Fpers.Capability.Resource.User (class ManageUser)
+import Fpers.Component.Utils (OpaqueSlot)
+import Fpers.Data.Profile (Profile)
+import Fpers.Data.Route (Route(..), routeCodec)
+import Fpers.Env (UserEnv)
+import Fpers.Page.Editor as Editor
+import Fpers.Page.Home as Home
+import Fpers.Page.Login as Login
+import Fpers.Page.Profile (Tab(..))
+import Fpers.Page.Profile as Profile
+import Fpers.Page.Register as Register
+import Fpers.Page.Settings as Settings
+import Fpers.Page.ViewArticle as ViewArticle
 import Control.Monad.Reader (class MonadAsk)
 import Data.Either (hush)
 import Data.Foldable (elem)
@@ -70,6 +71,7 @@ component
   => ManageUser m
   => ManageArticle m
   => ManageComment m
+  => ManageStream m
   => ManageTag m
   => H.Component HH.HTML Query {} Void m
 component = Connect.component $ H.mkComponent

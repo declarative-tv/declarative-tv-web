@@ -1,5 +1,5 @@
 -- | Profiles are an example of an entity (a persistent data type with a unique identity) and are
--- | widely used in the Conduit application.
+-- | widely used in the Fpers application.
 -- |
 -- | We have two versions of the `Profile` type, as with the `Article` type: one with a few core
 -- | fields about the user and another that also contains their email address. It's tedious and
@@ -13,16 +13,16 @@
 -- | This module also demonstrates how to create lenses for record types. Optics, which include
 -- | lenses, let you work with values within nested structures. We'll use optics to drill down from
 -- | large types like a component `State` to a particular field in a profile stored in that state.
-module Conduit.Data.Profile where
+module Fpers.Data.Profile where
 
 import Prelude
 
-import Conduit.Data.Avatar (Avatar)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.Email (Email)
-import Conduit.Data.Email as Email
-import Conduit.Data.Username (Username)
-import Conduit.Data.Username as Username
+import Fpers.Data.Avatar (Avatar)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.Email (Email)
+import Fpers.Data.Email as Email
+import Fpers.Data.Username (Username)
+import Fpers.Data.Username as Username
 import Data.Codec (mapCodec)
 import Data.Codec.Argonaut (JsonCodec, JsonDecodeError)
 import Data.Codec.Argonaut as CA

@@ -1,8 +1,8 @@
-module Conduit.Component.HTML.Utils where
+module Fpers.Component.HTML.Utils where
 
 import Prelude
 
-import Conduit.Data.Route (Route, routeCodec)
+import Fpers.Data.Route (Route, routeCodec)
 import Data.Maybe (Maybe(..))
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP

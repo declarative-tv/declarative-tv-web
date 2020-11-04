@@ -1,8 +1,8 @@
--- | The follow buttons in Conduit don't have enough encapsulated state or behaviors to be a full
+-- | The follow buttons in Fpers don't have enough encapsulated state or behaviors to be a full
 -- | component, but do need to trigger certain actions in a parent component. To avoid writing the
 -- | same query handler over and over again, we'll export both the pure HTML function and a default
 -- | handle from this module.
-module Conduit.Component.Part.FollowButton
+module Fpers.Component.Part.FollowButton
   ( followButton
   , follow
   , unfollow
@@ -10,11 +10,11 @@ module Conduit.Component.Part.FollowButton
 
 import Prelude
 
-import Conduit.Capability.Resource.User (class ManageUser, followUser, unfollowUser)
-import Conduit.Component.HTML.Utils (css)
-import Conduit.Data.Profile (Author, Relation(..))
-import Conduit.Data.Username (Username)
-import Conduit.Data.Username as Username
+import Fpers.Capability.Resource.User (class ManageUser, followUser, unfollowUser)
+import Fpers.Component.HTML.Utils (css)
+import Fpers.Data.Profile (Author, Relation(..))
+import Fpers.Data.Username (Username)
+import Fpers.Data.Username as Username
 import Data.Foldable (for_)
 import Data.Lens (Traversal', preview, set)
 import Data.Maybe (Maybe(..))

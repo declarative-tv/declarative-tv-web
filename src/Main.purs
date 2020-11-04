@@ -3,13 +3,13 @@ module Main where
 import Prelude
 
 import Affjax (request, printError)
-import Conduit.Api.Endpoint (Endpoint(..))
-import Conduit.Api.Request (BaseURL(..), RequestMethod(..), defaultRequest, readToken)
-import Conduit.AppM (runAppM)
-import Conduit.Component.Router as Router
-import Conduit.Data.Profile as Profile
-import Conduit.Data.Route (Route, routeCodec)
-import Conduit.Env (Env, LogLevel(..))
+import Fpers.Api.Endpoint (Endpoint(..))
+import Fpers.Api.Request (BaseURL(..), RequestMethod(..), defaultRequest, readToken)
+import Fpers.AppM (runAppM)
+import Fpers.Component.Router as Router
+import Fpers.Data.Profile as Profile
+import Fpers.Data.Route (Route, routeCodec)
+import Fpers.Env (Env, LogLevel(..))
 import Data.Bifunctor (lmap)
 import Data.Codec as Codec
 import Data.Codec.Argonaut (printJsonDecodeError)
@@ -39,7 +39,7 @@ main = HA.runHalogenAff do
   _ <- HA.awaitBody
 
   let
-    baseUrl = BaseURL "https://conduit.productionready.io"
+    baseUrl = BaseURL "https://api.twitch.tv"
     logLevel = Dev
 
   userEnv <- liftEffect do

@@ -1,27 +1,27 @@
 -- | User profiles display the articles they have written as well as the articles they have
 -- | favorited. It's also the main way users choose to follow one another. Users can view their
 -- | own profile.
-module Conduit.Page.Profile where
+module Fpers.Page.Profile where
 
 import Prelude
 
-import Conduit.Api.Endpoint (noArticleParams)
-import Conduit.Capability.Resource.Article (class ManageArticle, getArticles)
-import Conduit.Capability.Resource.User (class ManageUser, getAuthor)
-import Conduit.Component.HTML.ArticleList (articleList, renderPagination)
-import Conduit.Component.HTML.Footer (footer)
-import Conduit.Component.HTML.Header (header)
-import Conduit.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
-import Conduit.Component.Part.FavoriteButton (favorite, unfavorite)
-import Conduit.Component.Part.FollowButton (follow, followButton, unfollow)
-import Conduit.Data.Article (ArticleWithMetadata)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.PaginatedArray (PaginatedArray)
-import Conduit.Data.Profile (Profile, Author)
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username (Username)
-import Conduit.Data.Username as Username
-import Conduit.Env (UserEnv)
+import Fpers.Api.Endpoint (noArticleParams)
+import Fpers.Capability.Resource.Article (class ManageArticle, getArticles)
+import Fpers.Capability.Resource.User (class ManageUser, getAuthor)
+import Fpers.Component.HTML.ArticleList (articleList, renderPagination)
+import Fpers.Component.HTML.Footer (footer)
+import Fpers.Component.HTML.Header (header)
+import Fpers.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
+import Fpers.Component.Part.FavoriteButton (favorite, unfavorite)
+import Fpers.Component.Part.FollowButton (follow, followButton, unfollow)
+import Fpers.Data.Article (ArticleWithMetadata)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.PaginatedArray (PaginatedArray)
+import Fpers.Data.Profile (Profile, Author)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username (Username)
+import Fpers.Data.Username as Username
+import Fpers.Env (UserEnv)
 import Control.Monad.Reader (class MonadAsk, asks)
 import Data.Lens (Traversal')
 import Data.Lens.Index (ix)

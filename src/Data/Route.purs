@@ -9,14 +9,14 @@
 -- |
 -- | For more information about the library and to read the tutorial, see:
 -- | https://github.com/natefaubion/purescript-routing-duplex/tree/v0.2.0
-module Conduit.Data.Route where
+module Fpers.Data.Route where
 
 import Prelude hiding ((/))
 
 import Data.Either (note)
 import Data.Generic.Rep (class Generic)
-import Conduit.Data.Username (Username)
-import Conduit.Data.Username as Username
+import Fpers.Data.Username (Username)
+import Fpers.Data.Username as Username
 import Routing.Duplex (RouteDuplex', as, root, segment)
 import Routing.Duplex.Generic (noArgs, sum)
 import Routing.Duplex.Generic.Syntax ((/))

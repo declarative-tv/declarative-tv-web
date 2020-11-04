@@ -1,29 +1,29 @@
 -- | Articles are stored as markdown strings, which is then rendered as HTMl. They also include
 -- | comments so users can read an article and then share what they thought about it. This component
--- | supports viewing and interacting with articles in Conduit.
-module Conduit.Page.ViewArticle where
+-- | supports viewing and interacting with articles in Fpers.
+module Fpers.Page.ViewArticle where
 
 import Prelude
 
-import Conduit.Capability.Navigate (class Navigate, navigate)
-import Conduit.Capability.Resource.Article (class ManageArticle, deleteArticle, getArticle)
-import Conduit.Capability.Resource.Comment (class ManageComment, createComment, deleteComment, getComments)
-import Conduit.Capability.Resource.User (class ManageUser)
-import Conduit.Component.HTML.Footer (footer)
-import Conduit.Component.HTML.Header (header)
-import Conduit.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
-import Conduit.Component.Part.FavoriteButton (ButtonSize(..), favorite, favoriteButton, unfavorite)
-import Conduit.Component.Part.FollowButton (follow, followButton, unfollow)
-import Conduit.Component.RawHTML as RawHTML
-import Conduit.Component.Utils (OpaqueSlot)
-import Conduit.Data.Article (ArticleWithMetadata)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.Comment (Comment, CommentId)
-import Conduit.Data.PreciseDateTime as PDT
-import Conduit.Data.Profile (Profile, Relation(..), Author)
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username as Username
-import Conduit.Env (UserEnv)
+import Fpers.Capability.Navigate (class Navigate, navigate)
+import Fpers.Capability.Resource.Article (class ManageArticle, deleteArticle, getArticle)
+import Fpers.Capability.Resource.Comment (class ManageComment, createComment, deleteComment, getComments)
+import Fpers.Capability.Resource.User (class ManageUser)
+import Fpers.Component.HTML.Footer (footer)
+import Fpers.Component.HTML.Header (header)
+import Fpers.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
+import Fpers.Component.Part.FavoriteButton (ButtonSize(..), favorite, favoriteButton, unfavorite)
+import Fpers.Component.Part.FollowButton (follow, followButton, unfollow)
+import Fpers.Component.RawHTML as RawHTML
+import Fpers.Component.Utils (OpaqueSlot)
+import Fpers.Data.Article (ArticleWithMetadata)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.Comment (Comment, CommentId)
+import Fpers.Data.PreciseDateTime as PDT
+import Fpers.Data.Profile (Profile, Relation(..), Author)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username as Username
+import Fpers.Env (UserEnv)
 import Control.Monad.Reader (class MonadAsk, asks)
 import Control.Parallel (parTraverse_)
 import Data.Foldable (for_)

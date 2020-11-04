@@ -5,13 +5,13 @@
 -- |
 -- | In a framework like React, little bundles of functionality like this might be individual
 -- | components. In Halogen, they're simple pure functions which produce HTML.
-module Conduit.Form.Field where
+module Fpers.Form.Field where
 
 import Prelude
 
-import Conduit.Component.HTML.Utils (css, maybeElem)
-import Conduit.Form.Validation (errorToString)
-import Conduit.Form.Validation as V
+import Fpers.Component.HTML.Utils (css, maybeElem)
+import Fpers.Form.Validation (errorToString)
+import Fpers.Form.Validation as V
 import DOM.HTML.Indexed (HTMLinput)
 import Data.Maybe (Maybe(..))
 import Data.Newtype (class Newtype)
@@ -26,7 +26,7 @@ import Type.Row as Row
 -- | Formless (the form library for Halogen) supports a submit event which will attempt to validate
 -- | and return the successfully-parsed fields. We can create a small helper function that creates
 -- | a submit button with customizable text and the submit event triggered by a click. Since all
--- | submit buttons in the Conduit application look the same, we can jus use this throughout the app.
+-- | submit buttons in the Fpers application look the same, we can jus use this throughout the app.
 submit :: forall form act slots m. String -> F.ComponentHTML form act slots m
 submit buttonText =
   HH.button

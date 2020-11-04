@@ -1,19 +1,19 @@
--- | The registration form allows new users to sign up to the Conduit service and authenticate
+-- | The registration form allows new users to sign up to the Fpers service and authenticate
 -- | their session.
-module Conduit.Page.Register where
+module Fpers.Page.Register where
 
 import Prelude
 
-import Conduit.Api.Request (RegisterFields)
-import Conduit.Capability.Navigate (class Navigate, navigate)
-import Conduit.Capability.Resource.User (class ManageUser, registerUser)
-import Conduit.Component.HTML.Header (header)
-import Conduit.Component.HTML.Utils (css, safeHref)
-import Conduit.Data.Email (Email)
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username (Username)
-import Conduit.Form.Field as Field
-import Conduit.Form.Validation as V
+import Fpers.Api.Request (RegisterFields)
+import Fpers.Capability.Navigate (class Navigate, navigate)
+import Fpers.Capability.Resource.User (class ManageUser, registerUser)
+import Fpers.Component.HTML.Header (header)
+import Fpers.Component.HTML.Utils (css, safeHref)
+import Fpers.Data.Email (Email)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username (Username)
+import Fpers.Form.Field as Field
+import Fpers.Form.Validation as V
 import Data.Foldable (traverse_)
 import Data.Maybe (Maybe(..))
 import Data.Newtype (class Newtype)

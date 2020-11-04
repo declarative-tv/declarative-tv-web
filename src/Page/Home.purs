@@ -1,22 +1,8 @@
-module Conduit.Page.Home where
+module Fpers.Page.Home where
 
 import Prelude
 
 import Component.HOC.Connect as Connect
-import Conduit.Api.Endpoint (ArticleParams, Pagination, noArticleParams)
-import Conduit.Capability.Navigate (class Navigate)
-import Conduit.Capability.Resource.Article (class ManageArticle, getArticles, getCurrentUserFeed)
-import Conduit.Capability.Resource.Tag (class ManageTag, getAllTags)
-import Conduit.Component.HTML.ArticleList (articleList, renderPagination)
-import Conduit.Component.HTML.Footer (footer)
-import Conduit.Component.HTML.Header (header)
-import Conduit.Component.HTML.Utils (css, maybeElem, whenElem)
-import Conduit.Component.Part.FavoriteButton (favorite, unfavorite)
-import Conduit.Data.Article (ArticleWithMetadata)
-import Conduit.Data.PaginatedArray (PaginatedArray)
-import Conduit.Data.Profile (Profile)
-import Conduit.Data.Route (Route(..))
-import Conduit.Env (UserEnv)
 import Control.Monad.Reader (class MonadAsk)
 import Data.Lens (Traversal')
 import Data.Lens.Index (ix)
@@ -25,6 +11,22 @@ import Data.Maybe (Maybe(..), isJust, isNothing)
 import Data.Monoid (guard)
 import Data.Symbol (SProxy(..))
 import Effect.Aff.Class (class MonadAff)
+import Fpers.Api.Endpoint (ArticleParams, Pagination, noArticleParams)
+import Fpers.Capability.Navigate (class Navigate)
+import Fpers.Capability.Resource.Article (class ManageArticle, getArticles, getCurrentUserFeed)
+import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
+import Fpers.Capability.Resource.Tag (class ManageTag, getAllTags)
+import Fpers.Component.HTML.ArticleList (articleList, renderPagination)
+import Fpers.Component.HTML.Footer (footer)
+import Fpers.Component.HTML.Header (header)
+import Fpers.Component.HTML.Utils (css, maybeElem, whenElem)
+import Fpers.Component.Part.FavoriteButton (favorite, unfavorite)
+import Fpers.Data.Article (ArticleWithMetadata)
+import Fpers.Data.PaginatedArray (PaginatedArray)
+import Fpers.Data.Profile (Profile)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Stream (Stream)
+import Fpers.Env (UserEnv)
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
@@ -39,6 +41,7 @@ data Action
   | ShowTab Tab
   | LoadFeed Pagination
   | LoadArticles ArticleParams
+  | LoadStreams (Array String)
   | LoadTags
   | FavoriteArticle Int
   | UnfavoriteArticle Int
@@ -47,6 +50,7 @@ data Action
 type State =
   { tags :: RemoteData String (Array String)
   , articles :: RemoteData String (PaginatedArray ArticleWithMetadata)
+  , streams :: RemoteData String (Array Stream)
   , tab :: Tab
   , page :: Int
   , currentUser :: Maybe Profile
@@ -69,6 +73,7 @@ component
   => MonadAsk { userEnv :: UserEnv | r } m
   => Navigate m
   => ManageTag m
+  => ManageStream m
   => ManageArticle m
   => H.Component HH.HTML q {} o m
 component = Connect.component $ H.mkComponent
@@ -84,6 +89,7 @@ component = Connect.component $ H.mkComponent
   initialState { currentUser } =
     { tags: NotAsked
     , articles: NotAsked
+    , streams: NotAsked
     , tab: Global
     , currentUser
     , page: 1
@@ -100,6 +106,7 @@ component = Connect.component $ H.mkComponent
         profile -> do
           void $ H.fork $ handleAction $ LoadFeed { limit: Just 20, offset: Nothing }
           H.modify_ _ { tab = Feed }
+      void $ H.fork $ handleAction $ LoadStreams ["CmdvTv", "gillchristian"]
 
     Receive { currentUser } ->
       H.modify_ _ { currentUser = currentUser }
@@ -118,6 +125,11 @@ component = Connect.component $ H.mkComponent
       H.modify_ _ { articles = Loading }
       articles <- getArticles params
       H.modify_ _ { articles = fromMaybe articles }
+
+    LoadStreams streamers -> do
+      H.modify_ _ { streams = Loading }
+      streams <- getStreams streamers
+      H.modify_ _ { streams = fromMaybe streams }
 
     ShowTab thisTab -> do
       st <- H.get

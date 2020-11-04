@@ -1,27 +1,11 @@
-module Conduit.AppM where
+module Fpers.AppM where
 
 import Prelude
 
-import Conduit.Api.Endpoint (Endpoint(..), noArticleParams)
-import Conduit.Api.Request (RequestMethod(..))
-import Conduit.Api.Request as Request
-import Conduit.Api.Utils (authenticate, decode, decodeWithUser, mkAuthRequest, mkRequest)
-import Conduit.Capability.LogMessages (class LogMessages)
-import Conduit.Capability.Navigate (class Navigate, locationState, navigate)
-import Conduit.Capability.Now (class Now)
-import Conduit.Capability.Resource.Article (class ManageArticle)
-import Conduit.Capability.Resource.Comment (class ManageComment)
-import Conduit.Capability.Resource.Tag (class ManageTag)
-import Conduit.Capability.Resource.User (class ManageUser)
-import Conduit.Data.Article as Article
-import Conduit.Data.Comment as Comment
-import Conduit.Data.Log as Log
-import Conduit.Data.Profile as Profile
-import Conduit.Data.Route as Route
-import Conduit.Env (Env, LogLevel(..))
 import Control.Monad.Reader.Trans (class MonadAsk, ReaderT, ask, asks, runReaderT)
 import Data.Codec.Argonaut as CA
 import Data.Codec.Argonaut as Codec
+import Data.Codec.Argonaut.Compat as CAC
 import Data.Codec.Argonaut.Record as CAR
 import Data.Maybe (Maybe(..))
 import Effect.Aff (Aff)
@@ -31,6 +15,25 @@ import Effect.Class (class MonadEffect, liftEffect)
 import Effect.Console as Console
 import Effect.Now as Now
 import Effect.Ref as Ref
+import Fpers.Api.Endpoint (Endpoint(..), noArticleParams)
+import Fpers.Api.Request (RequestMethod(..))
+import Fpers.Api.Request as Request
+import Fpers.Api.Utils (authenticate, decode, decodeWithUser, mkAuthRequest, mkRequest)
+import Fpers.Capability.LogMessages (class LogMessages)
+import Fpers.Capability.Navigate (class Navigate, locationState, navigate)
+import Fpers.Capability.Now (class Now)
+import Fpers.Capability.Resource.Article (class ManageArticle)
+import Fpers.Capability.Resource.Comment (class ManageComment)
+import Fpers.Capability.Resource.Stream (class ManageStream)
+import Fpers.Capability.Resource.Tag (class ManageTag)
+import Fpers.Capability.Resource.User (class ManageUser)
+import Fpers.Data.Article as Article
+import Fpers.Data.Comment as Comment
+import Fpers.Data.Log as Log
+import Fpers.Data.Profile as Profile
+import Fpers.Data.Route as Route
+import Fpers.Data.Stream (streamCodec)
+import Fpers.Env (Env, LogLevel(..))
 import Routing.Duplex (print)
 import Type.Equality (class TypeEquals, from)
 
@@ -131,6 +134,13 @@ instance manageCommentAppM :: ManageComment AppM where
 
   deleteComment slug id =
     void $ mkAuthRequest { endpoint: Comment slug id, method: Delete }
+
+instance manageStreamAppM :: ManageStream AppM where
+  getStreams streamers = do
+    mbJson <- mkRequest { endpoint: Streamers { user_login: streamers }, method: Get }
+    map (map _.data)
+      $ decode (CAR.object "Streams" { "data": CAC.array streamCodec }) mbJson
+
 
 instance manageArticleAppM :: ManageArticle AppM where
   getArticle slug = do

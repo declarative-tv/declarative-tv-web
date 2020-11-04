@@ -1,22 +1,22 @@
 -- | The settings page lets users change data about their account, like their email or password,
 -- | as well as their publicly-viewable profile information.
-module Conduit.Page.Settings where
+module Fpers.Page.Settings where
 
 import Prelude
 
-import Conduit.Capability.Navigate (class Navigate, logout)
-import Conduit.Capability.Resource.User (class ManageUser, UpdateProfileFields, getCurrentUser, updateUser)
-import Conduit.Component.HTML.Header (header)
-import Conduit.Component.HTML.Utils (css)
-import Conduit.Data.Avatar (Avatar)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.Email (Email)
-import Conduit.Data.Profile (ProfileWithEmail)
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username (Username)
-import Conduit.Data.Username as Username
-import Conduit.Form.Field as Field
-import Conduit.Form.Validation as V
+import Fpers.Capability.Navigate (class Navigate, logout)
+import Fpers.Capability.Resource.User (class ManageUser, UpdateProfileFields, getCurrentUser, updateUser)
+import Fpers.Component.HTML.Header (header)
+import Fpers.Component.HTML.Utils (css)
+import Fpers.Data.Avatar (Avatar)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.Email (Email)
+import Fpers.Data.Profile (ProfileWithEmail)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username (Username)
+import Fpers.Data.Username as Username
+import Fpers.Form.Field as Field
+import Fpers.Form.Validation as V
 import Data.Lens (preview)
 import Data.Maybe (Maybe(..))
 import Data.Maybe as Maybe

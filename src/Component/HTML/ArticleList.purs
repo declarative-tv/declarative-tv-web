@@ -1,17 +1,17 @@
 -- | This module exports a pure HTML function to render lists of articles in various formats,
 -- | included paginated lists.
-module Conduit.Component.HTML.ArticleList where
+module Fpers.Component.HTML.ArticleList where
 
 import Prelude
 
-import Conduit.Component.HTML.Utils (css, safeHref, whenElem)
-import Conduit.Component.Part.FavoriteButton (favoriteButton, ButtonSize(..))
-import Conduit.Data.Article (ArticleWithMetadata)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.PaginatedArray (PaginatedArray)
-import Conduit.Data.PreciseDateTime as PDT
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username as Username
+import Fpers.Component.HTML.Utils (css, safeHref, whenElem)
+import Fpers.Component.Part.FavoriteButton (favoriteButton, ButtonSize(..))
+import Fpers.Data.Article (ArticleWithMetadata)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.PaginatedArray (PaginatedArray)
+import Fpers.Data.PreciseDateTime as PDT
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username as Username
 import Data.Array (mapWithIndex)
 import Data.Enum (enumFromTo)
 import Data.Foldable (length)

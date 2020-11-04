@@ -1,13 +1,13 @@
 -- | This module exports a pure HTML function to render a consistent header throughout the app.
-module Conduit.Component.HTML.Header where
+module Fpers.Component.HTML.Header where
 
 import Prelude
 
-import Conduit.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
-import Conduit.Data.Avatar as Avatar
-import Conduit.Data.Profile (ProfileRep)
-import Conduit.Data.Route (Route(..))
-import Conduit.Data.Username as Username
+import Fpers.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
+import Fpers.Data.Avatar as Avatar
+import Fpers.Data.Profile (ProfileRep)
+import Fpers.Data.Route (Route(..))
+import Fpers.Data.Username as Username
 import Data.Maybe (Maybe, isNothing, isJust)
 import Data.Monoid (guard)
 import Halogen.HTML as HH
