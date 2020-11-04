@@ -7,6 +7,774 @@ import Halogen.HTML.Core (ClassName(..))
 container :: ClassName
 container = ClassName "container"
 
+-- | space-y-0
+spaceY0 :: ClassName
+spaceY0 = ClassName "space-y-0"
+
+-- | space-x-0
+spaceX0 :: ClassName
+spaceX0 = ClassName "space-x-0"
+
+-- | space-y-1
+spaceY1 :: ClassName
+spaceY1 = ClassName "space-y-1"
+
+-- | space-x-1
+spaceX1 :: ClassName
+spaceX1 = ClassName "space-x-1"
+
+-- | space-y-2
+spaceY2 :: ClassName
+spaceY2 = ClassName "space-y-2"
+
+-- | space-x-2
+spaceX2 :: ClassName
+spaceX2 = ClassName "space-x-2"
+
+-- | space-y-3
+spaceY3 :: ClassName
+spaceY3 = ClassName "space-y-3"
+
+-- | space-x-3
+spaceX3 :: ClassName
+spaceX3 = ClassName "space-x-3"
+
+-- | space-y-4
+spaceY4 :: ClassName
+spaceY4 = ClassName "space-y-4"
+
+-- | space-x-4
+spaceX4 :: ClassName
+spaceX4 = ClassName "space-x-4"
+
+-- | space-y-5
+spaceY5 :: ClassName
+spaceY5 = ClassName "space-y-5"
+
+-- | space-x-5
+spaceX5 :: ClassName
+spaceX5 = ClassName "space-x-5"
+
+-- | space-y-6
+spaceY6 :: ClassName
+spaceY6 = ClassName "space-y-6"
+
+-- | space-x-6
+spaceX6 :: ClassName
+spaceX6 = ClassName "space-x-6"
+
+-- | space-y-8
+spaceY8 :: ClassName
+spaceY8 = ClassName "space-y-8"
+
+-- | space-x-8
+spaceX8 :: ClassName
+spaceX8 = ClassName "space-x-8"
+
+-- | space-y-10
+spaceY10 :: ClassName
+spaceY10 = ClassName "space-y-10"
+
+-- | space-x-10
+spaceX10 :: ClassName
+spaceX10 = ClassName "space-x-10"
+
+-- | space-y-12
+spaceY12 :: ClassName
+spaceY12 = ClassName "space-y-12"
+
+-- | space-x-12
+spaceX12 :: ClassName
+spaceX12 = ClassName "space-x-12"
+
+-- | space-y-16
+spaceY16 :: ClassName
+spaceY16 = ClassName "space-y-16"
+
+-- | space-x-16
+spaceX16 :: ClassName
+spaceX16 = ClassName "space-x-16"
+
+-- | space-y-20
+spaceY20 :: ClassName
+spaceY20 = ClassName "space-y-20"
+
+-- | space-x-20
+spaceX20 :: ClassName
+spaceX20 = ClassName "space-x-20"
+
+-- | space-y-24
+spaceY24 :: ClassName
+spaceY24 = ClassName "space-y-24"
+
+-- | space-x-24
+spaceX24 :: ClassName
+spaceX24 = ClassName "space-x-24"
+
+-- | space-y-32
+spaceY32 :: ClassName
+spaceY32 = ClassName "space-y-32"
+
+-- | space-x-32
+spaceX32 :: ClassName
+spaceX32 = ClassName "space-x-32"
+
+-- | space-y-40
+spaceY40 :: ClassName
+spaceY40 = ClassName "space-y-40"
+
+-- | space-x-40
+spaceX40 :: ClassName
+spaceX40 = ClassName "space-x-40"
+
+-- | space-y-48
+spaceY48 :: ClassName
+spaceY48 = ClassName "space-y-48"
+
+-- | space-x-48
+spaceX48 :: ClassName
+spaceX48 = ClassName "space-x-48"
+
+-- | space-y-56
+spaceY56 :: ClassName
+spaceY56 = ClassName "space-y-56"
+
+-- | space-x-56
+spaceX56 :: ClassName
+spaceX56 = ClassName "space-x-56"
+
+-- | space-y-64
+spaceY64 :: ClassName
+spaceY64 = ClassName "space-y-64"
+
+-- | space-x-64
+spaceX64 :: ClassName
+spaceX64 = ClassName "space-x-64"
+
+-- | space-y-px
+spaceYPx :: ClassName
+spaceYPx = ClassName "space-y-px"
+
+-- | space-x-px
+spaceXPx :: ClassName
+spaceXPx = ClassName "space-x-px"
+
+-- | -space-y-1
+negSpaceY1 :: ClassName
+negSpaceY1 = ClassName "-space-y-1"
+
+-- | -space-x-1
+negSpaceX1 :: ClassName
+negSpaceX1 = ClassName "-space-x-1"
+
+-- | -space-y-2
+negSpaceY2 :: ClassName
+negSpaceY2 = ClassName "-space-y-2"
+
+-- | -space-x-2
+negSpaceX2 :: ClassName
+negSpaceX2 = ClassName "-space-x-2"
+
+-- | -space-y-3
+negSpaceY3 :: ClassName
+negSpaceY3 = ClassName "-space-y-3"
+
+-- | -space-x-3
+negSpaceX3 :: ClassName
+negSpaceX3 = ClassName "-space-x-3"
+
+-- | -space-y-4
+negSpaceY4 :: ClassName
+negSpaceY4 = ClassName "-space-y-4"
+
+-- | -space-x-4
+negSpaceX4 :: ClassName
+negSpaceX4 = ClassName "-space-x-4"
+
+-- | -space-y-5
+negSpaceY5 :: ClassName
+negSpaceY5 = ClassName "-space-y-5"
+
+-- | -space-x-5
+negSpaceX5 :: ClassName
+negSpaceX5 = ClassName "-space-x-5"
+
+-- | -space-y-6
+negSpaceY6 :: ClassName
+negSpaceY6 = ClassName "-space-y-6"
+
+-- | -space-x-6
+negSpaceX6 :: ClassName
+negSpaceX6 = ClassName "-space-x-6"
+
+-- | -space-y-8
+negSpaceY8 :: ClassName
+negSpaceY8 = ClassName "-space-y-8"
+
+-- | -space-x-8
+negSpaceX8 :: ClassName
+negSpaceX8 = ClassName "-space-x-8"
+
+-- | -space-y-10
+negSpaceY10 :: ClassName
+negSpaceY10 = ClassName "-space-y-10"
+
+-- | -space-x-10
+negSpaceX10 :: ClassName
+negSpaceX10 = ClassName "-space-x-10"
+
+-- | -space-y-12
+negSpaceY12 :: ClassName
+negSpaceY12 = ClassName "-space-y-12"
+
+-- | -space-x-12
+negSpaceX12 :: ClassName
+negSpaceX12 = ClassName "-space-x-12"
+
+-- | -space-y-16
+negSpaceY16 :: ClassName
+negSpaceY16 = ClassName "-space-y-16"
+
+-- | -space-x-16
+negSpaceX16 :: ClassName
+negSpaceX16 = ClassName "-space-x-16"
+
+-- | -space-y-20
+negSpaceY20 :: ClassName
+negSpaceY20 = ClassName "-space-y-20"
+
+-- | -space-x-20
+negSpaceX20 :: ClassName
+negSpaceX20 = ClassName "-space-x-20"
+
+-- | -space-y-24
+negSpaceY24 :: ClassName
+negSpaceY24 = ClassName "-space-y-24"
+
+-- | -space-x-24
+negSpaceX24 :: ClassName
+negSpaceX24 = ClassName "-space-x-24"
+
+-- | -space-y-32
+negSpaceY32 :: ClassName
+negSpaceY32 = ClassName "-space-y-32"
+
+-- | -space-x-32
+negSpaceX32 :: ClassName
+negSpaceX32 = ClassName "-space-x-32"
+
+-- | -space-y-40
+negSpaceY40 :: ClassName
+negSpaceY40 = ClassName "-space-y-40"
+
+-- | -space-x-40
+negSpaceX40 :: ClassName
+negSpaceX40 = ClassName "-space-x-40"
+
+-- | -space-y-48
+negSpaceY48 :: ClassName
+negSpaceY48 = ClassName "-space-y-48"
+
+-- | -space-x-48
+negSpaceX48 :: ClassName
+negSpaceX48 = ClassName "-space-x-48"
+
+-- | -space-y-56
+negSpaceY56 :: ClassName
+negSpaceY56 = ClassName "-space-y-56"
+
+-- | -space-x-56
+negSpaceX56 :: ClassName
+negSpaceX56 = ClassName "-space-x-56"
+
+-- | -space-y-64
+negSpaceY64 :: ClassName
+negSpaceY64 = ClassName "-space-y-64"
+
+-- | -space-x-64
+negSpaceX64 :: ClassName
+negSpaceX64 = ClassName "-space-x-64"
+
+-- | -space-y-px
+negSpaceYPx :: ClassName
+negSpaceYPx = ClassName "-space-y-px"
+
+-- | -space-x-px
+negSpaceXPx :: ClassName
+negSpaceXPx = ClassName "-space-x-px"
+
+-- | space-y-reverse
+spaceYReverse :: ClassName
+spaceYReverse = ClassName "space-y-reverse"
+
+-- | space-x-reverse
+spaceXReverse :: ClassName
+spaceXReverse = ClassName "space-x-reverse"
+
+-- | divide-y-0
+divideY0 :: ClassName
+divideY0 = ClassName "divide-y-0"
+
+-- | divide-x-0
+divideX0 :: ClassName
+divideX0 = ClassName "divide-x-0"
+
+-- | divide-y-2
+divideY2 :: ClassName
+divideY2 = ClassName "divide-y-2"
+
+-- | divide-x-2
+divideX2 :: ClassName
+divideX2 = ClassName "divide-x-2"
+
+-- | divide-y-4
+divideY4 :: ClassName
+divideY4 = ClassName "divide-y-4"
+
+-- | divide-x-4
+divideX4 :: ClassName
+divideX4 = ClassName "divide-x-4"
+
+-- | divide-y-8
+divideY8 :: ClassName
+divideY8 = ClassName "divide-y-8"
+
+-- | divide-x-8
+divideX8 :: ClassName
+divideX8 = ClassName "divide-x-8"
+
+-- | divide-y
+divideY :: ClassName
+divideY = ClassName "divide-y"
+
+-- | divide-x
+divideX :: ClassName
+divideX = ClassName "divide-x"
+
+-- | divide-y-reverse
+divideYReverse :: ClassName
+divideYReverse = ClassName "divide-y-reverse"
+
+-- | divide-x-reverse
+divideXReverse :: ClassName
+divideXReverse = ClassName "divide-x-reverse"
+
+-- | divide-transparent
+divideTransparent :: ClassName
+divideTransparent = ClassName "divide-transparent"
+
+-- | divide-current
+divideCurrent :: ClassName
+divideCurrent = ClassName "divide-current"
+
+-- | divide-black
+divideBlack :: ClassName
+divideBlack = ClassName "divide-black"
+
+-- | divide-white
+divideWhite :: ClassName
+divideWhite = ClassName "divide-white"
+
+-- | divide-gray-100
+divideGray100 :: ClassName
+divideGray100 = ClassName "divide-gray-100"
+
+-- | divide-gray-200
+divideGray200 :: ClassName
+divideGray200 = ClassName "divide-gray-200"
+
+-- | divide-gray-300
+divideGray300 :: ClassName
+divideGray300 = ClassName "divide-gray-300"
+
+-- | divide-gray-400
+divideGray400 :: ClassName
+divideGray400 = ClassName "divide-gray-400"
+
+-- | divide-gray-500
+divideGray500 :: ClassName
+divideGray500 = ClassName "divide-gray-500"
+
+-- | divide-gray-600
+divideGray600 :: ClassName
+divideGray600 = ClassName "divide-gray-600"
+
+-- | divide-gray-700
+divideGray700 :: ClassName
+divideGray700 = ClassName "divide-gray-700"
+
+-- | divide-gray-800
+divideGray800 :: ClassName
+divideGray800 = ClassName "divide-gray-800"
+
+-- | divide-gray-900
+divideGray900 :: ClassName
+divideGray900 = ClassName "divide-gray-900"
+
+-- | divide-red-100
+divideRed100 :: ClassName
+divideRed100 = ClassName "divide-red-100"
+
+-- | divide-red-200
+divideRed200 :: ClassName
+divideRed200 = ClassName "divide-red-200"
+
+-- | divide-red-300
+divideRed300 :: ClassName
+divideRed300 = ClassName "divide-red-300"
+
+-- | divide-red-400
+divideRed400 :: ClassName
+divideRed400 = ClassName "divide-red-400"
+
+-- | divide-red-500
+divideRed500 :: ClassName
+divideRed500 = ClassName "divide-red-500"
+
+-- | divide-red-600
+divideRed600 :: ClassName
+divideRed600 = ClassName "divide-red-600"
+
+-- | divide-red-700
+divideRed700 :: ClassName
+divideRed700 = ClassName "divide-red-700"
+
+-- | divide-red-800
+divideRed800 :: ClassName
+divideRed800 = ClassName "divide-red-800"
+
+-- | divide-red-900
+divideRed900 :: ClassName
+divideRed900 = ClassName "divide-red-900"
+
+-- | divide-orange-100
+divideOrange100 :: ClassName
+divideOrange100 = ClassName "divide-orange-100"
+
+-- | divide-orange-200
+divideOrange200 :: ClassName
+divideOrange200 = ClassName "divide-orange-200"
+
+-- | divide-orange-300
+divideOrange300 :: ClassName
+divideOrange300 = ClassName "divide-orange-300"
+
+-- | divide-orange-400
+divideOrange400 :: ClassName
+divideOrange400 = ClassName "divide-orange-400"
+
+-- | divide-orange-500
+divideOrange500 :: ClassName
+divideOrange500 = ClassName "divide-orange-500"
+
+-- | divide-orange-600
+divideOrange600 :: ClassName
+divideOrange600 = ClassName "divide-orange-600"
+
+-- | divide-orange-700
+divideOrange700 :: ClassName
+divideOrange700 = ClassName "divide-orange-700"
+
+-- | divide-orange-800
+divideOrange800 :: ClassName
+divideOrange800 = ClassName "divide-orange-800"
+
+-- | divide-orange-900
+divideOrange900 :: ClassName
+divideOrange900 = ClassName "divide-orange-900"
+
+-- | divide-yellow-100
+divideYellow100 :: ClassName
+divideYellow100 = ClassName "divide-yellow-100"
+
+-- | divide-yellow-200
+divideYellow200 :: ClassName
+divideYellow200 = ClassName "divide-yellow-200"
+
+-- | divide-yellow-300
+divideYellow300 :: ClassName
+divideYellow300 = ClassName "divide-yellow-300"
+
+-- | divide-yellow-400
+divideYellow400 :: ClassName
+divideYellow400 = ClassName "divide-yellow-400"
+
+-- | divide-yellow-500
+divideYellow500 :: ClassName
+divideYellow500 = ClassName "divide-yellow-500"
+
+-- | divide-yellow-600
+divideYellow600 :: ClassName
+divideYellow600 = ClassName "divide-yellow-600"
+
+-- | divide-yellow-700
+divideYellow700 :: ClassName
+divideYellow700 = ClassName "divide-yellow-700"
+
+-- | divide-yellow-800
+divideYellow800 :: ClassName
+divideYellow800 = ClassName "divide-yellow-800"
+
+-- | divide-yellow-900
+divideYellow900 :: ClassName
+divideYellow900 = ClassName "divide-yellow-900"
+
+-- | divide-green-100
+divideGreen100 :: ClassName
+divideGreen100 = ClassName "divide-green-100"
+
+-- | divide-green-200
+divideGreen200 :: ClassName
+divideGreen200 = ClassName "divide-green-200"
+
+-- | divide-green-300
+divideGreen300 :: ClassName
+divideGreen300 = ClassName "divide-green-300"
+
+-- | divide-green-400
+divideGreen400 :: ClassName
+divideGreen400 = ClassName "divide-green-400"
+
+-- | divide-green-500
+divideGreen500 :: ClassName
+divideGreen500 = ClassName "divide-green-500"
+
+-- | divide-green-600
+divideGreen600 :: ClassName
+divideGreen600 = ClassName "divide-green-600"
+
+-- | divide-green-700
+divideGreen700 :: ClassName
+divideGreen700 = ClassName "divide-green-700"
+
+-- | divide-green-800
+divideGreen800 :: ClassName
+divideGreen800 = ClassName "divide-green-800"
+
+-- | divide-green-900
+divideGreen900 :: ClassName
+divideGreen900 = ClassName "divide-green-900"
+
+-- | divide-teal-100
+divideTeal100 :: ClassName
+divideTeal100 = ClassName "divide-teal-100"
+
+-- | divide-teal-200
+divideTeal200 :: ClassName
+divideTeal200 = ClassName "divide-teal-200"
+
+-- | divide-teal-300
+divideTeal300 :: ClassName
+divideTeal300 = ClassName "divide-teal-300"
+
+-- | divide-teal-400
+divideTeal400 :: ClassName
+divideTeal400 = ClassName "divide-teal-400"
+
+-- | divide-teal-500
+divideTeal500 :: ClassName
+divideTeal500 = ClassName "divide-teal-500"
+
+-- | divide-teal-600
+divideTeal600 :: ClassName
+divideTeal600 = ClassName "divide-teal-600"
+
+-- | divide-teal-700
+divideTeal700 :: ClassName
+divideTeal700 = ClassName "divide-teal-700"
+
+-- | divide-teal-800
+divideTeal800 :: ClassName
+divideTeal800 = ClassName "divide-teal-800"
+
+-- | divide-teal-900
+divideTeal900 :: ClassName
+divideTeal900 = ClassName "divide-teal-900"
+
+-- | divide-blue-100
+divideBlue100 :: ClassName
+divideBlue100 = ClassName "divide-blue-100"
+
+-- | divide-blue-200
+divideBlue200 :: ClassName
+divideBlue200 = ClassName "divide-blue-200"
+
+-- | divide-blue-300
+divideBlue300 :: ClassName
+divideBlue300 = ClassName "divide-blue-300"
+
+-- | divide-blue-400
+divideBlue400 :: ClassName
+divideBlue400 = ClassName "divide-blue-400"
+
+-- | divide-blue-500
+divideBlue500 :: ClassName
+divideBlue500 = ClassName "divide-blue-500"
+
+-- | divide-blue-600
+divideBlue600 :: ClassName
+divideBlue600 = ClassName "divide-blue-600"
+
+-- | divide-blue-700
+divideBlue700 :: ClassName
+divideBlue700 = ClassName "divide-blue-700"
+
+-- | divide-blue-800
+divideBlue800 :: ClassName
+divideBlue800 = ClassName "divide-blue-800"
+
+-- | divide-blue-900
+divideBlue900 :: ClassName
+divideBlue900 = ClassName "divide-blue-900"
+
+-- | divide-indigo-100
+divideIndigo100 :: ClassName
+divideIndigo100 = ClassName "divide-indigo-100"
+
+-- | divide-indigo-200
+divideIndigo200 :: ClassName
+divideIndigo200 = ClassName "divide-indigo-200"
+
+-- | divide-indigo-300
+divideIndigo300 :: ClassName
+divideIndigo300 = ClassName "divide-indigo-300"
+
+-- | divide-indigo-400
+divideIndigo400 :: ClassName
+divideIndigo400 = ClassName "divide-indigo-400"
+
+-- | divide-indigo-500
+divideIndigo500 :: ClassName
+divideIndigo500 = ClassName "divide-indigo-500"
+
+-- | divide-indigo-600
+divideIndigo600 :: ClassName
+divideIndigo600 = ClassName "divide-indigo-600"
+
+-- | divide-indigo-700
+divideIndigo700 :: ClassName
+divideIndigo700 = ClassName "divide-indigo-700"
+
+-- | divide-indigo-800
+divideIndigo800 :: ClassName
+divideIndigo800 = ClassName "divide-indigo-800"
+
+-- | divide-indigo-900
+divideIndigo900 :: ClassName
+divideIndigo900 = ClassName "divide-indigo-900"
+
+-- | divide-purple-100
+dividePurple100 :: ClassName
+dividePurple100 = ClassName "divide-purple-100"
+
+-- | divide-purple-200
+dividePurple200 :: ClassName
+dividePurple200 = ClassName "divide-purple-200"
+
+-- | divide-purple-300
+dividePurple300 :: ClassName
+dividePurple300 = ClassName "divide-purple-300"
+
+-- | divide-purple-400
+dividePurple400 :: ClassName
+dividePurple400 = ClassName "divide-purple-400"
+
+-- | divide-purple-500
+dividePurple500 :: ClassName
+dividePurple500 = ClassName "divide-purple-500"
+
+-- | divide-purple-600
+dividePurple600 :: ClassName
+dividePurple600 = ClassName "divide-purple-600"
+
+-- | divide-purple-700
+dividePurple700 :: ClassName
+dividePurple700 = ClassName "divide-purple-700"
+
+-- | divide-purple-800
+dividePurple800 :: ClassName
+dividePurple800 = ClassName "divide-purple-800"
+
+-- | divide-purple-900
+dividePurple900 :: ClassName
+dividePurple900 = ClassName "divide-purple-900"
+
+-- | divide-pink-100
+dividePink100 :: ClassName
+dividePink100 = ClassName "divide-pink-100"
+
+-- | divide-pink-200
+dividePink200 :: ClassName
+dividePink200 = ClassName "divide-pink-200"
+
+-- | divide-pink-300
+dividePink300 :: ClassName
+dividePink300 = ClassName "divide-pink-300"
+
+-- | divide-pink-400
+dividePink400 :: ClassName
+dividePink400 = ClassName "divide-pink-400"
+
+-- | divide-pink-500
+dividePink500 :: ClassName
+dividePink500 = ClassName "divide-pink-500"
+
+-- | divide-pink-600
+dividePink600 :: ClassName
+dividePink600 = ClassName "divide-pink-600"
+
+-- | divide-pink-700
+dividePink700 :: ClassName
+dividePink700 = ClassName "divide-pink-700"
+
+-- | divide-pink-800
+dividePink800 :: ClassName
+dividePink800 = ClassName "divide-pink-800"
+
+-- | divide-pink-900
+dividePink900 :: ClassName
+dividePink900 = ClassName "divide-pink-900"
+
+-- | divide-solid
+divideSolid :: ClassName
+divideSolid = ClassName "divide-solid"
+
+-- | divide-dashed
+divideDashed :: ClassName
+divideDashed = ClassName "divide-dashed"
+
+-- | divide-dotted
+divideDotted :: ClassName
+divideDotted = ClassName "divide-dotted"
+
+-- | divide-double
+divideDouble :: ClassName
+divideDouble = ClassName "divide-double"
+
+-- | divide-none
+divideNone :: ClassName
+divideNone = ClassName "divide-none"
+
+-- | divide-opacity-0
+divideOpacity0 :: ClassName
+divideOpacity0 = ClassName "divide-opacity-0"
+
+-- | divide-opacity-25
+divideOpacity25 :: ClassName
+divideOpacity25 = ClassName "divide-opacity-25"
+
+-- | divide-opacity-50
+divideOpacity50 :: ClassName
+divideOpacity50 = ClassName "divide-opacity-50"
+
+-- | divide-opacity-75
+divideOpacity75 :: ClassName
+divideOpacity75 = ClassName "divide-opacity-75"
+
+-- | divide-opacity-100
+divideOpacity100 :: ClassName
+divideOpacity100 = ClassName "divide-opacity-100"
+
 -- | sr-only
 srOnly :: ClassName
 srOnly = ClassName "sr-only"
@@ -11391,6 +12159,10 @@ antialiased = ClassName "antialiased"
 subpixelAntialiased :: ClassName
 subpixelAntialiased = ClassName "subpixel-antialiased"
 
+-- | normal-nums
+normalNums :: ClassName
+normalNums = ClassName "normal-nums"
+
 -- | ordinal
 ordinal :: ClassName
 ordinal = ClassName "ordinal"
@@ -11422,10 +12194,6 @@ diagonalFractions = ClassName "diagonal-fractions"
 -- | stacked-fractions
 stackedFractions :: ClassName
 stackedFractions = ClassName "stacked-fractions"
-
--- | normal-nums
-normalNums :: ClassName
-normalNums = ClassName "normal-nums"
 
 -- | tracking-tighter
 trackingTighter :: ClassName
@@ -14514,6 +15282,774 @@ animateBounce = ClassName "animate-bounce"
 -- | sm:container
 smContainer :: ClassName
 smContainer = ClassName "sm:container"
+
+-- | sm:space-y-0
+smSpaceY0 :: ClassName
+smSpaceY0 = ClassName "sm:space-y-0"
+
+-- | sm:space-x-0
+smSpaceX0 :: ClassName
+smSpaceX0 = ClassName "sm:space-x-0"
+
+-- | sm:space-y-1
+smSpaceY1 :: ClassName
+smSpaceY1 = ClassName "sm:space-y-1"
+
+-- | sm:space-x-1
+smSpaceX1 :: ClassName
+smSpaceX1 = ClassName "sm:space-x-1"
+
+-- | sm:space-y-2
+smSpaceY2 :: ClassName
+smSpaceY2 = ClassName "sm:space-y-2"
+
+-- | sm:space-x-2
+smSpaceX2 :: ClassName
+smSpaceX2 = ClassName "sm:space-x-2"
+
+-- | sm:space-y-3
+smSpaceY3 :: ClassName
+smSpaceY3 = ClassName "sm:space-y-3"
+
+-- | sm:space-x-3
+smSpaceX3 :: ClassName
+smSpaceX3 = ClassName "sm:space-x-3"
+
+-- | sm:space-y-4
+smSpaceY4 :: ClassName
+smSpaceY4 = ClassName "sm:space-y-4"
+
+-- | sm:space-x-4
+smSpaceX4 :: ClassName
+smSpaceX4 = ClassName "sm:space-x-4"
+
+-- | sm:space-y-5
+smSpaceY5 :: ClassName
+smSpaceY5 = ClassName "sm:space-y-5"
+
+-- | sm:space-x-5
+smSpaceX5 :: ClassName
+smSpaceX5 = ClassName "sm:space-x-5"
+
+-- | sm:space-y-6
+smSpaceY6 :: ClassName
+smSpaceY6 = ClassName "sm:space-y-6"
+
+-- | sm:space-x-6
+smSpaceX6 :: ClassName
+smSpaceX6 = ClassName "sm:space-x-6"
+
+-- | sm:space-y-8
+smSpaceY8 :: ClassName
+smSpaceY8 = ClassName "sm:space-y-8"
+
+-- | sm:space-x-8
+smSpaceX8 :: ClassName
+smSpaceX8 = ClassName "sm:space-x-8"
+
+-- | sm:space-y-10
+smSpaceY10 :: ClassName
+smSpaceY10 = ClassName "sm:space-y-10"
+
+-- | sm:space-x-10
+smSpaceX10 :: ClassName
+smSpaceX10 = ClassName "sm:space-x-10"
+
+-- | sm:space-y-12
+smSpaceY12 :: ClassName
+smSpaceY12 = ClassName "sm:space-y-12"
+
+-- | sm:space-x-12
+smSpaceX12 :: ClassName
+smSpaceX12 = ClassName "sm:space-x-12"
+
+-- | sm:space-y-16
+smSpaceY16 :: ClassName
+smSpaceY16 = ClassName "sm:space-y-16"
+
+-- | sm:space-x-16
+smSpaceX16 :: ClassName
+smSpaceX16 = ClassName "sm:space-x-16"
+
+-- | sm:space-y-20
+smSpaceY20 :: ClassName
+smSpaceY20 = ClassName "sm:space-y-20"
+
+-- | sm:space-x-20
+smSpaceX20 :: ClassName
+smSpaceX20 = ClassName "sm:space-x-20"
+
+-- | sm:space-y-24
+smSpaceY24 :: ClassName
+smSpaceY24 = ClassName "sm:space-y-24"
+
+-- | sm:space-x-24
+smSpaceX24 :: ClassName
+smSpaceX24 = ClassName "sm:space-x-24"
+
+-- | sm:space-y-32
+smSpaceY32 :: ClassName
+smSpaceY32 = ClassName "sm:space-y-32"
+
+-- | sm:space-x-32
+smSpaceX32 :: ClassName
+smSpaceX32 = ClassName "sm:space-x-32"
+
+-- | sm:space-y-40
+smSpaceY40 :: ClassName
+smSpaceY40 = ClassName "sm:space-y-40"
+
+-- | sm:space-x-40
+smSpaceX40 :: ClassName
+smSpaceX40 = ClassName "sm:space-x-40"
+
+-- | sm:space-y-48
+smSpaceY48 :: ClassName
+smSpaceY48 = ClassName "sm:space-y-48"
+
+-- | sm:space-x-48
+smSpaceX48 :: ClassName
+smSpaceX48 = ClassName "sm:space-x-48"
+
+-- | sm:space-y-56
+smSpaceY56 :: ClassName
+smSpaceY56 = ClassName "sm:space-y-56"
+
+-- | sm:space-x-56
+smSpaceX56 :: ClassName
+smSpaceX56 = ClassName "sm:space-x-56"
+
+-- | sm:space-y-64
+smSpaceY64 :: ClassName
+smSpaceY64 = ClassName "sm:space-y-64"
+
+-- | sm:space-x-64
+smSpaceX64 :: ClassName
+smSpaceX64 = ClassName "sm:space-x-64"
+
+-- | sm:space-y-px
+smSpaceYPx :: ClassName
+smSpaceYPx = ClassName "sm:space-y-px"
+
+-- | sm:space-x-px
+smSpaceXPx :: ClassName
+smSpaceXPx = ClassName "sm:space-x-px"
+
+-- | sm:-space-y-1
+smNegSpaceY1 :: ClassName
+smNegSpaceY1 = ClassName "sm:-space-y-1"
+
+-- | sm:-space-x-1
+smNegSpaceX1 :: ClassName
+smNegSpaceX1 = ClassName "sm:-space-x-1"
+
+-- | sm:-space-y-2
+smNegSpaceY2 :: ClassName
+smNegSpaceY2 = ClassName "sm:-space-y-2"
+
+-- | sm:-space-x-2
+smNegSpaceX2 :: ClassName
+smNegSpaceX2 = ClassName "sm:-space-x-2"
+
+-- | sm:-space-y-3
+smNegSpaceY3 :: ClassName
+smNegSpaceY3 = ClassName "sm:-space-y-3"
+
+-- | sm:-space-x-3
+smNegSpaceX3 :: ClassName
+smNegSpaceX3 = ClassName "sm:-space-x-3"
+
+-- | sm:-space-y-4
+smNegSpaceY4 :: ClassName
+smNegSpaceY4 = ClassName "sm:-space-y-4"
+
+-- | sm:-space-x-4
+smNegSpaceX4 :: ClassName
+smNegSpaceX4 = ClassName "sm:-space-x-4"
+
+-- | sm:-space-y-5
+smNegSpaceY5 :: ClassName
+smNegSpaceY5 = ClassName "sm:-space-y-5"
+
+-- | sm:-space-x-5
+smNegSpaceX5 :: ClassName
+smNegSpaceX5 = ClassName "sm:-space-x-5"
+
+-- | sm:-space-y-6
+smNegSpaceY6 :: ClassName
+smNegSpaceY6 = ClassName "sm:-space-y-6"
+
+-- | sm:-space-x-6
+smNegSpaceX6 :: ClassName
+smNegSpaceX6 = ClassName "sm:-space-x-6"
+
+-- | sm:-space-y-8
+smNegSpaceY8 :: ClassName
+smNegSpaceY8 = ClassName "sm:-space-y-8"
+
+-- | sm:-space-x-8
+smNegSpaceX8 :: ClassName
+smNegSpaceX8 = ClassName "sm:-space-x-8"
+
+-- | sm:-space-y-10
+smNegSpaceY10 :: ClassName
+smNegSpaceY10 = ClassName "sm:-space-y-10"
+
+-- | sm:-space-x-10
+smNegSpaceX10 :: ClassName
+smNegSpaceX10 = ClassName "sm:-space-x-10"
+
+-- | sm:-space-y-12
+smNegSpaceY12 :: ClassName
+smNegSpaceY12 = ClassName "sm:-space-y-12"
+
+-- | sm:-space-x-12
+smNegSpaceX12 :: ClassName
+smNegSpaceX12 = ClassName "sm:-space-x-12"
+
+-- | sm:-space-y-16
+smNegSpaceY16 :: ClassName
+smNegSpaceY16 = ClassName "sm:-space-y-16"
+
+-- | sm:-space-x-16
+smNegSpaceX16 :: ClassName
+smNegSpaceX16 = ClassName "sm:-space-x-16"
+
+-- | sm:-space-y-20
+smNegSpaceY20 :: ClassName
+smNegSpaceY20 = ClassName "sm:-space-y-20"
+
+-- | sm:-space-x-20
+smNegSpaceX20 :: ClassName
+smNegSpaceX20 = ClassName "sm:-space-x-20"
+
+-- | sm:-space-y-24
+smNegSpaceY24 :: ClassName
+smNegSpaceY24 = ClassName "sm:-space-y-24"
+
+-- | sm:-space-x-24
+smNegSpaceX24 :: ClassName
+smNegSpaceX24 = ClassName "sm:-space-x-24"
+
+-- | sm:-space-y-32
+smNegSpaceY32 :: ClassName
+smNegSpaceY32 = ClassName "sm:-space-y-32"
+
+-- | sm:-space-x-32
+smNegSpaceX32 :: ClassName
+smNegSpaceX32 = ClassName "sm:-space-x-32"
+
+-- | sm:-space-y-40
+smNegSpaceY40 :: ClassName
+smNegSpaceY40 = ClassName "sm:-space-y-40"
+
+-- | sm:-space-x-40
+smNegSpaceX40 :: ClassName
+smNegSpaceX40 = ClassName "sm:-space-x-40"
+
+-- | sm:-space-y-48
+smNegSpaceY48 :: ClassName
+smNegSpaceY48 = ClassName "sm:-space-y-48"
+
+-- | sm:-space-x-48
+smNegSpaceX48 :: ClassName
+smNegSpaceX48 = ClassName "sm:-space-x-48"
+
+-- | sm:-space-y-56
+smNegSpaceY56 :: ClassName
+smNegSpaceY56 = ClassName "sm:-space-y-56"
+
+-- | sm:-space-x-56
+smNegSpaceX56 :: ClassName
+smNegSpaceX56 = ClassName "sm:-space-x-56"
+
+-- | sm:-space-y-64
+smNegSpaceY64 :: ClassName
+smNegSpaceY64 = ClassName "sm:-space-y-64"
+
+-- | sm:-space-x-64
+smNegSpaceX64 :: ClassName
+smNegSpaceX64 = ClassName "sm:-space-x-64"
+
+-- | sm:-space-y-px
+smNegSpaceYPx :: ClassName
+smNegSpaceYPx = ClassName "sm:-space-y-px"
+
+-- | sm:-space-x-px
+smNegSpaceXPx :: ClassName
+smNegSpaceXPx = ClassName "sm:-space-x-px"
+
+-- | sm:space-y-reverse
+smSpaceYReverse :: ClassName
+smSpaceYReverse = ClassName "sm:space-y-reverse"
+
+-- | sm:space-x-reverse
+smSpaceXReverse :: ClassName
+smSpaceXReverse = ClassName "sm:space-x-reverse"
+
+-- | sm:divide-y-0
+smDivideY0 :: ClassName
+smDivideY0 = ClassName "sm:divide-y-0"
+
+-- | sm:divide-x-0
+smDivideX0 :: ClassName
+smDivideX0 = ClassName "sm:divide-x-0"
+
+-- | sm:divide-y-2
+smDivideY2 :: ClassName
+smDivideY2 = ClassName "sm:divide-y-2"
+
+-- | sm:divide-x-2
+smDivideX2 :: ClassName
+smDivideX2 = ClassName "sm:divide-x-2"
+
+-- | sm:divide-y-4
+smDivideY4 :: ClassName
+smDivideY4 = ClassName "sm:divide-y-4"
+
+-- | sm:divide-x-4
+smDivideX4 :: ClassName
+smDivideX4 = ClassName "sm:divide-x-4"
+
+-- | sm:divide-y-8
+smDivideY8 :: ClassName
+smDivideY8 = ClassName "sm:divide-y-8"
+
+-- | sm:divide-x-8
+smDivideX8 :: ClassName
+smDivideX8 = ClassName "sm:divide-x-8"
+
+-- | sm:divide-y
+smDivideY :: ClassName
+smDivideY = ClassName "sm:divide-y"
+
+-- | sm:divide-x
+smDivideX :: ClassName
+smDivideX = ClassName "sm:divide-x"
+
+-- | sm:divide-y-reverse
+smDivideYReverse :: ClassName
+smDivideYReverse = ClassName "sm:divide-y-reverse"
+
+-- | sm:divide-x-reverse
+smDivideXReverse :: ClassName
+smDivideXReverse = ClassName "sm:divide-x-reverse"
+
+-- | sm:divide-transparent
+smDivideTransparent :: ClassName
+smDivideTransparent = ClassName "sm:divide-transparent"
+
+-- | sm:divide-current
+smDivideCurrent :: ClassName
+smDivideCurrent = ClassName "sm:divide-current"
+
+-- | sm:divide-black
+smDivideBlack :: ClassName
+smDivideBlack = ClassName "sm:divide-black"
+
+-- | sm:divide-white
+smDivideWhite :: ClassName
+smDivideWhite = ClassName "sm:divide-white"
+
+-- | sm:divide-gray-100
+smDivideGray100 :: ClassName
+smDivideGray100 = ClassName "sm:divide-gray-100"
+
+-- | sm:divide-gray-200
+smDivideGray200 :: ClassName
+smDivideGray200 = ClassName "sm:divide-gray-200"
+
+-- | sm:divide-gray-300
+smDivideGray300 :: ClassName
+smDivideGray300 = ClassName "sm:divide-gray-300"
+
+-- | sm:divide-gray-400
+smDivideGray400 :: ClassName
+smDivideGray400 = ClassName "sm:divide-gray-400"
+
+-- | sm:divide-gray-500
+smDivideGray500 :: ClassName
+smDivideGray500 = ClassName "sm:divide-gray-500"
+
+-- | sm:divide-gray-600
+smDivideGray600 :: ClassName
+smDivideGray600 = ClassName "sm:divide-gray-600"
+
+-- | sm:divide-gray-700
+smDivideGray700 :: ClassName
+smDivideGray700 = ClassName "sm:divide-gray-700"
+
+-- | sm:divide-gray-800
+smDivideGray800 :: ClassName
+smDivideGray800 = ClassName "sm:divide-gray-800"
+
+-- | sm:divide-gray-900
+smDivideGray900 :: ClassName
+smDivideGray900 = ClassName "sm:divide-gray-900"
+
+-- | sm:divide-red-100
+smDivideRed100 :: ClassName
+smDivideRed100 = ClassName "sm:divide-red-100"
+
+-- | sm:divide-red-200
+smDivideRed200 :: ClassName
+smDivideRed200 = ClassName "sm:divide-red-200"
+
+-- | sm:divide-red-300
+smDivideRed300 :: ClassName
+smDivideRed300 = ClassName "sm:divide-red-300"
+
+-- | sm:divide-red-400
+smDivideRed400 :: ClassName
+smDivideRed400 = ClassName "sm:divide-red-400"
+
+-- | sm:divide-red-500
+smDivideRed500 :: ClassName
+smDivideRed500 = ClassName "sm:divide-red-500"
+
+-- | sm:divide-red-600
+smDivideRed600 :: ClassName
+smDivideRed600 = ClassName "sm:divide-red-600"
+
+-- | sm:divide-red-700
+smDivideRed700 :: ClassName
+smDivideRed700 = ClassName "sm:divide-red-700"
+
+-- | sm:divide-red-800
+smDivideRed800 :: ClassName
+smDivideRed800 = ClassName "sm:divide-red-800"
+
+-- | sm:divide-red-900
+smDivideRed900 :: ClassName
+smDivideRed900 = ClassName "sm:divide-red-900"
+
+-- | sm:divide-orange-100
+smDivideOrange100 :: ClassName
+smDivideOrange100 = ClassName "sm:divide-orange-100"
+
+-- | sm:divide-orange-200
+smDivideOrange200 :: ClassName
+smDivideOrange200 = ClassName "sm:divide-orange-200"
+
+-- | sm:divide-orange-300
+smDivideOrange300 :: ClassName
+smDivideOrange300 = ClassName "sm:divide-orange-300"
+
+-- | sm:divide-orange-400
+smDivideOrange400 :: ClassName
+smDivideOrange400 = ClassName "sm:divide-orange-400"
+
+-- | sm:divide-orange-500
+smDivideOrange500 :: ClassName
+smDivideOrange500 = ClassName "sm:divide-orange-500"
+
+-- | sm:divide-orange-600
+smDivideOrange600 :: ClassName
+smDivideOrange600 = ClassName "sm:divide-orange-600"
+
+-- | sm:divide-orange-700
+smDivideOrange700 :: ClassName
+smDivideOrange700 = ClassName "sm:divide-orange-700"
+
+-- | sm:divide-orange-800
+smDivideOrange800 :: ClassName
+smDivideOrange800 = ClassName "sm:divide-orange-800"
+
+-- | sm:divide-orange-900
+smDivideOrange900 :: ClassName
+smDivideOrange900 = ClassName "sm:divide-orange-900"
+
+-- | sm:divide-yellow-100
+smDivideYellow100 :: ClassName
+smDivideYellow100 = ClassName "sm:divide-yellow-100"
+
+-- | sm:divide-yellow-200
+smDivideYellow200 :: ClassName
+smDivideYellow200 = ClassName "sm:divide-yellow-200"
+
+-- | sm:divide-yellow-300
+smDivideYellow300 :: ClassName
+smDivideYellow300 = ClassName "sm:divide-yellow-300"
+
+-- | sm:divide-yellow-400
+smDivideYellow400 :: ClassName
+smDivideYellow400 = ClassName "sm:divide-yellow-400"
+
+-- | sm:divide-yellow-500
+smDivideYellow500 :: ClassName
+smDivideYellow500 = ClassName "sm:divide-yellow-500"
+
+-- | sm:divide-yellow-600
+smDivideYellow600 :: ClassName
+smDivideYellow600 = ClassName "sm:divide-yellow-600"
+
+-- | sm:divide-yellow-700
+smDivideYellow700 :: ClassName
+smDivideYellow700 = ClassName "sm:divide-yellow-700"
+
+-- | sm:divide-yellow-800
+smDivideYellow800 :: ClassName
+smDivideYellow800 = ClassName "sm:divide-yellow-800"
+
+-- | sm:divide-yellow-900
+smDivideYellow900 :: ClassName
+smDivideYellow900 = ClassName "sm:divide-yellow-900"
+
+-- | sm:divide-green-100
+smDivideGreen100 :: ClassName
+smDivideGreen100 = ClassName "sm:divide-green-100"
+
+-- | sm:divide-green-200
+smDivideGreen200 :: ClassName
+smDivideGreen200 = ClassName "sm:divide-green-200"
+
+-- | sm:divide-green-300
+smDivideGreen300 :: ClassName
+smDivideGreen300 = ClassName "sm:divide-green-300"
+
+-- | sm:divide-green-400
+smDivideGreen400 :: ClassName
+smDivideGreen400 = ClassName "sm:divide-green-400"
+
+-- | sm:divide-green-500
+smDivideGreen500 :: ClassName
+smDivideGreen500 = ClassName "sm:divide-green-500"
+
+-- | sm:divide-green-600
+smDivideGreen600 :: ClassName
+smDivideGreen600 = ClassName "sm:divide-green-600"
+
+-- | sm:divide-green-700
+smDivideGreen700 :: ClassName
+smDivideGreen700 = ClassName "sm:divide-green-700"
+
+-- | sm:divide-green-800
+smDivideGreen800 :: ClassName
+smDivideGreen800 = ClassName "sm:divide-green-800"
+
+-- | sm:divide-green-900
+smDivideGreen900 :: ClassName
+smDivideGreen900 = ClassName "sm:divide-green-900"
+
+-- | sm:divide-teal-100
+smDivideTeal100 :: ClassName
+smDivideTeal100 = ClassName "sm:divide-teal-100"
+
+-- | sm:divide-teal-200
+smDivideTeal200 :: ClassName
+smDivideTeal200 = ClassName "sm:divide-teal-200"
+
+-- | sm:divide-teal-300
+smDivideTeal300 :: ClassName
+smDivideTeal300 = ClassName "sm:divide-teal-300"
+
+-- | sm:divide-teal-400
+smDivideTeal400 :: ClassName
+smDivideTeal400 = ClassName "sm:divide-teal-400"
+
+-- | sm:divide-teal-500
+smDivideTeal500 :: ClassName
+smDivideTeal500 = ClassName "sm:divide-teal-500"
+
+-- | sm:divide-teal-600
+smDivideTeal600 :: ClassName
+smDivideTeal600 = ClassName "sm:divide-teal-600"
+
+-- | sm:divide-teal-700
+smDivideTeal700 :: ClassName
+smDivideTeal700 = ClassName "sm:divide-teal-700"
+
+-- | sm:divide-teal-800
+smDivideTeal800 :: ClassName
+smDivideTeal800 = ClassName "sm:divide-teal-800"
+
+-- | sm:divide-teal-900
+smDivideTeal900 :: ClassName
+smDivideTeal900 = ClassName "sm:divide-teal-900"
+
+-- | sm:divide-blue-100
+smDivideBlue100 :: ClassName
+smDivideBlue100 = ClassName "sm:divide-blue-100"
+
+-- | sm:divide-blue-200
+smDivideBlue200 :: ClassName
+smDivideBlue200 = ClassName "sm:divide-blue-200"
+
+-- | sm:divide-blue-300
+smDivideBlue300 :: ClassName
+smDivideBlue300 = ClassName "sm:divide-blue-300"
+
+-- | sm:divide-blue-400
+smDivideBlue400 :: ClassName
+smDivideBlue400 = ClassName "sm:divide-blue-400"
+
+-- | sm:divide-blue-500
+smDivideBlue500 :: ClassName
+smDivideBlue500 = ClassName "sm:divide-blue-500"
+
+-- | sm:divide-blue-600
+smDivideBlue600 :: ClassName
+smDivideBlue600 = ClassName "sm:divide-blue-600"
+
+-- | sm:divide-blue-700
+smDivideBlue700 :: ClassName
+smDivideBlue700 = ClassName "sm:divide-blue-700"
+
+-- | sm:divide-blue-800
+smDivideBlue800 :: ClassName
+smDivideBlue800 = ClassName "sm:divide-blue-800"
+
+-- | sm:divide-blue-900
+smDivideBlue900 :: ClassName
+smDivideBlue900 = ClassName "sm:divide-blue-900"
+
+-- | sm:divide-indigo-100
+smDivideIndigo100 :: ClassName
+smDivideIndigo100 = ClassName "sm:divide-indigo-100"
+
+-- | sm:divide-indigo-200
+smDivideIndigo200 :: ClassName
+smDivideIndigo200 = ClassName "sm:divide-indigo-200"
+
+-- | sm:divide-indigo-300
+smDivideIndigo300 :: ClassName
+smDivideIndigo300 = ClassName "sm:divide-indigo-300"
+
+-- | sm:divide-indigo-400
+smDivideIndigo400 :: ClassName
+smDivideIndigo400 = ClassName "sm:divide-indigo-400"
+
+-- | sm:divide-indigo-500
+smDivideIndigo500 :: ClassName
+smDivideIndigo500 = ClassName "sm:divide-indigo-500"
+
+-- | sm:divide-indigo-600
+smDivideIndigo600 :: ClassName
+smDivideIndigo600 = ClassName "sm:divide-indigo-600"
+
+-- | sm:divide-indigo-700
+smDivideIndigo700 :: ClassName
+smDivideIndigo700 = ClassName "sm:divide-indigo-700"
+
+-- | sm:divide-indigo-800
+smDivideIndigo800 :: ClassName
+smDivideIndigo800 = ClassName "sm:divide-indigo-800"
+
+-- | sm:divide-indigo-900
+smDivideIndigo900 :: ClassName
+smDivideIndigo900 = ClassName "sm:divide-indigo-900"
+
+-- | sm:divide-purple-100
+smDividePurple100 :: ClassName
+smDividePurple100 = ClassName "sm:divide-purple-100"
+
+-- | sm:divide-purple-200
+smDividePurple200 :: ClassName
+smDividePurple200 = ClassName "sm:divide-purple-200"
+
+-- | sm:divide-purple-300
+smDividePurple300 :: ClassName
+smDividePurple300 = ClassName "sm:divide-purple-300"
+
+-- | sm:divide-purple-400
+smDividePurple400 :: ClassName
+smDividePurple400 = ClassName "sm:divide-purple-400"
+
+-- | sm:divide-purple-500
+smDividePurple500 :: ClassName
+smDividePurple500 = ClassName "sm:divide-purple-500"
+
+-- | sm:divide-purple-600
+smDividePurple600 :: ClassName
+smDividePurple600 = ClassName "sm:divide-purple-600"
+
+-- | sm:divide-purple-700
+smDividePurple700 :: ClassName
+smDividePurple700 = ClassName "sm:divide-purple-700"
+
+-- | sm:divide-purple-800
+smDividePurple800 :: ClassName
+smDividePurple800 = ClassName "sm:divide-purple-800"
+
+-- | sm:divide-purple-900
+smDividePurple900 :: ClassName
+smDividePurple900 = ClassName "sm:divide-purple-900"
+
+-- | sm:divide-pink-100
+smDividePink100 :: ClassName
+smDividePink100 = ClassName "sm:divide-pink-100"
+
+-- | sm:divide-pink-200
+smDividePink200 :: ClassName
+smDividePink200 = ClassName "sm:divide-pink-200"
+
+-- | sm:divide-pink-300
+smDividePink300 :: ClassName
+smDividePink300 = ClassName "sm:divide-pink-300"
+
+-- | sm:divide-pink-400
+smDividePink400 :: ClassName
+smDividePink400 = ClassName "sm:divide-pink-400"
+
+-- | sm:divide-pink-500
+smDividePink500 :: ClassName
+smDividePink500 = ClassName "sm:divide-pink-500"
+
+-- | sm:divide-pink-600
+smDividePink600 :: ClassName
+smDividePink600 = ClassName "sm:divide-pink-600"
+
+-- | sm:divide-pink-700
+smDividePink700 :: ClassName
+smDividePink700 = ClassName "sm:divide-pink-700"
+
+-- | sm:divide-pink-800
+smDividePink800 :: ClassName
+smDividePink800 = ClassName "sm:divide-pink-800"
+
+-- | sm:divide-pink-900
+smDividePink900 :: ClassName
+smDividePink900 = ClassName "sm:divide-pink-900"
+
+-- | sm:divide-solid
+smDivideSolid :: ClassName
+smDivideSolid = ClassName "sm:divide-solid"
+
+-- | sm:divide-dashed
+smDivideDashed :: ClassName
+smDivideDashed = ClassName "sm:divide-dashed"
+
+-- | sm:divide-dotted
+smDivideDotted :: ClassName
+smDivideDotted = ClassName "sm:divide-dotted"
+
+-- | sm:divide-double
+smDivideDouble :: ClassName
+smDivideDouble = ClassName "sm:divide-double"
+
+-- | sm:divide-none
+smDivideNone :: ClassName
+smDivideNone = ClassName "sm:divide-none"
+
+-- | sm:divide-opacity-0
+smDivideOpacity0 :: ClassName
+smDivideOpacity0 = ClassName "sm:divide-opacity-0"
+
+-- | sm:divide-opacity-25
+smDivideOpacity25 :: ClassName
+smDivideOpacity25 = ClassName "sm:divide-opacity-25"
+
+-- | sm:divide-opacity-50
+smDivideOpacity50 :: ClassName
+smDivideOpacity50 = ClassName "sm:divide-opacity-50"
+
+-- | sm:divide-opacity-75
+smDivideOpacity75 :: ClassName
+smDivideOpacity75 = ClassName "sm:divide-opacity-75"
+
+-- | sm:divide-opacity-100
+smDivideOpacity100 :: ClassName
+smDivideOpacity100 = ClassName "sm:divide-opacity-100"
 
 -- | sm:sr-only
 smSrOnly :: ClassName
@@ -25899,6 +27435,10 @@ smAntialiased = ClassName "sm:antialiased"
 smSubpixelAntialiased :: ClassName
 smSubpixelAntialiased = ClassName "sm:subpixel-antialiased"
 
+-- | sm:normal-nums
+smNormalNums :: ClassName
+smNormalNums = ClassName "sm:normal-nums"
+
 -- | sm:ordinal
 smOrdinal :: ClassName
 smOrdinal = ClassName "sm:ordinal"
@@ -25930,10 +27470,6 @@ smDiagonalFractions = ClassName "sm:diagonal-fractions"
 -- | sm:stacked-fractions
 smStackedFractions :: ClassName
 smStackedFractions = ClassName "sm:stacked-fractions"
-
--- | sm:normal-nums
-smNormalNums :: ClassName
-smNormalNums = ClassName "sm:normal-nums"
 
 -- | sm:tracking-tighter
 smTrackingTighter :: ClassName
@@ -29022,6 +30558,774 @@ smAnimateBounce = ClassName "sm:animate-bounce"
 -- | md:container
 mdContainer :: ClassName
 mdContainer = ClassName "md:container"
+
+-- | md:space-y-0
+mdSpaceY0 :: ClassName
+mdSpaceY0 = ClassName "md:space-y-0"
+
+-- | md:space-x-0
+mdSpaceX0 :: ClassName
+mdSpaceX0 = ClassName "md:space-x-0"
+
+-- | md:space-y-1
+mdSpaceY1 :: ClassName
+mdSpaceY1 = ClassName "md:space-y-1"
+
+-- | md:space-x-1
+mdSpaceX1 :: ClassName
+mdSpaceX1 = ClassName "md:space-x-1"
+
+-- | md:space-y-2
+mdSpaceY2 :: ClassName
+mdSpaceY2 = ClassName "md:space-y-2"
+
+-- | md:space-x-2
+mdSpaceX2 :: ClassName
+mdSpaceX2 = ClassName "md:space-x-2"
+
+-- | md:space-y-3
+mdSpaceY3 :: ClassName
+mdSpaceY3 = ClassName "md:space-y-3"
+
+-- | md:space-x-3
+mdSpaceX3 :: ClassName
+mdSpaceX3 = ClassName "md:space-x-3"
+
+-- | md:space-y-4
+mdSpaceY4 :: ClassName
+mdSpaceY4 = ClassName "md:space-y-4"
+
+-- | md:space-x-4
+mdSpaceX4 :: ClassName
+mdSpaceX4 = ClassName "md:space-x-4"
+
+-- | md:space-y-5
+mdSpaceY5 :: ClassName
+mdSpaceY5 = ClassName "md:space-y-5"
+
+-- | md:space-x-5
+mdSpaceX5 :: ClassName
+mdSpaceX5 = ClassName "md:space-x-5"
+
+-- | md:space-y-6
+mdSpaceY6 :: ClassName
+mdSpaceY6 = ClassName "md:space-y-6"
+
+-- | md:space-x-6
+mdSpaceX6 :: ClassName
+mdSpaceX6 = ClassName "md:space-x-6"
+
+-- | md:space-y-8
+mdSpaceY8 :: ClassName
+mdSpaceY8 = ClassName "md:space-y-8"
+
+-- | md:space-x-8
+mdSpaceX8 :: ClassName
+mdSpaceX8 = ClassName "md:space-x-8"
+
+-- | md:space-y-10
+mdSpaceY10 :: ClassName
+mdSpaceY10 = ClassName "md:space-y-10"
+
+-- | md:space-x-10
+mdSpaceX10 :: ClassName
+mdSpaceX10 = ClassName "md:space-x-10"
+
+-- | md:space-y-12
+mdSpaceY12 :: ClassName
+mdSpaceY12 = ClassName "md:space-y-12"
+
+-- | md:space-x-12
+mdSpaceX12 :: ClassName
+mdSpaceX12 = ClassName "md:space-x-12"
+
+-- | md:space-y-16
+mdSpaceY16 :: ClassName
+mdSpaceY16 = ClassName "md:space-y-16"
+
+-- | md:space-x-16
+mdSpaceX16 :: ClassName
+mdSpaceX16 = ClassName "md:space-x-16"
+
+-- | md:space-y-20
+mdSpaceY20 :: ClassName
+mdSpaceY20 = ClassName "md:space-y-20"
+
+-- | md:space-x-20
+mdSpaceX20 :: ClassName
+mdSpaceX20 = ClassName "md:space-x-20"
+
+-- | md:space-y-24
+mdSpaceY24 :: ClassName
+mdSpaceY24 = ClassName "md:space-y-24"
+
+-- | md:space-x-24
+mdSpaceX24 :: ClassName
+mdSpaceX24 = ClassName "md:space-x-24"
+
+-- | md:space-y-32
+mdSpaceY32 :: ClassName
+mdSpaceY32 = ClassName "md:space-y-32"
+
+-- | md:space-x-32
+mdSpaceX32 :: ClassName
+mdSpaceX32 = ClassName "md:space-x-32"
+
+-- | md:space-y-40
+mdSpaceY40 :: ClassName
+mdSpaceY40 = ClassName "md:space-y-40"
+
+-- | md:space-x-40
+mdSpaceX40 :: ClassName
+mdSpaceX40 = ClassName "md:space-x-40"
+
+-- | md:space-y-48
+mdSpaceY48 :: ClassName
+mdSpaceY48 = ClassName "md:space-y-48"
+
+-- | md:space-x-48
+mdSpaceX48 :: ClassName
+mdSpaceX48 = ClassName "md:space-x-48"
+
+-- | md:space-y-56
+mdSpaceY56 :: ClassName
+mdSpaceY56 = ClassName "md:space-y-56"
+
+-- | md:space-x-56
+mdSpaceX56 :: ClassName
+mdSpaceX56 = ClassName "md:space-x-56"
+
+-- | md:space-y-64
+mdSpaceY64 :: ClassName
+mdSpaceY64 = ClassName "md:space-y-64"
+
+-- | md:space-x-64
+mdSpaceX64 :: ClassName
+mdSpaceX64 = ClassName "md:space-x-64"
+
+-- | md:space-y-px
+mdSpaceYPx :: ClassName
+mdSpaceYPx = ClassName "md:space-y-px"
+
+-- | md:space-x-px
+mdSpaceXPx :: ClassName
+mdSpaceXPx = ClassName "md:space-x-px"
+
+-- | md:-space-y-1
+mdNegSpaceY1 :: ClassName
+mdNegSpaceY1 = ClassName "md:-space-y-1"
+
+-- | md:-space-x-1
+mdNegSpaceX1 :: ClassName
+mdNegSpaceX1 = ClassName "md:-space-x-1"
+
+-- | md:-space-y-2
+mdNegSpaceY2 :: ClassName
+mdNegSpaceY2 = ClassName "md:-space-y-2"
+
+-- | md:-space-x-2
+mdNegSpaceX2 :: ClassName
+mdNegSpaceX2 = ClassName "md:-space-x-2"
+
+-- | md:-space-y-3
+mdNegSpaceY3 :: ClassName
+mdNegSpaceY3 = ClassName "md:-space-y-3"
+
+-- | md:-space-x-3
+mdNegSpaceX3 :: ClassName
+mdNegSpaceX3 = ClassName "md:-space-x-3"
+
+-- | md:-space-y-4
+mdNegSpaceY4 :: ClassName
+mdNegSpaceY4 = ClassName "md:-space-y-4"
+
+-- | md:-space-x-4
+mdNegSpaceX4 :: ClassName
+mdNegSpaceX4 = ClassName "md:-space-x-4"
+
+-- | md:-space-y-5
+mdNegSpaceY5 :: ClassName
+mdNegSpaceY5 = ClassName "md:-space-y-5"
+
+-- | md:-space-x-5
+mdNegSpaceX5 :: ClassName
+mdNegSpaceX5 = ClassName "md:-space-x-5"
+
+-- | md:-space-y-6
+mdNegSpaceY6 :: ClassName
+mdNegSpaceY6 = ClassName "md:-space-y-6"
+
+-- | md:-space-x-6
+mdNegSpaceX6 :: ClassName
+mdNegSpaceX6 = ClassName "md:-space-x-6"
+
+-- | md:-space-y-8
+mdNegSpaceY8 :: ClassName
+mdNegSpaceY8 = ClassName "md:-space-y-8"
+
+-- | md:-space-x-8
+mdNegSpaceX8 :: ClassName
+mdNegSpaceX8 = ClassName "md:-space-x-8"
+
+-- | md:-space-y-10
+mdNegSpaceY10 :: ClassName
+mdNegSpaceY10 = ClassName "md:-space-y-10"
+
+-- | md:-space-x-10
+mdNegSpaceX10 :: ClassName
+mdNegSpaceX10 = ClassName "md:-space-x-10"
+
+-- | md:-space-y-12
+mdNegSpaceY12 :: ClassName
+mdNegSpaceY12 = ClassName "md:-space-y-12"
+
+-- | md:-space-x-12
+mdNegSpaceX12 :: ClassName
+mdNegSpaceX12 = ClassName "md:-space-x-12"
+
+-- | md:-space-y-16
+mdNegSpaceY16 :: ClassName
+mdNegSpaceY16 = ClassName "md:-space-y-16"
+
+-- | md:-space-x-16
+mdNegSpaceX16 :: ClassName
+mdNegSpaceX16 = ClassName "md:-space-x-16"
+
+-- | md:-space-y-20
+mdNegSpaceY20 :: ClassName
+mdNegSpaceY20 = ClassName "md:-space-y-20"
+
+-- | md:-space-x-20
+mdNegSpaceX20 :: ClassName
+mdNegSpaceX20 = ClassName "md:-space-x-20"
+
+-- | md:-space-y-24
+mdNegSpaceY24 :: ClassName
+mdNegSpaceY24 = ClassName "md:-space-y-24"
+
+-- | md:-space-x-24
+mdNegSpaceX24 :: ClassName
+mdNegSpaceX24 = ClassName "md:-space-x-24"
+
+-- | md:-space-y-32
+mdNegSpaceY32 :: ClassName
+mdNegSpaceY32 = ClassName "md:-space-y-32"
+
+-- | md:-space-x-32
+mdNegSpaceX32 :: ClassName
+mdNegSpaceX32 = ClassName "md:-space-x-32"
+
+-- | md:-space-y-40
+mdNegSpaceY40 :: ClassName
+mdNegSpaceY40 = ClassName "md:-space-y-40"
+
+-- | md:-space-x-40
+mdNegSpaceX40 :: ClassName
+mdNegSpaceX40 = ClassName "md:-space-x-40"
+
+-- | md:-space-y-48
+mdNegSpaceY48 :: ClassName
+mdNegSpaceY48 = ClassName "md:-space-y-48"
+
+-- | md:-space-x-48
+mdNegSpaceX48 :: ClassName
+mdNegSpaceX48 = ClassName "md:-space-x-48"
+
+-- | md:-space-y-56
+mdNegSpaceY56 :: ClassName
+mdNegSpaceY56 = ClassName "md:-space-y-56"
+
+-- | md:-space-x-56
+mdNegSpaceX56 :: ClassName
+mdNegSpaceX56 = ClassName "md:-space-x-56"
+
+-- | md:-space-y-64
+mdNegSpaceY64 :: ClassName
+mdNegSpaceY64 = ClassName "md:-space-y-64"
+
+-- | md:-space-x-64
+mdNegSpaceX64 :: ClassName
+mdNegSpaceX64 = ClassName "md:-space-x-64"
+
+-- | md:-space-y-px
+mdNegSpaceYPx :: ClassName
+mdNegSpaceYPx = ClassName "md:-space-y-px"
+
+-- | md:-space-x-px
+mdNegSpaceXPx :: ClassName
+mdNegSpaceXPx = ClassName "md:-space-x-px"
+
+-- | md:space-y-reverse
+mdSpaceYReverse :: ClassName
+mdSpaceYReverse = ClassName "md:space-y-reverse"
+
+-- | md:space-x-reverse
+mdSpaceXReverse :: ClassName
+mdSpaceXReverse = ClassName "md:space-x-reverse"
+
+-- | md:divide-y-0
+mdDivideY0 :: ClassName
+mdDivideY0 = ClassName "md:divide-y-0"
+
+-- | md:divide-x-0
+mdDivideX0 :: ClassName
+mdDivideX0 = ClassName "md:divide-x-0"
+
+-- | md:divide-y-2
+mdDivideY2 :: ClassName
+mdDivideY2 = ClassName "md:divide-y-2"
+
+-- | md:divide-x-2
+mdDivideX2 :: ClassName
+mdDivideX2 = ClassName "md:divide-x-2"
+
+-- | md:divide-y-4
+mdDivideY4 :: ClassName
+mdDivideY4 = ClassName "md:divide-y-4"
+
+-- | md:divide-x-4
+mdDivideX4 :: ClassName
+mdDivideX4 = ClassName "md:divide-x-4"
+
+-- | md:divide-y-8
+mdDivideY8 :: ClassName
+mdDivideY8 = ClassName "md:divide-y-8"
+
+-- | md:divide-x-8
+mdDivideX8 :: ClassName
+mdDivideX8 = ClassName "md:divide-x-8"
+
+-- | md:divide-y
+mdDivideY :: ClassName
+mdDivideY = ClassName "md:divide-y"
+
+-- | md:divide-x
+mdDivideX :: ClassName
+mdDivideX = ClassName "md:divide-x"
+
+-- | md:divide-y-reverse
+mdDivideYReverse :: ClassName
+mdDivideYReverse = ClassName "md:divide-y-reverse"
+
+-- | md:divide-x-reverse
+mdDivideXReverse :: ClassName
+mdDivideXReverse = ClassName "md:divide-x-reverse"
+
+-- | md:divide-transparent
+mdDivideTransparent :: ClassName
+mdDivideTransparent = ClassName "md:divide-transparent"
+
+-- | md:divide-current
+mdDivideCurrent :: ClassName
+mdDivideCurrent = ClassName "md:divide-current"
+
+-- | md:divide-black
+mdDivideBlack :: ClassName
+mdDivideBlack = ClassName "md:divide-black"
+
+-- | md:divide-white
+mdDivideWhite :: ClassName
+mdDivideWhite = ClassName "md:divide-white"
+
+-- | md:divide-gray-100
+mdDivideGray100 :: ClassName
+mdDivideGray100 = ClassName "md:divide-gray-100"
+
+-- | md:divide-gray-200
+mdDivideGray200 :: ClassName
+mdDivideGray200 = ClassName "md:divide-gray-200"
+
+-- | md:divide-gray-300
+mdDivideGray300 :: ClassName
+mdDivideGray300 = ClassName "md:divide-gray-300"
+
+-- | md:divide-gray-400
+mdDivideGray400 :: ClassName
+mdDivideGray400 = ClassName "md:divide-gray-400"
+
+-- | md:divide-gray-500
+mdDivideGray500 :: ClassName
+mdDivideGray500 = ClassName "md:divide-gray-500"
+
+-- | md:divide-gray-600
+mdDivideGray600 :: ClassName
+mdDivideGray600 = ClassName "md:divide-gray-600"
+
+-- | md:divide-gray-700
+mdDivideGray700 :: ClassName
+mdDivideGray700 = ClassName "md:divide-gray-700"
+
+-- | md:divide-gray-800
+mdDivideGray800 :: ClassName
+mdDivideGray800 = ClassName "md:divide-gray-800"
+
+-- | md:divide-gray-900
+mdDivideGray900 :: ClassName
+mdDivideGray900 = ClassName "md:divide-gray-900"
+
+-- | md:divide-red-100
+mdDivideRed100 :: ClassName
+mdDivideRed100 = ClassName "md:divide-red-100"
+
+-- | md:divide-red-200
+mdDivideRed200 :: ClassName
+mdDivideRed200 = ClassName "md:divide-red-200"
+
+-- | md:divide-red-300
+mdDivideRed300 :: ClassName
+mdDivideRed300 = ClassName "md:divide-red-300"
+
+-- | md:divide-red-400
+mdDivideRed400 :: ClassName
+mdDivideRed400 = ClassName "md:divide-red-400"
+
+-- | md:divide-red-500
+mdDivideRed500 :: ClassName
+mdDivideRed500 = ClassName "md:divide-red-500"
+
+-- | md:divide-red-600
+mdDivideRed600 :: ClassName
+mdDivideRed600 = ClassName "md:divide-red-600"
+
+-- | md:divide-red-700
+mdDivideRed700 :: ClassName
+mdDivideRed700 = ClassName "md:divide-red-700"
+
+-- | md:divide-red-800
+mdDivideRed800 :: ClassName
+mdDivideRed800 = ClassName "md:divide-red-800"
+
+-- | md:divide-red-900
+mdDivideRed900 :: ClassName
+mdDivideRed900 = ClassName "md:divide-red-900"
+
+-- | md:divide-orange-100
+mdDivideOrange100 :: ClassName
+mdDivideOrange100 = ClassName "md:divide-orange-100"
+
+-- | md:divide-orange-200
+mdDivideOrange200 :: ClassName
+mdDivideOrange200 = ClassName "md:divide-orange-200"
+
+-- | md:divide-orange-300
+mdDivideOrange300 :: ClassName
+mdDivideOrange300 = ClassName "md:divide-orange-300"
+
+-- | md:divide-orange-400
+mdDivideOrange400 :: ClassName
+mdDivideOrange400 = ClassName "md:divide-orange-400"
+
+-- | md:divide-orange-500
+mdDivideOrange500 :: ClassName
+mdDivideOrange500 = ClassName "md:divide-orange-500"
+
+-- | md:divide-orange-600
+mdDivideOrange600 :: ClassName
+mdDivideOrange600 = ClassName "md:divide-orange-600"
+
+-- | md:divide-orange-700
+mdDivideOrange700 :: ClassName
+mdDivideOrange700 = ClassName "md:divide-orange-700"
+
+-- | md:divide-orange-800
+mdDivideOrange800 :: ClassName
+mdDivideOrange800 = ClassName "md:divide-orange-800"
+
+-- | md:divide-orange-900
+mdDivideOrange900 :: ClassName
+mdDivideOrange900 = ClassName "md:divide-orange-900"
+
+-- | md:divide-yellow-100
+mdDivideYellow100 :: ClassName
+mdDivideYellow100 = ClassName "md:divide-yellow-100"
+
+-- | md:divide-yellow-200
+mdDivideYellow200 :: ClassName
+mdDivideYellow200 = ClassName "md:divide-yellow-200"
+
+-- | md:divide-yellow-300
+mdDivideYellow300 :: ClassName
+mdDivideYellow300 = ClassName "md:divide-yellow-300"
+
+-- | md:divide-yellow-400
+mdDivideYellow400 :: ClassName
+mdDivideYellow400 = ClassName "md:divide-yellow-400"
+
+-- | md:divide-yellow-500
+mdDivideYellow500 :: ClassName
+mdDivideYellow500 = ClassName "md:divide-yellow-500"
+
+-- | md:divide-yellow-600
+mdDivideYellow600 :: ClassName
+mdDivideYellow600 = ClassName "md:divide-yellow-600"
+
+-- | md:divide-yellow-700
+mdDivideYellow700 :: ClassName
+mdDivideYellow700 = ClassName "md:divide-yellow-700"
+
+-- | md:divide-yellow-800
+mdDivideYellow800 :: ClassName
+mdDivideYellow800 = ClassName "md:divide-yellow-800"
+
+-- | md:divide-yellow-900
+mdDivideYellow900 :: ClassName
+mdDivideYellow900 = ClassName "md:divide-yellow-900"
+
+-- | md:divide-green-100
+mdDivideGreen100 :: ClassName
+mdDivideGreen100 = ClassName "md:divide-green-100"
+
+-- | md:divide-green-200
+mdDivideGreen200 :: ClassName
+mdDivideGreen200 = ClassName "md:divide-green-200"
+
+-- | md:divide-green-300
+mdDivideGreen300 :: ClassName
+mdDivideGreen300 = ClassName "md:divide-green-300"
+
+-- | md:divide-green-400
+mdDivideGreen400 :: ClassName
+mdDivideGreen400 = ClassName "md:divide-green-400"
+
+-- | md:divide-green-500
+mdDivideGreen500 :: ClassName
+mdDivideGreen500 = ClassName "md:divide-green-500"
+
+-- | md:divide-green-600
+mdDivideGreen600 :: ClassName
+mdDivideGreen600 = ClassName "md:divide-green-600"
+
+-- | md:divide-green-700
+mdDivideGreen700 :: ClassName
+mdDivideGreen700 = ClassName "md:divide-green-700"
+
+-- | md:divide-green-800
+mdDivideGreen800 :: ClassName
+mdDivideGreen800 = ClassName "md:divide-green-800"
+
+-- | md:divide-green-900
+mdDivideGreen900 :: ClassName
+mdDivideGreen900 = ClassName "md:divide-green-900"
+
+-- | md:divide-teal-100
+mdDivideTeal100 :: ClassName
+mdDivideTeal100 = ClassName "md:divide-teal-100"
+
+-- | md:divide-teal-200
+mdDivideTeal200 :: ClassName
+mdDivideTeal200 = ClassName "md:divide-teal-200"
+
+-- | md:divide-teal-300
+mdDivideTeal300 :: ClassName
+mdDivideTeal300 = ClassName "md:divide-teal-300"
+
+-- | md:divide-teal-400
+mdDivideTeal400 :: ClassName
+mdDivideTeal400 = ClassName "md:divide-teal-400"
+
+-- | md:divide-teal-500
+mdDivideTeal500 :: ClassName
+mdDivideTeal500 = ClassName "md:divide-teal-500"
+
+-- | md:divide-teal-600
+mdDivideTeal600 :: ClassName
+mdDivideTeal600 = ClassName "md:divide-teal-600"
+
+-- | md:divide-teal-700
+mdDivideTeal700 :: ClassName
+mdDivideTeal700 = ClassName "md:divide-teal-700"
+
+-- | md:divide-teal-800
+mdDivideTeal800 :: ClassName
+mdDivideTeal800 = ClassName "md:divide-teal-800"
+
+-- | md:divide-teal-900
+mdDivideTeal900 :: ClassName
+mdDivideTeal900 = ClassName "md:divide-teal-900"
+
+-- | md:divide-blue-100
+mdDivideBlue100 :: ClassName
+mdDivideBlue100 = ClassName "md:divide-blue-100"
+
+-- | md:divide-blue-200
+mdDivideBlue200 :: ClassName
+mdDivideBlue200 = ClassName "md:divide-blue-200"
+
+-- | md:divide-blue-300
+mdDivideBlue300 :: ClassName
+mdDivideBlue300 = ClassName "md:divide-blue-300"
+
+-- | md:divide-blue-400
+mdDivideBlue400 :: ClassName
+mdDivideBlue400 = ClassName "md:divide-blue-400"
+
+-- | md:divide-blue-500
+mdDivideBlue500 :: ClassName
+mdDivideBlue500 = ClassName "md:divide-blue-500"
+
+-- | md:divide-blue-600
+mdDivideBlue600 :: ClassName
+mdDivideBlue600 = ClassName "md:divide-blue-600"
+
+-- | md:divide-blue-700
+mdDivideBlue700 :: ClassName
+mdDivideBlue700 = ClassName "md:divide-blue-700"
+
+-- | md:divide-blue-800
+mdDivideBlue800 :: ClassName
+mdDivideBlue800 = ClassName "md:divide-blue-800"
+
+-- | md:divide-blue-900
+mdDivideBlue900 :: ClassName
+mdDivideBlue900 = ClassName "md:divide-blue-900"
+
+-- | md:divide-indigo-100
+mdDivideIndigo100 :: ClassName
+mdDivideIndigo100 = ClassName "md:divide-indigo-100"
+
+-- | md:divide-indigo-200
+mdDivideIndigo200 :: ClassName
+mdDivideIndigo200 = ClassName "md:divide-indigo-200"
+
+-- | md:divide-indigo-300
+mdDivideIndigo300 :: ClassName
+mdDivideIndigo300 = ClassName "md:divide-indigo-300"
+
+-- | md:divide-indigo-400
+mdDivideIndigo400 :: ClassName
+mdDivideIndigo400 = ClassName "md:divide-indigo-400"
+
+-- | md:divide-indigo-500
+mdDivideIndigo500 :: ClassName
+mdDivideIndigo500 = ClassName "md:divide-indigo-500"
+
+-- | md:divide-indigo-600
+mdDivideIndigo600 :: ClassName
+mdDivideIndigo600 = ClassName "md:divide-indigo-600"
+
+-- | md:divide-indigo-700
+mdDivideIndigo700 :: ClassName
+mdDivideIndigo700 = ClassName "md:divide-indigo-700"
+
+-- | md:divide-indigo-800
+mdDivideIndigo800 :: ClassName
+mdDivideIndigo800 = ClassName "md:divide-indigo-800"
+
+-- | md:divide-indigo-900
+mdDivideIndigo900 :: ClassName
+mdDivideIndigo900 = ClassName "md:divide-indigo-900"
+
+-- | md:divide-purple-100
+mdDividePurple100 :: ClassName
+mdDividePurple100 = ClassName "md:divide-purple-100"
+
+-- | md:divide-purple-200
+mdDividePurple200 :: ClassName
+mdDividePurple200 = ClassName "md:divide-purple-200"
+
+-- | md:divide-purple-300
+mdDividePurple300 :: ClassName
+mdDividePurple300 = ClassName "md:divide-purple-300"
+
+-- | md:divide-purple-400
+mdDividePurple400 :: ClassName
+mdDividePurple400 = ClassName "md:divide-purple-400"
+
+-- | md:divide-purple-500
+mdDividePurple500 :: ClassName
+mdDividePurple500 = ClassName "md:divide-purple-500"
+
+-- | md:divide-purple-600
+mdDividePurple600 :: ClassName
+mdDividePurple600 = ClassName "md:divide-purple-600"
+
+-- | md:divide-purple-700
+mdDividePurple700 :: ClassName
+mdDividePurple700 = ClassName "md:divide-purple-700"
+
+-- | md:divide-purple-800
+mdDividePurple800 :: ClassName
+mdDividePurple800 = ClassName "md:divide-purple-800"
+
+-- | md:divide-purple-900
+mdDividePurple900 :: ClassName
+mdDividePurple900 = ClassName "md:divide-purple-900"
+
+-- | md:divide-pink-100
+mdDividePink100 :: ClassName
+mdDividePink100 = ClassName "md:divide-pink-100"
+
+-- | md:divide-pink-200
+mdDividePink200 :: ClassName
+mdDividePink200 = ClassName "md:divide-pink-200"
+
+-- | md:divide-pink-300
+mdDividePink300 :: ClassName
+mdDividePink300 = ClassName "md:divide-pink-300"
+
+-- | md:divide-pink-400
+mdDividePink400 :: ClassName
+mdDividePink400 = ClassName "md:divide-pink-400"
+
+-- | md:divide-pink-500
+mdDividePink500 :: ClassName
+mdDividePink500 = ClassName "md:divide-pink-500"
+
+-- | md:divide-pink-600
+mdDividePink600 :: ClassName
+mdDividePink600 = ClassName "md:divide-pink-600"
+
+-- | md:divide-pink-700
+mdDividePink700 :: ClassName
+mdDividePink700 = ClassName "md:divide-pink-700"
+
+-- | md:divide-pink-800
+mdDividePink800 :: ClassName
+mdDividePink800 = ClassName "md:divide-pink-800"
+
+-- | md:divide-pink-900
+mdDividePink900 :: ClassName
+mdDividePink900 = ClassName "md:divide-pink-900"
+
+-- | md:divide-solid
+mdDivideSolid :: ClassName
+mdDivideSolid = ClassName "md:divide-solid"
+
+-- | md:divide-dashed
+mdDivideDashed :: ClassName
+mdDivideDashed = ClassName "md:divide-dashed"
+
+-- | md:divide-dotted
+mdDivideDotted :: ClassName
+mdDivideDotted = ClassName "md:divide-dotted"
+
+-- | md:divide-double
+mdDivideDouble :: ClassName
+mdDivideDouble = ClassName "md:divide-double"
+
+-- | md:divide-none
+mdDivideNone :: ClassName
+mdDivideNone = ClassName "md:divide-none"
+
+-- | md:divide-opacity-0
+mdDivideOpacity0 :: ClassName
+mdDivideOpacity0 = ClassName "md:divide-opacity-0"
+
+-- | md:divide-opacity-25
+mdDivideOpacity25 :: ClassName
+mdDivideOpacity25 = ClassName "md:divide-opacity-25"
+
+-- | md:divide-opacity-50
+mdDivideOpacity50 :: ClassName
+mdDivideOpacity50 = ClassName "md:divide-opacity-50"
+
+-- | md:divide-opacity-75
+mdDivideOpacity75 :: ClassName
+mdDivideOpacity75 = ClassName "md:divide-opacity-75"
+
+-- | md:divide-opacity-100
+mdDivideOpacity100 :: ClassName
+mdDivideOpacity100 = ClassName "md:divide-opacity-100"
 
 -- | md:sr-only
 mdSrOnly :: ClassName
@@ -40407,6 +42711,10 @@ mdAntialiased = ClassName "md:antialiased"
 mdSubpixelAntialiased :: ClassName
 mdSubpixelAntialiased = ClassName "md:subpixel-antialiased"
 
+-- | md:normal-nums
+mdNormalNums :: ClassName
+mdNormalNums = ClassName "md:normal-nums"
+
 -- | md:ordinal
 mdOrdinal :: ClassName
 mdOrdinal = ClassName "md:ordinal"
@@ -40438,10 +42746,6 @@ mdDiagonalFractions = ClassName "md:diagonal-fractions"
 -- | md:stacked-fractions
 mdStackedFractions :: ClassName
 mdStackedFractions = ClassName "md:stacked-fractions"
-
--- | md:normal-nums
-mdNormalNums :: ClassName
-mdNormalNums = ClassName "md:normal-nums"
 
 -- | md:tracking-tighter
 mdTrackingTighter :: ClassName
@@ -43530,6 +45834,774 @@ mdAnimateBounce = ClassName "md:animate-bounce"
 -- | lg:container
 lgContainer :: ClassName
 lgContainer = ClassName "lg:container"
+
+-- | lg:space-y-0
+lgSpaceY0 :: ClassName
+lgSpaceY0 = ClassName "lg:space-y-0"
+
+-- | lg:space-x-0
+lgSpaceX0 :: ClassName
+lgSpaceX0 = ClassName "lg:space-x-0"
+
+-- | lg:space-y-1
+lgSpaceY1 :: ClassName
+lgSpaceY1 = ClassName "lg:space-y-1"
+
+-- | lg:space-x-1
+lgSpaceX1 :: ClassName
+lgSpaceX1 = ClassName "lg:space-x-1"
+
+-- | lg:space-y-2
+lgSpaceY2 :: ClassName
+lgSpaceY2 = ClassName "lg:space-y-2"
+
+-- | lg:space-x-2
+lgSpaceX2 :: ClassName
+lgSpaceX2 = ClassName "lg:space-x-2"
+
+-- | lg:space-y-3
+lgSpaceY3 :: ClassName
+lgSpaceY3 = ClassName "lg:space-y-3"
+
+-- | lg:space-x-3
+lgSpaceX3 :: ClassName
+lgSpaceX3 = ClassName "lg:space-x-3"
+
+-- | lg:space-y-4
+lgSpaceY4 :: ClassName
+lgSpaceY4 = ClassName "lg:space-y-4"
+
+-- | lg:space-x-4
+lgSpaceX4 :: ClassName
+lgSpaceX4 = ClassName "lg:space-x-4"
+
+-- | lg:space-y-5
+lgSpaceY5 :: ClassName
+lgSpaceY5 = ClassName "lg:space-y-5"
+
+-- | lg:space-x-5
+lgSpaceX5 :: ClassName
+lgSpaceX5 = ClassName "lg:space-x-5"
+
+-- | lg:space-y-6
+lgSpaceY6 :: ClassName
+lgSpaceY6 = ClassName "lg:space-y-6"
+
+-- | lg:space-x-6
+lgSpaceX6 :: ClassName
+lgSpaceX6 = ClassName "lg:space-x-6"
+
+-- | lg:space-y-8
+lgSpaceY8 :: ClassName
+lgSpaceY8 = ClassName "lg:space-y-8"
+
+-- | lg:space-x-8
+lgSpaceX8 :: ClassName
+lgSpaceX8 = ClassName "lg:space-x-8"
+
+-- | lg:space-y-10
+lgSpaceY10 :: ClassName
+lgSpaceY10 = ClassName "lg:space-y-10"
+
+-- | lg:space-x-10
+lgSpaceX10 :: ClassName
+lgSpaceX10 = ClassName "lg:space-x-10"
+
+-- | lg:space-y-12
+lgSpaceY12 :: ClassName
+lgSpaceY12 = ClassName "lg:space-y-12"
+
+-- | lg:space-x-12
+lgSpaceX12 :: ClassName
+lgSpaceX12 = ClassName "lg:space-x-12"
+
+-- | lg:space-y-16
+lgSpaceY16 :: ClassName
+lgSpaceY16 = ClassName "lg:space-y-16"
+
+-- | lg:space-x-16
+lgSpaceX16 :: ClassName
+lgSpaceX16 = ClassName "lg:space-x-16"
+
+-- | lg:space-y-20
+lgSpaceY20 :: ClassName
+lgSpaceY20 = ClassName "lg:space-y-20"
+
+-- | lg:space-x-20
+lgSpaceX20 :: ClassName
+lgSpaceX20 = ClassName "lg:space-x-20"
+
+-- | lg:space-y-24
+lgSpaceY24 :: ClassName
+lgSpaceY24 = ClassName "lg:space-y-24"
+
+-- | lg:space-x-24
+lgSpaceX24 :: ClassName
+lgSpaceX24 = ClassName "lg:space-x-24"
+
+-- | lg:space-y-32
+lgSpaceY32 :: ClassName
+lgSpaceY32 = ClassName "lg:space-y-32"
+
+-- | lg:space-x-32
+lgSpaceX32 :: ClassName
+lgSpaceX32 = ClassName "lg:space-x-32"
+
+-- | lg:space-y-40
+lgSpaceY40 :: ClassName
+lgSpaceY40 = ClassName "lg:space-y-40"
+
+-- | lg:space-x-40
+lgSpaceX40 :: ClassName
+lgSpaceX40 = ClassName "lg:space-x-40"
+
+-- | lg:space-y-48
+lgSpaceY48 :: ClassName
+lgSpaceY48 = ClassName "lg:space-y-48"
+
+-- | lg:space-x-48
+lgSpaceX48 :: ClassName
+lgSpaceX48 = ClassName "lg:space-x-48"
+
+-- | lg:space-y-56
+lgSpaceY56 :: ClassName
+lgSpaceY56 = ClassName "lg:space-y-56"
+
+-- | lg:space-x-56
+lgSpaceX56 :: ClassName
+lgSpaceX56 = ClassName "lg:space-x-56"
+
+-- | lg:space-y-64
+lgSpaceY64 :: ClassName
+lgSpaceY64 = ClassName "lg:space-y-64"
+
+-- | lg:space-x-64
+lgSpaceX64 :: ClassName
+lgSpaceX64 = ClassName "lg:space-x-64"
+
+-- | lg:space-y-px
+lgSpaceYPx :: ClassName
+lgSpaceYPx = ClassName "lg:space-y-px"
+
+-- | lg:space-x-px
+lgSpaceXPx :: ClassName
+lgSpaceXPx = ClassName "lg:space-x-px"
+
+-- | lg:-space-y-1
+lgNegSpaceY1 :: ClassName
+lgNegSpaceY1 = ClassName "lg:-space-y-1"
+
+-- | lg:-space-x-1
+lgNegSpaceX1 :: ClassName
+lgNegSpaceX1 = ClassName "lg:-space-x-1"
+
+-- | lg:-space-y-2
+lgNegSpaceY2 :: ClassName
+lgNegSpaceY2 = ClassName "lg:-space-y-2"
+
+-- | lg:-space-x-2
+lgNegSpaceX2 :: ClassName
+lgNegSpaceX2 = ClassName "lg:-space-x-2"
+
+-- | lg:-space-y-3
+lgNegSpaceY3 :: ClassName
+lgNegSpaceY3 = ClassName "lg:-space-y-3"
+
+-- | lg:-space-x-3
+lgNegSpaceX3 :: ClassName
+lgNegSpaceX3 = ClassName "lg:-space-x-3"
+
+-- | lg:-space-y-4
+lgNegSpaceY4 :: ClassName
+lgNegSpaceY4 = ClassName "lg:-space-y-4"
+
+-- | lg:-space-x-4
+lgNegSpaceX4 :: ClassName
+lgNegSpaceX4 = ClassName "lg:-space-x-4"
+
+-- | lg:-space-y-5
+lgNegSpaceY5 :: ClassName
+lgNegSpaceY5 = ClassName "lg:-space-y-5"
+
+-- | lg:-space-x-5
+lgNegSpaceX5 :: ClassName
+lgNegSpaceX5 = ClassName "lg:-space-x-5"
+
+-- | lg:-space-y-6
+lgNegSpaceY6 :: ClassName
+lgNegSpaceY6 = ClassName "lg:-space-y-6"
+
+-- | lg:-space-x-6
+lgNegSpaceX6 :: ClassName
+lgNegSpaceX6 = ClassName "lg:-space-x-6"
+
+-- | lg:-space-y-8
+lgNegSpaceY8 :: ClassName
+lgNegSpaceY8 = ClassName "lg:-space-y-8"
+
+-- | lg:-space-x-8
+lgNegSpaceX8 :: ClassName
+lgNegSpaceX8 = ClassName "lg:-space-x-8"
+
+-- | lg:-space-y-10
+lgNegSpaceY10 :: ClassName
+lgNegSpaceY10 = ClassName "lg:-space-y-10"
+
+-- | lg:-space-x-10
+lgNegSpaceX10 :: ClassName
+lgNegSpaceX10 = ClassName "lg:-space-x-10"
+
+-- | lg:-space-y-12
+lgNegSpaceY12 :: ClassName
+lgNegSpaceY12 = ClassName "lg:-space-y-12"
+
+-- | lg:-space-x-12
+lgNegSpaceX12 :: ClassName
+lgNegSpaceX12 = ClassName "lg:-space-x-12"
+
+-- | lg:-space-y-16
+lgNegSpaceY16 :: ClassName
+lgNegSpaceY16 = ClassName "lg:-space-y-16"
+
+-- | lg:-space-x-16
+lgNegSpaceX16 :: ClassName
+lgNegSpaceX16 = ClassName "lg:-space-x-16"
+
+-- | lg:-space-y-20
+lgNegSpaceY20 :: ClassName
+lgNegSpaceY20 = ClassName "lg:-space-y-20"
+
+-- | lg:-space-x-20
+lgNegSpaceX20 :: ClassName
+lgNegSpaceX20 = ClassName "lg:-space-x-20"
+
+-- | lg:-space-y-24
+lgNegSpaceY24 :: ClassName
+lgNegSpaceY24 = ClassName "lg:-space-y-24"
+
+-- | lg:-space-x-24
+lgNegSpaceX24 :: ClassName
+lgNegSpaceX24 = ClassName "lg:-space-x-24"
+
+-- | lg:-space-y-32
+lgNegSpaceY32 :: ClassName
+lgNegSpaceY32 = ClassName "lg:-space-y-32"
+
+-- | lg:-space-x-32
+lgNegSpaceX32 :: ClassName
+lgNegSpaceX32 = ClassName "lg:-space-x-32"
+
+-- | lg:-space-y-40
+lgNegSpaceY40 :: ClassName
+lgNegSpaceY40 = ClassName "lg:-space-y-40"
+
+-- | lg:-space-x-40
+lgNegSpaceX40 :: ClassName
+lgNegSpaceX40 = ClassName "lg:-space-x-40"
+
+-- | lg:-space-y-48
+lgNegSpaceY48 :: ClassName
+lgNegSpaceY48 = ClassName "lg:-space-y-48"
+
+-- | lg:-space-x-48
+lgNegSpaceX48 :: ClassName
+lgNegSpaceX48 = ClassName "lg:-space-x-48"
+
+-- | lg:-space-y-56
+lgNegSpaceY56 :: ClassName
+lgNegSpaceY56 = ClassName "lg:-space-y-56"
+
+-- | lg:-space-x-56
+lgNegSpaceX56 :: ClassName
+lgNegSpaceX56 = ClassName "lg:-space-x-56"
+
+-- | lg:-space-y-64
+lgNegSpaceY64 :: ClassName
+lgNegSpaceY64 = ClassName "lg:-space-y-64"
+
+-- | lg:-space-x-64
+lgNegSpaceX64 :: ClassName
+lgNegSpaceX64 = ClassName "lg:-space-x-64"
+
+-- | lg:-space-y-px
+lgNegSpaceYPx :: ClassName
+lgNegSpaceYPx = ClassName "lg:-space-y-px"
+
+-- | lg:-space-x-px
+lgNegSpaceXPx :: ClassName
+lgNegSpaceXPx = ClassName "lg:-space-x-px"
+
+-- | lg:space-y-reverse
+lgSpaceYReverse :: ClassName
+lgSpaceYReverse = ClassName "lg:space-y-reverse"
+
+-- | lg:space-x-reverse
+lgSpaceXReverse :: ClassName
+lgSpaceXReverse = ClassName "lg:space-x-reverse"
+
+-- | lg:divide-y-0
+lgDivideY0 :: ClassName
+lgDivideY0 = ClassName "lg:divide-y-0"
+
+-- | lg:divide-x-0
+lgDivideX0 :: ClassName
+lgDivideX0 = ClassName "lg:divide-x-0"
+
+-- | lg:divide-y-2
+lgDivideY2 :: ClassName
+lgDivideY2 = ClassName "lg:divide-y-2"
+
+-- | lg:divide-x-2
+lgDivideX2 :: ClassName
+lgDivideX2 = ClassName "lg:divide-x-2"
+
+-- | lg:divide-y-4
+lgDivideY4 :: ClassName
+lgDivideY4 = ClassName "lg:divide-y-4"
+
+-- | lg:divide-x-4
+lgDivideX4 :: ClassName
+lgDivideX4 = ClassName "lg:divide-x-4"
+
+-- | lg:divide-y-8
+lgDivideY8 :: ClassName
+lgDivideY8 = ClassName "lg:divide-y-8"
+
+-- | lg:divide-x-8
+lgDivideX8 :: ClassName
+lgDivideX8 = ClassName "lg:divide-x-8"
+
+-- | lg:divide-y
+lgDivideY :: ClassName
+lgDivideY = ClassName "lg:divide-y"
+
+-- | lg:divide-x
+lgDivideX :: ClassName
+lgDivideX = ClassName "lg:divide-x"
+
+-- | lg:divide-y-reverse
+lgDivideYReverse :: ClassName
+lgDivideYReverse = ClassName "lg:divide-y-reverse"
+
+-- | lg:divide-x-reverse
+lgDivideXReverse :: ClassName
+lgDivideXReverse = ClassName "lg:divide-x-reverse"
+
+-- | lg:divide-transparent
+lgDivideTransparent :: ClassName
+lgDivideTransparent = ClassName "lg:divide-transparent"
+
+-- | lg:divide-current
+lgDivideCurrent :: ClassName
+lgDivideCurrent = ClassName "lg:divide-current"
+
+-- | lg:divide-black
+lgDivideBlack :: ClassName
+lgDivideBlack = ClassName "lg:divide-black"
+
+-- | lg:divide-white
+lgDivideWhite :: ClassName
+lgDivideWhite = ClassName "lg:divide-white"
+
+-- | lg:divide-gray-100
+lgDivideGray100 :: ClassName
+lgDivideGray100 = ClassName "lg:divide-gray-100"
+
+-- | lg:divide-gray-200
+lgDivideGray200 :: ClassName
+lgDivideGray200 = ClassName "lg:divide-gray-200"
+
+-- | lg:divide-gray-300
+lgDivideGray300 :: ClassName
+lgDivideGray300 = ClassName "lg:divide-gray-300"
+
+-- | lg:divide-gray-400
+lgDivideGray400 :: ClassName
+lgDivideGray400 = ClassName "lg:divide-gray-400"
+
+-- | lg:divide-gray-500
+lgDivideGray500 :: ClassName
+lgDivideGray500 = ClassName "lg:divide-gray-500"
+
+-- | lg:divide-gray-600
+lgDivideGray600 :: ClassName
+lgDivideGray600 = ClassName "lg:divide-gray-600"
+
+-- | lg:divide-gray-700
+lgDivideGray700 :: ClassName
+lgDivideGray700 = ClassName "lg:divide-gray-700"
+
+-- | lg:divide-gray-800
+lgDivideGray800 :: ClassName
+lgDivideGray800 = ClassName "lg:divide-gray-800"
+
+-- | lg:divide-gray-900
+lgDivideGray900 :: ClassName
+lgDivideGray900 = ClassName "lg:divide-gray-900"
+
+-- | lg:divide-red-100
+lgDivideRed100 :: ClassName
+lgDivideRed100 = ClassName "lg:divide-red-100"
+
+-- | lg:divide-red-200
+lgDivideRed200 :: ClassName
+lgDivideRed200 = ClassName "lg:divide-red-200"
+
+-- | lg:divide-red-300
+lgDivideRed300 :: ClassName
+lgDivideRed300 = ClassName "lg:divide-red-300"
+
+-- | lg:divide-red-400
+lgDivideRed400 :: ClassName
+lgDivideRed400 = ClassName "lg:divide-red-400"
+
+-- | lg:divide-red-500
+lgDivideRed500 :: ClassName
+lgDivideRed500 = ClassName "lg:divide-red-500"
+
+-- | lg:divide-red-600
+lgDivideRed600 :: ClassName
+lgDivideRed600 = ClassName "lg:divide-red-600"
+
+-- | lg:divide-red-700
+lgDivideRed700 :: ClassName
+lgDivideRed700 = ClassName "lg:divide-red-700"
+
+-- | lg:divide-red-800
+lgDivideRed800 :: ClassName
+lgDivideRed800 = ClassName "lg:divide-red-800"
+
+-- | lg:divide-red-900
+lgDivideRed900 :: ClassName
+lgDivideRed900 = ClassName "lg:divide-red-900"
+
+-- | lg:divide-orange-100
+lgDivideOrange100 :: ClassName
+lgDivideOrange100 = ClassName "lg:divide-orange-100"
+
+-- | lg:divide-orange-200
+lgDivideOrange200 :: ClassName
+lgDivideOrange200 = ClassName "lg:divide-orange-200"
+
+-- | lg:divide-orange-300
+lgDivideOrange300 :: ClassName
+lgDivideOrange300 = ClassName "lg:divide-orange-300"
+
+-- | lg:divide-orange-400
+lgDivideOrange400 :: ClassName
+lgDivideOrange400 = ClassName "lg:divide-orange-400"
+
+-- | lg:divide-orange-500
+lgDivideOrange500 :: ClassName
+lgDivideOrange500 = ClassName "lg:divide-orange-500"
+
+-- | lg:divide-orange-600
+lgDivideOrange600 :: ClassName
+lgDivideOrange600 = ClassName "lg:divide-orange-600"
+
+-- | lg:divide-orange-700
+lgDivideOrange700 :: ClassName
+lgDivideOrange700 = ClassName "lg:divide-orange-700"
+
+-- | lg:divide-orange-800
+lgDivideOrange800 :: ClassName
+lgDivideOrange800 = ClassName "lg:divide-orange-800"
+
+-- | lg:divide-orange-900
+lgDivideOrange900 :: ClassName
+lgDivideOrange900 = ClassName "lg:divide-orange-900"
+
+-- | lg:divide-yellow-100
+lgDivideYellow100 :: ClassName
+lgDivideYellow100 = ClassName "lg:divide-yellow-100"
+
+-- | lg:divide-yellow-200
+lgDivideYellow200 :: ClassName
+lgDivideYellow200 = ClassName "lg:divide-yellow-200"
+
+-- | lg:divide-yellow-300
+lgDivideYellow300 :: ClassName
+lgDivideYellow300 = ClassName "lg:divide-yellow-300"
+
+-- | lg:divide-yellow-400
+lgDivideYellow400 :: ClassName
+lgDivideYellow400 = ClassName "lg:divide-yellow-400"
+
+-- | lg:divide-yellow-500
+lgDivideYellow500 :: ClassName
+lgDivideYellow500 = ClassName "lg:divide-yellow-500"
+
+-- | lg:divide-yellow-600
+lgDivideYellow600 :: ClassName
+lgDivideYellow600 = ClassName "lg:divide-yellow-600"
+
+-- | lg:divide-yellow-700
+lgDivideYellow700 :: ClassName
+lgDivideYellow700 = ClassName "lg:divide-yellow-700"
+
+-- | lg:divide-yellow-800
+lgDivideYellow800 :: ClassName
+lgDivideYellow800 = ClassName "lg:divide-yellow-800"
+
+-- | lg:divide-yellow-900
+lgDivideYellow900 :: ClassName
+lgDivideYellow900 = ClassName "lg:divide-yellow-900"
+
+-- | lg:divide-green-100
+lgDivideGreen100 :: ClassName
+lgDivideGreen100 = ClassName "lg:divide-green-100"
+
+-- | lg:divide-green-200
+lgDivideGreen200 :: ClassName
+lgDivideGreen200 = ClassName "lg:divide-green-200"
+
+-- | lg:divide-green-300
+lgDivideGreen300 :: ClassName
+lgDivideGreen300 = ClassName "lg:divide-green-300"
+
+-- | lg:divide-green-400
+lgDivideGreen400 :: ClassName
+lgDivideGreen400 = ClassName "lg:divide-green-400"
+
+-- | lg:divide-green-500
+lgDivideGreen500 :: ClassName
+lgDivideGreen500 = ClassName "lg:divide-green-500"
+
+-- | lg:divide-green-600
+lgDivideGreen600 :: ClassName
+lgDivideGreen600 = ClassName "lg:divide-green-600"
+
+-- | lg:divide-green-700
+lgDivideGreen700 :: ClassName
+lgDivideGreen700 = ClassName "lg:divide-green-700"
+
+-- | lg:divide-green-800
+lgDivideGreen800 :: ClassName
+lgDivideGreen800 = ClassName "lg:divide-green-800"
+
+-- | lg:divide-green-900
+lgDivideGreen900 :: ClassName
+lgDivideGreen900 = ClassName "lg:divide-green-900"
+
+-- | lg:divide-teal-100
+lgDivideTeal100 :: ClassName
+lgDivideTeal100 = ClassName "lg:divide-teal-100"
+
+-- | lg:divide-teal-200
+lgDivideTeal200 :: ClassName
+lgDivideTeal200 = ClassName "lg:divide-teal-200"
+
+-- | lg:divide-teal-300
+lgDivideTeal300 :: ClassName
+lgDivideTeal300 = ClassName "lg:divide-teal-300"
+
+-- | lg:divide-teal-400
+lgDivideTeal400 :: ClassName
+lgDivideTeal400 = ClassName "lg:divide-teal-400"
+
+-- | lg:divide-teal-500
+lgDivideTeal500 :: ClassName
+lgDivideTeal500 = ClassName "lg:divide-teal-500"
+
+-- | lg:divide-teal-600
+lgDivideTeal600 :: ClassName
+lgDivideTeal600 = ClassName "lg:divide-teal-600"
+
+-- | lg:divide-teal-700
+lgDivideTeal700 :: ClassName
+lgDivideTeal700 = ClassName "lg:divide-teal-700"
+
+-- | lg:divide-teal-800
+lgDivideTeal800 :: ClassName
+lgDivideTeal800 = ClassName "lg:divide-teal-800"
+
+-- | lg:divide-teal-900
+lgDivideTeal900 :: ClassName
+lgDivideTeal900 = ClassName "lg:divide-teal-900"
+
+-- | lg:divide-blue-100
+lgDivideBlue100 :: ClassName
+lgDivideBlue100 = ClassName "lg:divide-blue-100"
+
+-- | lg:divide-blue-200
+lgDivideBlue200 :: ClassName
+lgDivideBlue200 = ClassName "lg:divide-blue-200"
+
+-- | lg:divide-blue-300
+lgDivideBlue300 :: ClassName
+lgDivideBlue300 = ClassName "lg:divide-blue-300"
+
+-- | lg:divide-blue-400
+lgDivideBlue400 :: ClassName
+lgDivideBlue400 = ClassName "lg:divide-blue-400"
+
+-- | lg:divide-blue-500
+lgDivideBlue500 :: ClassName
+lgDivideBlue500 = ClassName "lg:divide-blue-500"
+
+-- | lg:divide-blue-600
+lgDivideBlue600 :: ClassName
+lgDivideBlue600 = ClassName "lg:divide-blue-600"
+
+-- | lg:divide-blue-700
+lgDivideBlue700 :: ClassName
+lgDivideBlue700 = ClassName "lg:divide-blue-700"
+
+-- | lg:divide-blue-800
+lgDivideBlue800 :: ClassName
+lgDivideBlue800 = ClassName "lg:divide-blue-800"
+
+-- | lg:divide-blue-900
+lgDivideBlue900 :: ClassName
+lgDivideBlue900 = ClassName "lg:divide-blue-900"
+
+-- | lg:divide-indigo-100
+lgDivideIndigo100 :: ClassName
+lgDivideIndigo100 = ClassName "lg:divide-indigo-100"
+
+-- | lg:divide-indigo-200
+lgDivideIndigo200 :: ClassName
+lgDivideIndigo200 = ClassName "lg:divide-indigo-200"
+
+-- | lg:divide-indigo-300
+lgDivideIndigo300 :: ClassName
+lgDivideIndigo300 = ClassName "lg:divide-indigo-300"
+
+-- | lg:divide-indigo-400
+lgDivideIndigo400 :: ClassName
+lgDivideIndigo400 = ClassName "lg:divide-indigo-400"
+
+-- | lg:divide-indigo-500
+lgDivideIndigo500 :: ClassName
+lgDivideIndigo500 = ClassName "lg:divide-indigo-500"
+
+-- | lg:divide-indigo-600
+lgDivideIndigo600 :: ClassName
+lgDivideIndigo600 = ClassName "lg:divide-indigo-600"
+
+-- | lg:divide-indigo-700
+lgDivideIndigo700 :: ClassName
+lgDivideIndigo700 = ClassName "lg:divide-indigo-700"
+
+-- | lg:divide-indigo-800
+lgDivideIndigo800 :: ClassName
+lgDivideIndigo800 = ClassName "lg:divide-indigo-800"
+
+-- | lg:divide-indigo-900
+lgDivideIndigo900 :: ClassName
+lgDivideIndigo900 = ClassName "lg:divide-indigo-900"
+
+-- | lg:divide-purple-100
+lgDividePurple100 :: ClassName
+lgDividePurple100 = ClassName "lg:divide-purple-100"
+
+-- | lg:divide-purple-200
+lgDividePurple200 :: ClassName
+lgDividePurple200 = ClassName "lg:divide-purple-200"
+
+-- | lg:divide-purple-300
+lgDividePurple300 :: ClassName
+lgDividePurple300 = ClassName "lg:divide-purple-300"
+
+-- | lg:divide-purple-400
+lgDividePurple400 :: ClassName
+lgDividePurple400 = ClassName "lg:divide-purple-400"
+
+-- | lg:divide-purple-500
+lgDividePurple500 :: ClassName
+lgDividePurple500 = ClassName "lg:divide-purple-500"
+
+-- | lg:divide-purple-600
+lgDividePurple600 :: ClassName
+lgDividePurple600 = ClassName "lg:divide-purple-600"
+
+-- | lg:divide-purple-700
+lgDividePurple700 :: ClassName
+lgDividePurple700 = ClassName "lg:divide-purple-700"
+
+-- | lg:divide-purple-800
+lgDividePurple800 :: ClassName
+lgDividePurple800 = ClassName "lg:divide-purple-800"
+
+-- | lg:divide-purple-900
+lgDividePurple900 :: ClassName
+lgDividePurple900 = ClassName "lg:divide-purple-900"
+
+-- | lg:divide-pink-100
+lgDividePink100 :: ClassName
+lgDividePink100 = ClassName "lg:divide-pink-100"
+
+-- | lg:divide-pink-200
+lgDividePink200 :: ClassName
+lgDividePink200 = ClassName "lg:divide-pink-200"
+
+-- | lg:divide-pink-300
+lgDividePink300 :: ClassName
+lgDividePink300 = ClassName "lg:divide-pink-300"
+
+-- | lg:divide-pink-400
+lgDividePink400 :: ClassName
+lgDividePink400 = ClassName "lg:divide-pink-400"
+
+-- | lg:divide-pink-500
+lgDividePink500 :: ClassName
+lgDividePink500 = ClassName "lg:divide-pink-500"
+
+-- | lg:divide-pink-600
+lgDividePink600 :: ClassName
+lgDividePink600 = ClassName "lg:divide-pink-600"
+
+-- | lg:divide-pink-700
+lgDividePink700 :: ClassName
+lgDividePink700 = ClassName "lg:divide-pink-700"
+
+-- | lg:divide-pink-800
+lgDividePink800 :: ClassName
+lgDividePink800 = ClassName "lg:divide-pink-800"
+
+-- | lg:divide-pink-900
+lgDividePink900 :: ClassName
+lgDividePink900 = ClassName "lg:divide-pink-900"
+
+-- | lg:divide-solid
+lgDivideSolid :: ClassName
+lgDivideSolid = ClassName "lg:divide-solid"
+
+-- | lg:divide-dashed
+lgDivideDashed :: ClassName
+lgDivideDashed = ClassName "lg:divide-dashed"
+
+-- | lg:divide-dotted
+lgDivideDotted :: ClassName
+lgDivideDotted = ClassName "lg:divide-dotted"
+
+-- | lg:divide-double
+lgDivideDouble :: ClassName
+lgDivideDouble = ClassName "lg:divide-double"
+
+-- | lg:divide-none
+lgDivideNone :: ClassName
+lgDivideNone = ClassName "lg:divide-none"
+
+-- | lg:divide-opacity-0
+lgDivideOpacity0 :: ClassName
+lgDivideOpacity0 = ClassName "lg:divide-opacity-0"
+
+-- | lg:divide-opacity-25
+lgDivideOpacity25 :: ClassName
+lgDivideOpacity25 = ClassName "lg:divide-opacity-25"
+
+-- | lg:divide-opacity-50
+lgDivideOpacity50 :: ClassName
+lgDivideOpacity50 = ClassName "lg:divide-opacity-50"
+
+-- | lg:divide-opacity-75
+lgDivideOpacity75 :: ClassName
+lgDivideOpacity75 = ClassName "lg:divide-opacity-75"
+
+-- | lg:divide-opacity-100
+lgDivideOpacity100 :: ClassName
+lgDivideOpacity100 = ClassName "lg:divide-opacity-100"
 
 -- | lg:sr-only
 lgSrOnly :: ClassName
@@ -54915,6 +57987,10 @@ lgAntialiased = ClassName "lg:antialiased"
 lgSubpixelAntialiased :: ClassName
 lgSubpixelAntialiased = ClassName "lg:subpixel-antialiased"
 
+-- | lg:normal-nums
+lgNormalNums :: ClassName
+lgNormalNums = ClassName "lg:normal-nums"
+
 -- | lg:ordinal
 lgOrdinal :: ClassName
 lgOrdinal = ClassName "lg:ordinal"
@@ -54946,10 +58022,6 @@ lgDiagonalFractions = ClassName "lg:diagonal-fractions"
 -- | lg:stacked-fractions
 lgStackedFractions :: ClassName
 lgStackedFractions = ClassName "lg:stacked-fractions"
-
--- | lg:normal-nums
-lgNormalNums :: ClassName
-lgNormalNums = ClassName "lg:normal-nums"
 
 -- | lg:tracking-tighter
 lgTrackingTighter :: ClassName
@@ -58038,6 +61110,774 @@ lgAnimateBounce = ClassName "lg:animate-bounce"
 -- | xl:container
 xlContainer :: ClassName
 xlContainer = ClassName "xl:container"
+
+-- | xl:space-y-0
+xlSpaceY0 :: ClassName
+xlSpaceY0 = ClassName "xl:space-y-0"
+
+-- | xl:space-x-0
+xlSpaceX0 :: ClassName
+xlSpaceX0 = ClassName "xl:space-x-0"
+
+-- | xl:space-y-1
+xlSpaceY1 :: ClassName
+xlSpaceY1 = ClassName "xl:space-y-1"
+
+-- | xl:space-x-1
+xlSpaceX1 :: ClassName
+xlSpaceX1 = ClassName "xl:space-x-1"
+
+-- | xl:space-y-2
+xlSpaceY2 :: ClassName
+xlSpaceY2 = ClassName "xl:space-y-2"
+
+-- | xl:space-x-2
+xlSpaceX2 :: ClassName
+xlSpaceX2 = ClassName "xl:space-x-2"
+
+-- | xl:space-y-3
+xlSpaceY3 :: ClassName
+xlSpaceY3 = ClassName "xl:space-y-3"
+
+-- | xl:space-x-3
+xlSpaceX3 :: ClassName
+xlSpaceX3 = ClassName "xl:space-x-3"
+
+-- | xl:space-y-4
+xlSpaceY4 :: ClassName
+xlSpaceY4 = ClassName "xl:space-y-4"
+
+-- | xl:space-x-4
+xlSpaceX4 :: ClassName
+xlSpaceX4 = ClassName "xl:space-x-4"
+
+-- | xl:space-y-5
+xlSpaceY5 :: ClassName
+xlSpaceY5 = ClassName "xl:space-y-5"
+
+-- | xl:space-x-5
+xlSpaceX5 :: ClassName
+xlSpaceX5 = ClassName "xl:space-x-5"
+
+-- | xl:space-y-6
+xlSpaceY6 :: ClassName
+xlSpaceY6 = ClassName "xl:space-y-6"
+
+-- | xl:space-x-6
+xlSpaceX6 :: ClassName
+xlSpaceX6 = ClassName "xl:space-x-6"
+
+-- | xl:space-y-8
+xlSpaceY8 :: ClassName
+xlSpaceY8 = ClassName "xl:space-y-8"
+
+-- | xl:space-x-8
+xlSpaceX8 :: ClassName
+xlSpaceX8 = ClassName "xl:space-x-8"
+
+-- | xl:space-y-10
+xlSpaceY10 :: ClassName
+xlSpaceY10 = ClassName "xl:space-y-10"
+
+-- | xl:space-x-10
+xlSpaceX10 :: ClassName
+xlSpaceX10 = ClassName "xl:space-x-10"
+
+-- | xl:space-y-12
+xlSpaceY12 :: ClassName
+xlSpaceY12 = ClassName "xl:space-y-12"
+
+-- | xl:space-x-12
+xlSpaceX12 :: ClassName
+xlSpaceX12 = ClassName "xl:space-x-12"
+
+-- | xl:space-y-16
+xlSpaceY16 :: ClassName
+xlSpaceY16 = ClassName "xl:space-y-16"
+
+-- | xl:space-x-16
+xlSpaceX16 :: ClassName
+xlSpaceX16 = ClassName "xl:space-x-16"
+
+-- | xl:space-y-20
+xlSpaceY20 :: ClassName
+xlSpaceY20 = ClassName "xl:space-y-20"
+
+-- | xl:space-x-20
+xlSpaceX20 :: ClassName
+xlSpaceX20 = ClassName "xl:space-x-20"
+
+-- | xl:space-y-24
+xlSpaceY24 :: ClassName
+xlSpaceY24 = ClassName "xl:space-y-24"
+
+-- | xl:space-x-24
+xlSpaceX24 :: ClassName
+xlSpaceX24 = ClassName "xl:space-x-24"
+
+-- | xl:space-y-32
+xlSpaceY32 :: ClassName
+xlSpaceY32 = ClassName "xl:space-y-32"
+
+-- | xl:space-x-32
+xlSpaceX32 :: ClassName
+xlSpaceX32 = ClassName "xl:space-x-32"
+
+-- | xl:space-y-40
+xlSpaceY40 :: ClassName
+xlSpaceY40 = ClassName "xl:space-y-40"
+
+-- | xl:space-x-40
+xlSpaceX40 :: ClassName
+xlSpaceX40 = ClassName "xl:space-x-40"
+
+-- | xl:space-y-48
+xlSpaceY48 :: ClassName
+xlSpaceY48 = ClassName "xl:space-y-48"
+
+-- | xl:space-x-48
+xlSpaceX48 :: ClassName
+xlSpaceX48 = ClassName "xl:space-x-48"
+
+-- | xl:space-y-56
+xlSpaceY56 :: ClassName
+xlSpaceY56 = ClassName "xl:space-y-56"
+
+-- | xl:space-x-56
+xlSpaceX56 :: ClassName
+xlSpaceX56 = ClassName "xl:space-x-56"
+
+-- | xl:space-y-64
+xlSpaceY64 :: ClassName
+xlSpaceY64 = ClassName "xl:space-y-64"
+
+-- | xl:space-x-64
+xlSpaceX64 :: ClassName
+xlSpaceX64 = ClassName "xl:space-x-64"
+
+-- | xl:space-y-px
+xlSpaceYPx :: ClassName
+xlSpaceYPx = ClassName "xl:space-y-px"
+
+-- | xl:space-x-px
+xlSpaceXPx :: ClassName
+xlSpaceXPx = ClassName "xl:space-x-px"
+
+-- | xl:-space-y-1
+xlNegSpaceY1 :: ClassName
+xlNegSpaceY1 = ClassName "xl:-space-y-1"
+
+-- | xl:-space-x-1
+xlNegSpaceX1 :: ClassName
+xlNegSpaceX1 = ClassName "xl:-space-x-1"
+
+-- | xl:-space-y-2
+xlNegSpaceY2 :: ClassName
+xlNegSpaceY2 = ClassName "xl:-space-y-2"
+
+-- | xl:-space-x-2
+xlNegSpaceX2 :: ClassName
+xlNegSpaceX2 = ClassName "xl:-space-x-2"
+
+-- | xl:-space-y-3
+xlNegSpaceY3 :: ClassName
+xlNegSpaceY3 = ClassName "xl:-space-y-3"
+
+-- | xl:-space-x-3
+xlNegSpaceX3 :: ClassName
+xlNegSpaceX3 = ClassName "xl:-space-x-3"
+
+-- | xl:-space-y-4
+xlNegSpaceY4 :: ClassName
+xlNegSpaceY4 = ClassName "xl:-space-y-4"
+
+-- | xl:-space-x-4
+xlNegSpaceX4 :: ClassName
+xlNegSpaceX4 = ClassName "xl:-space-x-4"
+
+-- | xl:-space-y-5
+xlNegSpaceY5 :: ClassName
+xlNegSpaceY5 = ClassName "xl:-space-y-5"
+
+-- | xl:-space-x-5
+xlNegSpaceX5 :: ClassName
+xlNegSpaceX5 = ClassName "xl:-space-x-5"
+
+-- | xl:-space-y-6
+xlNegSpaceY6 :: ClassName
+xlNegSpaceY6 = ClassName "xl:-space-y-6"
+
+-- | xl:-space-x-6
+xlNegSpaceX6 :: ClassName
+xlNegSpaceX6 = ClassName "xl:-space-x-6"
+
+-- | xl:-space-y-8
+xlNegSpaceY8 :: ClassName
+xlNegSpaceY8 = ClassName "xl:-space-y-8"
+
+-- | xl:-space-x-8
+xlNegSpaceX8 :: ClassName
+xlNegSpaceX8 = ClassName "xl:-space-x-8"
+
+-- | xl:-space-y-10
+xlNegSpaceY10 :: ClassName
+xlNegSpaceY10 = ClassName "xl:-space-y-10"
+
+-- | xl:-space-x-10
+xlNegSpaceX10 :: ClassName
+xlNegSpaceX10 = ClassName "xl:-space-x-10"
+
+-- | xl:-space-y-12
+xlNegSpaceY12 :: ClassName
+xlNegSpaceY12 = ClassName "xl:-space-y-12"
+
+-- | xl:-space-x-12
+xlNegSpaceX12 :: ClassName
+xlNegSpaceX12 = ClassName "xl:-space-x-12"
+
+-- | xl:-space-y-16
+xlNegSpaceY16 :: ClassName
+xlNegSpaceY16 = ClassName "xl:-space-y-16"
+
+-- | xl:-space-x-16
+xlNegSpaceX16 :: ClassName
+xlNegSpaceX16 = ClassName "xl:-space-x-16"
+
+-- | xl:-space-y-20
+xlNegSpaceY20 :: ClassName
+xlNegSpaceY20 = ClassName "xl:-space-y-20"
+
+-- | xl:-space-x-20
+xlNegSpaceX20 :: ClassName
+xlNegSpaceX20 = ClassName "xl:-space-x-20"
+
+-- | xl:-space-y-24
+xlNegSpaceY24 :: ClassName
+xlNegSpaceY24 = ClassName "xl:-space-y-24"
+
+-- | xl:-space-x-24
+xlNegSpaceX24 :: ClassName
+xlNegSpaceX24 = ClassName "xl:-space-x-24"
+
+-- | xl:-space-y-32
+xlNegSpaceY32 :: ClassName
+xlNegSpaceY32 = ClassName "xl:-space-y-32"
+
+-- | xl:-space-x-32
+xlNegSpaceX32 :: ClassName
+xlNegSpaceX32 = ClassName "xl:-space-x-32"
+
+-- | xl:-space-y-40
+xlNegSpaceY40 :: ClassName
+xlNegSpaceY40 = ClassName "xl:-space-y-40"
+
+-- | xl:-space-x-40
+xlNegSpaceX40 :: ClassName
+xlNegSpaceX40 = ClassName "xl:-space-x-40"
+
+-- | xl:-space-y-48
+xlNegSpaceY48 :: ClassName
+xlNegSpaceY48 = ClassName "xl:-space-y-48"
+
+-- | xl:-space-x-48
+xlNegSpaceX48 :: ClassName
+xlNegSpaceX48 = ClassName "xl:-space-x-48"
+
+-- | xl:-space-y-56
+xlNegSpaceY56 :: ClassName
+xlNegSpaceY56 = ClassName "xl:-space-y-56"
+
+-- | xl:-space-x-56
+xlNegSpaceX56 :: ClassName
+xlNegSpaceX56 = ClassName "xl:-space-x-56"
+
+-- | xl:-space-y-64
+xlNegSpaceY64 :: ClassName
+xlNegSpaceY64 = ClassName "xl:-space-y-64"
+
+-- | xl:-space-x-64
+xlNegSpaceX64 :: ClassName
+xlNegSpaceX64 = ClassName "xl:-space-x-64"
+
+-- | xl:-space-y-px
+xlNegSpaceYPx :: ClassName
+xlNegSpaceYPx = ClassName "xl:-space-y-px"
+
+-- | xl:-space-x-px
+xlNegSpaceXPx :: ClassName
+xlNegSpaceXPx = ClassName "xl:-space-x-px"
+
+-- | xl:space-y-reverse
+xlSpaceYReverse :: ClassName
+xlSpaceYReverse = ClassName "xl:space-y-reverse"
+
+-- | xl:space-x-reverse
+xlSpaceXReverse :: ClassName
+xlSpaceXReverse = ClassName "xl:space-x-reverse"
+
+-- | xl:divide-y-0
+xlDivideY0 :: ClassName
+xlDivideY0 = ClassName "xl:divide-y-0"
+
+-- | xl:divide-x-0
+xlDivideX0 :: ClassName
+xlDivideX0 = ClassName "xl:divide-x-0"
+
+-- | xl:divide-y-2
+xlDivideY2 :: ClassName
+xlDivideY2 = ClassName "xl:divide-y-2"
+
+-- | xl:divide-x-2
+xlDivideX2 :: ClassName
+xlDivideX2 = ClassName "xl:divide-x-2"
+
+-- | xl:divide-y-4
+xlDivideY4 :: ClassName
+xlDivideY4 = ClassName "xl:divide-y-4"
+
+-- | xl:divide-x-4
+xlDivideX4 :: ClassName
+xlDivideX4 = ClassName "xl:divide-x-4"
+
+-- | xl:divide-y-8
+xlDivideY8 :: ClassName
+xlDivideY8 = ClassName "xl:divide-y-8"
+
+-- | xl:divide-x-8
+xlDivideX8 :: ClassName
+xlDivideX8 = ClassName "xl:divide-x-8"
+
+-- | xl:divide-y
+xlDivideY :: ClassName
+xlDivideY = ClassName "xl:divide-y"
+
+-- | xl:divide-x
+xlDivideX :: ClassName
+xlDivideX = ClassName "xl:divide-x"
+
+-- | xl:divide-y-reverse
+xlDivideYReverse :: ClassName
+xlDivideYReverse = ClassName "xl:divide-y-reverse"
+
+-- | xl:divide-x-reverse
+xlDivideXReverse :: ClassName
+xlDivideXReverse = ClassName "xl:divide-x-reverse"
+
+-- | xl:divide-transparent
+xlDivideTransparent :: ClassName
+xlDivideTransparent = ClassName "xl:divide-transparent"
+
+-- | xl:divide-current
+xlDivideCurrent :: ClassName
+xlDivideCurrent = ClassName "xl:divide-current"
+
+-- | xl:divide-black
+xlDivideBlack :: ClassName
+xlDivideBlack = ClassName "xl:divide-black"
+
+-- | xl:divide-white
+xlDivideWhite :: ClassName
+xlDivideWhite = ClassName "xl:divide-white"
+
+-- | xl:divide-gray-100
+xlDivideGray100 :: ClassName
+xlDivideGray100 = ClassName "xl:divide-gray-100"
+
+-- | xl:divide-gray-200
+xlDivideGray200 :: ClassName
+xlDivideGray200 = ClassName "xl:divide-gray-200"
+
+-- | xl:divide-gray-300
+xlDivideGray300 :: ClassName
+xlDivideGray300 = ClassName "xl:divide-gray-300"
+
+-- | xl:divide-gray-400
+xlDivideGray400 :: ClassName
+xlDivideGray400 = ClassName "xl:divide-gray-400"
+
+-- | xl:divide-gray-500
+xlDivideGray500 :: ClassName
+xlDivideGray500 = ClassName "xl:divide-gray-500"
+
+-- | xl:divide-gray-600
+xlDivideGray600 :: ClassName
+xlDivideGray600 = ClassName "xl:divide-gray-600"
+
+-- | xl:divide-gray-700
+xlDivideGray700 :: ClassName
+xlDivideGray700 = ClassName "xl:divide-gray-700"
+
+-- | xl:divide-gray-800
+xlDivideGray800 :: ClassName
+xlDivideGray800 = ClassName "xl:divide-gray-800"
+
+-- | xl:divide-gray-900
+xlDivideGray900 :: ClassName
+xlDivideGray900 = ClassName "xl:divide-gray-900"
+
+-- | xl:divide-red-100
+xlDivideRed100 :: ClassName
+xlDivideRed100 = ClassName "xl:divide-red-100"
+
+-- | xl:divide-red-200
+xlDivideRed200 :: ClassName
+xlDivideRed200 = ClassName "xl:divide-red-200"
+
+-- | xl:divide-red-300
+xlDivideRed300 :: ClassName
+xlDivideRed300 = ClassName "xl:divide-red-300"
+
+-- | xl:divide-red-400
+xlDivideRed400 :: ClassName
+xlDivideRed400 = ClassName "xl:divide-red-400"
+
+-- | xl:divide-red-500
+xlDivideRed500 :: ClassName
+xlDivideRed500 = ClassName "xl:divide-red-500"
+
+-- | xl:divide-red-600
+xlDivideRed600 :: ClassName
+xlDivideRed600 = ClassName "xl:divide-red-600"
+
+-- | xl:divide-red-700
+xlDivideRed700 :: ClassName
+xlDivideRed700 = ClassName "xl:divide-red-700"
+
+-- | xl:divide-red-800
+xlDivideRed800 :: ClassName
+xlDivideRed800 = ClassName "xl:divide-red-800"
+
+-- | xl:divide-red-900
+xlDivideRed900 :: ClassName
+xlDivideRed900 = ClassName "xl:divide-red-900"
+
+-- | xl:divide-orange-100
+xlDivideOrange100 :: ClassName
+xlDivideOrange100 = ClassName "xl:divide-orange-100"
+
+-- | xl:divide-orange-200
+xlDivideOrange200 :: ClassName
+xlDivideOrange200 = ClassName "xl:divide-orange-200"
+
+-- | xl:divide-orange-300
+xlDivideOrange300 :: ClassName
+xlDivideOrange300 = ClassName "xl:divide-orange-300"
+
+-- | xl:divide-orange-400
+xlDivideOrange400 :: ClassName
+xlDivideOrange400 = ClassName "xl:divide-orange-400"
+
+-- | xl:divide-orange-500
+xlDivideOrange500 :: ClassName
+xlDivideOrange500 = ClassName "xl:divide-orange-500"
+
+-- | xl:divide-orange-600
+xlDivideOrange600 :: ClassName
+xlDivideOrange600 = ClassName "xl:divide-orange-600"
+
+-- | xl:divide-orange-700
+xlDivideOrange700 :: ClassName
+xlDivideOrange700 = ClassName "xl:divide-orange-700"
+
+-- | xl:divide-orange-800
+xlDivideOrange800 :: ClassName
+xlDivideOrange800 = ClassName "xl:divide-orange-800"
+
+-- | xl:divide-orange-900
+xlDivideOrange900 :: ClassName
+xlDivideOrange900 = ClassName "xl:divide-orange-900"
+
+-- | xl:divide-yellow-100
+xlDivideYellow100 :: ClassName
+xlDivideYellow100 = ClassName "xl:divide-yellow-100"
+
+-- | xl:divide-yellow-200
+xlDivideYellow200 :: ClassName
+xlDivideYellow200 = ClassName "xl:divide-yellow-200"
+
+-- | xl:divide-yellow-300
+xlDivideYellow300 :: ClassName
+xlDivideYellow300 = ClassName "xl:divide-yellow-300"
+
+-- | xl:divide-yellow-400
+xlDivideYellow400 :: ClassName
+xlDivideYellow400 = ClassName "xl:divide-yellow-400"
+
+-- | xl:divide-yellow-500
+xlDivideYellow500 :: ClassName
+xlDivideYellow500 = ClassName "xl:divide-yellow-500"
+
+-- | xl:divide-yellow-600
+xlDivideYellow600 :: ClassName
+xlDivideYellow600 = ClassName "xl:divide-yellow-600"
+
+-- | xl:divide-yellow-700
+xlDivideYellow700 :: ClassName
+xlDivideYellow700 = ClassName "xl:divide-yellow-700"
+
+-- | xl:divide-yellow-800
+xlDivideYellow800 :: ClassName
+xlDivideYellow800 = ClassName "xl:divide-yellow-800"
+
+-- | xl:divide-yellow-900
+xlDivideYellow900 :: ClassName
+xlDivideYellow900 = ClassName "xl:divide-yellow-900"
+
+-- | xl:divide-green-100
+xlDivideGreen100 :: ClassName
+xlDivideGreen100 = ClassName "xl:divide-green-100"
+
+-- | xl:divide-green-200
+xlDivideGreen200 :: ClassName
+xlDivideGreen200 = ClassName "xl:divide-green-200"
+
+-- | xl:divide-green-300
+xlDivideGreen300 :: ClassName
+xlDivideGreen300 = ClassName "xl:divide-green-300"
+
+-- | xl:divide-green-400
+xlDivideGreen400 :: ClassName
+xlDivideGreen400 = ClassName "xl:divide-green-400"
+
+-- | xl:divide-green-500
+xlDivideGreen500 :: ClassName
+xlDivideGreen500 = ClassName "xl:divide-green-500"
+
+-- | xl:divide-green-600
+xlDivideGreen600 :: ClassName
+xlDivideGreen600 = ClassName "xl:divide-green-600"
+
+-- | xl:divide-green-700
+xlDivideGreen700 :: ClassName
+xlDivideGreen700 = ClassName "xl:divide-green-700"
+
+-- | xl:divide-green-800
+xlDivideGreen800 :: ClassName
+xlDivideGreen800 = ClassName "xl:divide-green-800"
+
+-- | xl:divide-green-900
+xlDivideGreen900 :: ClassName
+xlDivideGreen900 = ClassName "xl:divide-green-900"
+
+-- | xl:divide-teal-100
+xlDivideTeal100 :: ClassName
+xlDivideTeal100 = ClassName "xl:divide-teal-100"
+
+-- | xl:divide-teal-200
+xlDivideTeal200 :: ClassName
+xlDivideTeal200 = ClassName "xl:divide-teal-200"
+
+-- | xl:divide-teal-300
+xlDivideTeal300 :: ClassName
+xlDivideTeal300 = ClassName "xl:divide-teal-300"
+
+-- | xl:divide-teal-400
+xlDivideTeal400 :: ClassName
+xlDivideTeal400 = ClassName "xl:divide-teal-400"
+
+-- | xl:divide-teal-500
+xlDivideTeal500 :: ClassName
+xlDivideTeal500 = ClassName "xl:divide-teal-500"
+
+-- | xl:divide-teal-600
+xlDivideTeal600 :: ClassName
+xlDivideTeal600 = ClassName "xl:divide-teal-600"
+
+-- | xl:divide-teal-700
+xlDivideTeal700 :: ClassName
+xlDivideTeal700 = ClassName "xl:divide-teal-700"
+
+-- | xl:divide-teal-800
+xlDivideTeal800 :: ClassName
+xlDivideTeal800 = ClassName "xl:divide-teal-800"
+
+-- | xl:divide-teal-900
+xlDivideTeal900 :: ClassName
+xlDivideTeal900 = ClassName "xl:divide-teal-900"
+
+-- | xl:divide-blue-100
+xlDivideBlue100 :: ClassName
+xlDivideBlue100 = ClassName "xl:divide-blue-100"
+
+-- | xl:divide-blue-200
+xlDivideBlue200 :: ClassName
+xlDivideBlue200 = ClassName "xl:divide-blue-200"
+
+-- | xl:divide-blue-300
+xlDivideBlue300 :: ClassName
+xlDivideBlue300 = ClassName "xl:divide-blue-300"
+
+-- | xl:divide-blue-400
+xlDivideBlue400 :: ClassName
+xlDivideBlue400 = ClassName "xl:divide-blue-400"
+
+-- | xl:divide-blue-500
+xlDivideBlue500 :: ClassName
+xlDivideBlue500 = ClassName "xl:divide-blue-500"
+
+-- | xl:divide-blue-600
+xlDivideBlue600 :: ClassName
+xlDivideBlue600 = ClassName "xl:divide-blue-600"
+
+-- | xl:divide-blue-700
+xlDivideBlue700 :: ClassName
+xlDivideBlue700 = ClassName "xl:divide-blue-700"
+
+-- | xl:divide-blue-800
+xlDivideBlue800 :: ClassName
+xlDivideBlue800 = ClassName "xl:divide-blue-800"
+
+-- | xl:divide-blue-900
+xlDivideBlue900 :: ClassName
+xlDivideBlue900 = ClassName "xl:divide-blue-900"
+
+-- | xl:divide-indigo-100
+xlDivideIndigo100 :: ClassName
+xlDivideIndigo100 = ClassName "xl:divide-indigo-100"
+
+-- | xl:divide-indigo-200
+xlDivideIndigo200 :: ClassName
+xlDivideIndigo200 = ClassName "xl:divide-indigo-200"
+
+-- | xl:divide-indigo-300
+xlDivideIndigo300 :: ClassName
+xlDivideIndigo300 = ClassName "xl:divide-indigo-300"
+
+-- | xl:divide-indigo-400
+xlDivideIndigo400 :: ClassName
+xlDivideIndigo400 = ClassName "xl:divide-indigo-400"
+
+-- | xl:divide-indigo-500
+xlDivideIndigo500 :: ClassName
+xlDivideIndigo500 = ClassName "xl:divide-indigo-500"
+
+-- | xl:divide-indigo-600
+xlDivideIndigo600 :: ClassName
+xlDivideIndigo600 = ClassName "xl:divide-indigo-600"
+
+-- | xl:divide-indigo-700
+xlDivideIndigo700 :: ClassName
+xlDivideIndigo700 = ClassName "xl:divide-indigo-700"
+
+-- | xl:divide-indigo-800
+xlDivideIndigo800 :: ClassName
+xlDivideIndigo800 = ClassName "xl:divide-indigo-800"
+
+-- | xl:divide-indigo-900
+xlDivideIndigo900 :: ClassName
+xlDivideIndigo900 = ClassName "xl:divide-indigo-900"
+
+-- | xl:divide-purple-100
+xlDividePurple100 :: ClassName
+xlDividePurple100 = ClassName "xl:divide-purple-100"
+
+-- | xl:divide-purple-200
+xlDividePurple200 :: ClassName
+xlDividePurple200 = ClassName "xl:divide-purple-200"
+
+-- | xl:divide-purple-300
+xlDividePurple300 :: ClassName
+xlDividePurple300 = ClassName "xl:divide-purple-300"
+
+-- | xl:divide-purple-400
+xlDividePurple400 :: ClassName
+xlDividePurple400 = ClassName "xl:divide-purple-400"
+
+-- | xl:divide-purple-500
+xlDividePurple500 :: ClassName
+xlDividePurple500 = ClassName "xl:divide-purple-500"
+
+-- | xl:divide-purple-600
+xlDividePurple600 :: ClassName
+xlDividePurple600 = ClassName "xl:divide-purple-600"
+
+-- | xl:divide-purple-700
+xlDividePurple700 :: ClassName
+xlDividePurple700 = ClassName "xl:divide-purple-700"
+
+-- | xl:divide-purple-800
+xlDividePurple800 :: ClassName
+xlDividePurple800 = ClassName "xl:divide-purple-800"
+
+-- | xl:divide-purple-900
+xlDividePurple900 :: ClassName
+xlDividePurple900 = ClassName "xl:divide-purple-900"
+
+-- | xl:divide-pink-100
+xlDividePink100 :: ClassName
+xlDividePink100 = ClassName "xl:divide-pink-100"
+
+-- | xl:divide-pink-200
+xlDividePink200 :: ClassName
+xlDividePink200 = ClassName "xl:divide-pink-200"
+
+-- | xl:divide-pink-300
+xlDividePink300 :: ClassName
+xlDividePink300 = ClassName "xl:divide-pink-300"
+
+-- | xl:divide-pink-400
+xlDividePink400 :: ClassName
+xlDividePink400 = ClassName "xl:divide-pink-400"
+
+-- | xl:divide-pink-500
+xlDividePink500 :: ClassName
+xlDividePink500 = ClassName "xl:divide-pink-500"
+
+-- | xl:divide-pink-600
+xlDividePink600 :: ClassName
+xlDividePink600 = ClassName "xl:divide-pink-600"
+
+-- | xl:divide-pink-700
+xlDividePink700 :: ClassName
+xlDividePink700 = ClassName "xl:divide-pink-700"
+
+-- | xl:divide-pink-800
+xlDividePink800 :: ClassName
+xlDividePink800 = ClassName "xl:divide-pink-800"
+
+-- | xl:divide-pink-900
+xlDividePink900 :: ClassName
+xlDividePink900 = ClassName "xl:divide-pink-900"
+
+-- | xl:divide-solid
+xlDivideSolid :: ClassName
+xlDivideSolid = ClassName "xl:divide-solid"
+
+-- | xl:divide-dashed
+xlDivideDashed :: ClassName
+xlDivideDashed = ClassName "xl:divide-dashed"
+
+-- | xl:divide-dotted
+xlDivideDotted :: ClassName
+xlDivideDotted = ClassName "xl:divide-dotted"
+
+-- | xl:divide-double
+xlDivideDouble :: ClassName
+xlDivideDouble = ClassName "xl:divide-double"
+
+-- | xl:divide-none
+xlDivideNone :: ClassName
+xlDivideNone = ClassName "xl:divide-none"
+
+-- | xl:divide-opacity-0
+xlDivideOpacity0 :: ClassName
+xlDivideOpacity0 = ClassName "xl:divide-opacity-0"
+
+-- | xl:divide-opacity-25
+xlDivideOpacity25 :: ClassName
+xlDivideOpacity25 = ClassName "xl:divide-opacity-25"
+
+-- | xl:divide-opacity-50
+xlDivideOpacity50 :: ClassName
+xlDivideOpacity50 = ClassName "xl:divide-opacity-50"
+
+-- | xl:divide-opacity-75
+xlDivideOpacity75 :: ClassName
+xlDivideOpacity75 = ClassName "xl:divide-opacity-75"
+
+-- | xl:divide-opacity-100
+xlDivideOpacity100 :: ClassName
+xlDivideOpacity100 = ClassName "xl:divide-opacity-100"
 
 -- | xl:sr-only
 xlSrOnly :: ClassName
@@ -69423,6 +73263,10 @@ xlAntialiased = ClassName "xl:antialiased"
 xlSubpixelAntialiased :: ClassName
 xlSubpixelAntialiased = ClassName "xl:subpixel-antialiased"
 
+-- | xl:normal-nums
+xlNormalNums :: ClassName
+xlNormalNums = ClassName "xl:normal-nums"
+
 -- | xl:ordinal
 xlOrdinal :: ClassName
 xlOrdinal = ClassName "xl:ordinal"
@@ -69454,10 +73298,6 @@ xlDiagonalFractions = ClassName "xl:diagonal-fractions"
 -- | xl:stacked-fractions
 xlStackedFractions :: ClassName
 xlStackedFractions = ClassName "xl:stacked-fractions"
-
--- | xl:normal-nums
-xlNormalNums :: ClassName
-xlNormalNums = ClassName "xl:normal-nums"
 
 -- | xl:tracking-tighter
 xlTrackingTighter :: ClassName

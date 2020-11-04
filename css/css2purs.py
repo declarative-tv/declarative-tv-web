@@ -15,37 +15,25 @@ cssNames = []
 def process(line):
     # Example input:
     # line = '    .-sm\:-space-y-0-w-1\/2:hover {'
-    regName = re.compile('^\s*\.([^ ]*?[^\\\\])(:.*)? .*$')
+    regName = re.compile('^\s*\.([^ ]*?[^,\\\\])(:.*)? .*$')
 
     m = regName.match(line)
 
     if m:
-        # lines could include several classes like, always separated by commas
-        #   '.ordinal, .slashed-zero, .lining-nums'
-        lineClasses = list(map(lambda x: x.strip(), line.replace('{', '').split(',')))
+        escaped = m.group(1)
+        # Just escaped class name
+        # -sm\:-space-y-0-w-1\/2
 
-        for x in lineClasses:
-          # Each 'x' should be a class name with the dot (see https://regexr.com/5f6o1)
-          regClassName = re.compile('^\.([^ ]*?[^\\\\])(:.*)?$')
-          m = regClassName.match(x)
+        cssStr = escaped.replace('\\', '')
+        # Remove escaped symbols - this is the CSS string
+        # -sm:-space-y-0-w-1/2
 
-          if m:
-            escaped = m.group(1)
+        # don't add duplicates
+        # assuming always adjacent
+        if len(cssNames) and cssNames[-1] == cssStr:
+            return
 
-            # Just escaped class name
-            # -sm\:-space-y-0-w-1\/2
-
-            #  .ordinal, .slashed-zero {
-            cssStr = escaped.replace('\\', '')
-            # Remove escaped symbols - this is the CSS string
-            # -sm:-space-y-0-w-1/2
-
-            # don't add duplicates
-            # assuming always adjacent
-            if len(cssNames) and cssNames[-1] == cssStr:
-                return
-
-            cssNames.append(cssStr)
+        cssNames.append(cssStr)
 
 def cssToPs(cssStr):
     # Conversion to PureScript-compatible name
