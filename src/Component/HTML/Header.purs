@@ -3,22 +3,13 @@ module Fpers.Component.HTML.Header where
 
 import Prelude
 
-import Fpers.Component.HTML.Utils (css, maybeElem, safeHref, whenElem)
-import Fpers.Data.Avatar as Avatar
-import Fpers.Data.Profile (ProfileRep)
+import Fpers.Component.HTML.Utils (css, safeHref)
 import Fpers.Data.Route (Route(..))
-import Fpers.Data.Username as Username
-import Data.Maybe (Maybe, isNothing, isJust)
 import Data.Monoid (guard)
 import Halogen.HTML as HH
-import Halogen.HTML.Properties as HP
 
--- | Our header will be a pure render function, but we'll require a route as an argument so we can
--- | judge whether a link should display active or not. We'll allow for any profile record type so
--- | long as it has our core fields -- this makes the header reusable across pages despite which
--- | variation on `Profile` they use.
-header :: forall i p r. Maybe { | ProfileRep r } -> Route -> HH.HTML i p
-header currentUser route =
+header :: forall i p. Route -> HH.HTML i p
+header route =
   HH.nav
     [ css "navbar navbar-light" ]
     [ HH.div
@@ -32,38 +23,11 @@ header currentUser route =
         [ css "nav navbar-nav pull-xs-right" ]
         [ navItem Home
             [ HH.text "Home" ]
-        , whenElem (isJust currentUser) \_ ->
-            navItem Editor
-              [ HH.i
-                [ css "ion-compose" ]
-                [ HH.text " New Post" ]
-              ]
-        , whenElem (isJust currentUser) \_ ->
-            navItem Settings
-              [ HH.i
-                [ css "ion-gear-a" ]
-                [ HH.text " Settings" ]
-              ]
-        , maybeElem currentUser \profile ->
-            navItem (Profile profile.username)
-              [ HH.img
-                [ css "user-pic"
-                , HP.src $ Avatar.toStringWithDefault profile.image
-                ]
-              , HH.text $ Username.toString profile.username
-              ]
-        , whenElem (isNothing currentUser) \_ ->
-            navItem Login
-              [ HH.text "Log in" ]
-        , whenElem (isNothing currentUser) \_ ->
-            navItem Register
-              [ HH.text "Sign up" ]
         ]
       ]
     ]
 
   where
-
   navItem r html =
     HH.li
       [ css "nav-item" ]

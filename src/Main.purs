@@ -2,27 +2,15 @@ module Main where
 
 import Prelude
 
-import Affjax (request, printError)
-import Fpers.Api.Endpoint (Endpoint(..))
-import Fpers.Api.Request (BaseURL(..), RequestMethod(..), defaultRequest, readToken)
+import Fpers.Api.Request (BaseURL(..))
 import Fpers.AppM (runAppM)
 import Fpers.Component.Router as Router
-import Fpers.Data.Profile as Profile
 import Fpers.Data.Route (Route, routeCodec)
 import Fpers.Env (Env, LogLevel(..))
-import Data.Bifunctor (lmap)
-import Data.Codec as Codec
-import Data.Codec.Argonaut (printJsonDecodeError)
-import Data.Codec.Argonaut as CA
-import Data.Codec.Argonaut.Record as CAR
-import Data.Either (Either(..), hush)
 import Data.Maybe (Maybe(..))
-import Data.Traversable (traverse_)
 import Effect (Effect)
 import Effect.Aff (Aff, launchAff_)
-import Effect.Aff.Bus as Bus
 import Effect.Exception (throw)
-import Effect.Ref as Ref
 import Halogen (liftEffect)
 import Halogen as H
 import Halogen.Aff as HA
@@ -42,34 +30,11 @@ main = HA.runHalogenAff do
     baseUrl = BaseURL "https://api.twitch.tv"
     logLevel = Dev
 
-  userEnv <- liftEffect do
-    currentUser <- Ref.new Nothing
-
-    userBus <- Bus.make
-
-    readToken >>= traverse_ \token -> do
-      let requestOptions = { endpoint: User, method: Get }
-      launchAff_ do
-        res <- request $ defaultRequest baseUrl (Just token) requestOptions
-
-        let
-          user :: Either String _
-          user = case res of
-            Left e ->
-              Left (printError e)
-            Right v -> lmap printJsonDecodeError do
-              u <- Codec.decode (CAR.object "User" { user: CA.json }) v.body
-              CA.decode Profile.profileCodec u.user
-
-        liftEffect (Ref.write (hush user) currentUser)
-
-    pure { currentUser, userBus }
-
   nav <- liftEffect makeInterface
 
   let
     environment :: Env
-    environment = { nav, baseUrl, logLevel, userEnv }
+    environment = { nav, baseUrl, logLevel }
 
     rootComponent :: H.Component HH.HTML Router.Query {} Void Aff
     rootComponent = H.hoist (runAppM environment) Router.component
