@@ -6,6 +6,7 @@ import Fpers.Capability.LogMessages (class LogMessages)
 import Fpers.Capability.Navigate (class Navigate, navigate, locationState)
 import Fpers.Capability.Now (class Now)
 import Fpers.Capability.Resource.Stream (class ManageStream)
+import Fpers.Capability.Resource.Streamer (class ManageStreamer)
 import Fpers.Component.Utils (OpaqueSlot)
 import Fpers.Data.Route (Route(..), routeCodec)
 import Fpers.Page.Home as Home
@@ -27,12 +28,6 @@ data Action
 
 type ChildSlots =
   ( home :: OpaqueSlot Unit
-  , login :: OpaqueSlot Unit
-  , register :: OpaqueSlot Unit
-  , settings :: OpaqueSlot Unit
-  , editor :: OpaqueSlot Unit
-  , viewArticle :: OpaqueSlot Unit
-  , profile :: OpaqueSlot Unit
   )
 
 component
@@ -42,6 +37,7 @@ component
   => LogMessages m
   => Navigate m
   => ManageStream m
+  => ManageStreamer m
   => H.Component HH.HTML Query {} Void m
 component = H.mkComponent
   { initialState: \_ -> { route: Nothing }

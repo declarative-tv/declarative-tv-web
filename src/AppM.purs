@@ -1,7 +1,6 @@
 module Fpers.AppM where
 
 import Prelude
-
 import Control.Monad.Reader.Trans (class MonadAsk, ReaderT, ask, asks, runReaderT)
 import Data.Codec.Argonaut.Compat as CAC
 import Data.Codec.Argonaut.Record as CAR
@@ -17,14 +16,17 @@ import Fpers.Capability.LogMessages (class LogMessages)
 import Fpers.Capability.Navigate (class Navigate, locationState)
 import Fpers.Capability.Now (class Now)
 import Fpers.Capability.Resource.Stream (class ManageStream)
+import Fpers.Capability.Resource.Streamer (class ManageStreamer)
 import Fpers.Data.Log as Log
 import Fpers.Data.Route as Route
 import Fpers.Data.Stream (streamCodec)
+import Fpers.Data.Streamer (streamerCodec)
 import Fpers.Env (Env, LogLevel(..))
 import Routing.Duplex (print)
 import Type.Equality (class TypeEquals, from)
 
-newtype AppM a = AppM (ReaderT Env Aff a)
+newtype AppM a
+  = AppM (ReaderT Env Aff a)
 
 runAppM :: Env -> AppM ~> Aff
 runAppM env (AppM m) = runReaderT m env
@@ -56,14 +58,19 @@ instance logMessagesAppM :: LogMessages AppM where
 
 instance navigateAppM :: Navigate AppM where
   locationState = liftEffect =<< _.nav.locationState <$> ask
-
   navigate route = do
     { pushState } <- asks _.nav
     { state } <- locationState
     liftEffect $ pushState state $ print Route.routeCodec $ route
 
 instance manageStreamAppM :: ManageStream AppM where
-  getStreams streamers = do
-    mbJson <- mkAuthRequest { endpoint: Streamers { user_login: streamers }, method: Get }
+  getStreams streamersNames = do
+    mbJson <- mkAuthRequest { endpoint: Streams { user_login: streamersNames }, method: Get }
     map (map _.data)
       $ decode (CAR.object "Streams" { "data": CAC.array streamCodec }) mbJson
+
+instance manageStreamerAppM :: ManageStreamer AppM where
+  getStreamers streamersNames = do
+    mbJson <- mkAuthRequest { endpoint: Streamers { login: streamersNames }, method: Get }
+    map (map _.data)
+      $ decode (CAR.object "Streamers" { "data": CAC.array streamerCodec }) mbJson

@@ -12,7 +12,6 @@ import Data.Either (Either(..), hush)
 import Data.Maybe (Maybe(..))
 import Effect.Aff.Class (class MonadAff, liftAff)
 import Effect.Class (liftEffect)
-import Effect.Class.Console (log)
 import Fpers.Api.Request (BaseURL, RequestOptions, defaultRequest, readClientId, readToken)
 import Fpers.Capability.LogMessages (class LogMessages, logError)
 import Fpers.Capability.Now (class Now)
@@ -27,8 +26,6 @@ mkAuthRequest opts = do
   { baseUrl } <- ask
   token <- liftEffect readToken
   clientId <- liftEffect readClientId
-  void $ liftEffect $ log $ show token
-  void $ liftEffect $ log $ show clientId
   response <- liftAff $ request $ defaultRequest baseUrl token clientId opts
   pure $ hush $ rmap _.body response
 
