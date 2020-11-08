@@ -51,7 +51,7 @@ liveFirst a b = case a.stream, b.stream of
   Just _, Nothing -> LT
   Nothing, Just _ -> GT
   Just x, Just y -> if x.viewer_count > y.viewer_count then LT else GT
-  _, _ -> EQ
+  _, _ -> compare a.streamer.login b.streamer.login
 
 component ::
   forall q o m.
@@ -82,15 +82,16 @@ component =
     Initialize -> do
       let
         streamersNames =
-          [ "CmdvTv"
+          [ "cmdvtv"
+          , "agentultra"
+          , "avh4"
+          , "chiroptical"
+          , "cvladfp"
           , "gillchristian"
-          , "gernaderjake"
-          , "baldbeardedbuilder"
-          , "cassidoo"
-          , "ifrostbolt"
-          , "zkmushroom"
-          , "rhymu8354"
-          , "melkeydev"
+          , "kerckhove_ts"
+          , "quinndougherty92"
+          , "totbwf"
+          -- , "gernaderjake"
           ]
       void $ H.fork $ handleAction $ LoadStreamers streamersNames
     LoadStreamers streamersNames -> do
@@ -103,17 +104,18 @@ component =
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
   render { streamersInfo } =
-    HH.div_
+    HH.div [ HP.classes [ T.container, T.flex, T.flexCol, T.itemsCenter ] ]
       [ header Home
-      , HH.div
-          [ HP.classes [ T.container ] ] case streamersInfo of
-          NotAsked -> [ HH.text "..." ]
-          Loading -> [ HH.text "..." ]
-          Failure msg -> [ HH.text $ "Failed: " <> msg ]
-          Success ss -> map streamerInfo ss
+      , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed
       , footer
       ]
     where
+    feed = case streamersInfo of
+      NotAsked -> [ HH.text "..." ]
+      Loading -> [ HH.text "..." ]
+      Failure msg -> [ HH.text $ "Failed: " <> msg ]
+      Success ss -> map streamerInfo ss
+
     streamerInfo :: StreamerInfo -> H.ComponentHTML Action slots m
     streamerInfo { streamer, stream } = case stream of
       Just s -> onlineStreamer streamer s
@@ -122,53 +124,74 @@ component =
     offlineStreamer :: Streamer -> H.ComponentHTML Action slots m
     offlineStreamer { profile_image_url, display_name, login, description } =
       HH.div
-        [ HP.classes [ T.mdFlex, T.m4 ] ]
-        [ HH.div
-            [ HP.classes [ T.mdFlexShrink0 ] ]
+        [ HP.classes [ T.my6, T.p4, T.border4, T.grid, T.gridCols10, T.gap2 ] ]
+        [ HH.a
+            [ HP.href $ "https://twitch.tv/" <> login, HP.classes [ T.colSpan1 ] ]
             [ HH.img
-                [ HP.classes [ T.roundedFull, T.h16, T.w16, T.roundedMd ]
+                [ HP.classes [ T.roundedFull, T.h12, T.w12 ]
                 , HP.src profile_image_url
-                , HP.width 100
-                , HP.height 100
                 ]
             ]
-        , HH.div
-            [ HP.classes [ T.mt4, T.mdMt0, T.mdMl6 ] ]
-            [ HH.div
-                [ HP.classes [ T.trackingWide, T.textSm, T.textIndigo600, T.fontBold ] ]
-                [ HH.text $ display_name ]
-            , HH.div
-                [ HP.classes [ T.block, T.mt1, T.textLg, T.leadingTight, T.fontSemibold, T.textGray900, T.hoverUnderline ] ]
-                [ HH.text description ]
+        , HH.div [ HP.classes [ T.colSpan9 ] ]
+            [ HH.a
+                [ HP.href $ "https://twitch.tv/" <> login
+                , HP.classes
+                    [ T.flex
+                    , T.itemsCenter
+                    , T.textIndigo700
+                    , T.fontBold
+                    , T.block
+                    , T.textLg
+                    , T.leadingNone
+                    , T.fontSemibold
+                    , T.hoverUnderline
+                    ]
+                ]
+                [ HH.div [ HP.classes [ T.bgGray600, T.w3, T.h3, T.roundedFull, T.mr1 ] ] [], HH.text display_name ]
+            , HH.p [ HP.classes [ T.textSm, T.textGray700, T.breakNormal, T.mt2 ] ] [ HH.text description ]
             ]
         ]
 
     onlineStreamer :: Streamer -> Stream -> H.ComponentHTML Action slots m
     onlineStreamer { profile_image_url } { title, user_name, viewer_count, thumbnail_url } =
       HH.div
-        [ HP.classes [ T.mdFlex, T.m4 ] ]
-        [ HH.div
-            [ HP.classes [ T.mdFlexShrink0 ] ]
-            [ HH.img [ HP.classes [ T.roundedLg, T.mdW56, T.roundedMd ], HP.src src, HP.width 440, HP.height 284 ]
-            , HH.img
-                [ HP.classes [ T.roundedFull, T.h16, T.w16, T.roundedMd ]
-                , HP.src profile_image_url
-                , HP.width 100
-                , HP.height 100
-                ]
-            ]
+        [ HP.classes [ T.my6, T.p4, T.border4, T.flex, T.flexCol ] ]
+        [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 408 ]
         , HH.div
-            [ HP.classes [ T.mt4, T.mdMt0, T.mdMl6 ] ]
-            [ HH.div
-                [ HP.classes [ T.trackingWide, T.textSm, T.textIndigo600, T.fontBold ] ]
-                [ HH.text $ user_name <> " <> " <> show viewer_count ]
-            , HH.div
-                [ HP.classes [ T.block, T.mt1, T.textLg, T.leadingTight, T.fontSemibold, T.textGray900, T.hoverUnderline ] ]
-                [ HH.text title ]
+            [ HP.classes [ T.mt6, T.grid, T.gridCols10, T.gap2 ] ]
+            [ HH.a
+                [ HP.href $ "https://twitch.tv/" <> user_name, HP.classes [ T.colSpan1 ] ]
+                [ HH.img [ HP.classes [ T.roundedFull, T.h12, T.w12 ], HP.src profile_image_url ]
+                ]
+            , HH.div [ HP.classes [ T.colSpan9 ] ]
+                [ HH.a
+                    [ HP.href $ "https://twitch.tv/" <> user_name
+                    , HP.classes [ T.block, T.textLg, T.leadingNone, T.fontSemibold, T.textGray900, T.hoverUnderline ]
+                    ]
+                    [ HH.text title ]
+                , HH.a
+                    [ HP.href $ "https://twitch.tv/" <> user_name
+                    , HP.classes
+                        [ T.flex
+                        , T.itemsCenter
+                        , T.textIndigo700
+                        , T.fontBold
+                        , T.block
+                        , T.textLg
+                        , T.leadingNone
+                        , T.fontSemibold
+                        , T.textGray900
+                        , T.hoverUnderline
+                        , T.mt2
+                        ]
+                    ]
+                    [ HH.div [ HP.classes [ T.bgRed600, T.w3, T.h3, T.roundedFull, T.mr1 ] ] [], HH.text user_name ]
+                ]
             ]
         ]
       where
       src =
-        replace (Pattern "{width}") (Replacement "440")
-          $ replace (Pattern "{height}") (Replacement "284")
+        -- TODO check ratio
+        replace (Pattern "{width}") (Replacement "632")
+          $ replace (Pattern "{height}") (Replacement "408")
           $ thumbnail_url
