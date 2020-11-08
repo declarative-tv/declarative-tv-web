@@ -3,7 +3,7 @@ module Fpers.Page.Home where
 import Prelude
 import Data.Array (sortBy)
 import Data.Foldable (find)
-import Data.Maybe (Maybe(..))
+import Data.Maybe (Maybe(..), maybe)
 import Data.String (replace, Pattern(..), Replacement(..))
 import Effect.Aff.Class (class MonadAff)
 import Fpers.Capability.Navigate (class Navigate)
@@ -17,7 +17,7 @@ import Fpers.Data.Streamer (Streamer)
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
-import Network.RemoteData (RemoteData(..), fromMaybe)
+import Network.RemoteData (RemoteData(..))
 import Tailwind as T
 
 -- import Network.RemoteData (RemoteData(..), _Success, toMaybe)
@@ -99,8 +99,10 @@ component =
       streamers <- getStreamers streamersNames
       streams <- getStreams streamersNames
       let
-        streamersInfo = zipStreamers <$> streamers <*> streams
-      H.modify_ _ { streamersInfo = fromMaybe (sortBy liveFirst <$> streamersInfo) }
+        mbStreamersInfo = sortBy liveFirst <$> (zipStreamers <$> streamers <*> streams)
+
+        streamersInfo = maybe (Failure "Could not fetch streamers information") Success mbStreamersInfo
+      H.modify_ _ { streamersInfo = streamersInfo }
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
   render { streamersInfo } =
@@ -111,9 +113,15 @@ component =
       ]
     where
     feed = case streamersInfo of
-      NotAsked -> [ HH.text "..." ]
-      Loading -> [ HH.text "..." ]
-      Failure msg -> [ HH.text $ "Failed: " <> msg ]
+      NotAsked -> [ HH.text "Loading ..." ]
+      Loading -> [ HH.text "Loading ..." ]
+      Failure msg ->
+        [ HH.div
+            [ HP.classes [ T.p4, T.border4, T.borderRed600, T.bgRed200, T.textRed900 ] ]
+            [ HH.p [ HP.classes [ T.fontBold, T.textLg ] ] [ HH.text "Error =(" ]
+            , HH.p_ [ HH.text msg ]
+            ]
+        ]
       Success ss -> map streamerInfo ss
 
     streamerInfo :: StreamerInfo -> H.ComponentHTML Action slots m
@@ -166,11 +174,6 @@ component =
             , HH.div [ HP.classes [ T.colSpan9 ] ]
                 [ HH.a
                     [ HP.href $ "https://twitch.tv/" <> user_name
-                    , HP.classes [ T.block, T.textLg, T.leadingNone, T.fontSemibold, T.textGray900, T.hoverUnderline ]
-                    ]
-                    [ HH.text title ]
-                , HH.a
-                    [ HP.href $ "https://twitch.tv/" <> user_name
                     , HP.classes
                         [ T.flex
                         , T.itemsCenter
@@ -182,16 +185,27 @@ component =
                         , T.fontSemibold
                         , T.textGray900
                         , T.hoverUnderline
-                        , T.mt2
                         ]
                     ]
                     [ HH.div [ HP.classes [ T.bgRed600, T.w3, T.h3, T.roundedFull, T.mr1 ] ] [], HH.text user_name ]
+                , HH.a
+                    [ HP.href $ "https://twitch.tv/" <> user_name
+                    , HP.classes
+                        [ T.block
+                        , T.textLg
+                        , T.leadingNone
+                        , T.fontSemibold
+                        , T.textGray900
+                        , T.hoverUnderline
+                        , T.mt2
+                        ]
+                    ]
+                    [ HH.text title ]
                 ]
             ]
         ]
       where
       src =
-        -- TODO check ratio
         replace (Pattern "{width}") (Replacement "632")
           $ replace (Pattern "{height}") (Replacement "408")
           $ thumbnail_url
