@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import * as qs from "qs";
+import qs from "qs";
 
 export default (req, res) => {
   const query = qs.stringify(req.query, {
@@ -10,8 +10,8 @@ export default (req, res) => {
 
   fetch(`https://api.twitch.tv/helix/users?${query}`, {
     headers: {
-      Authorization: `Bearer ${process.env.TOKEN}`,
-      "Client-Id": process.env.CLIENT_ID || "",
+      Authorization: `Bearer ${process.env.TWITCH_TOKEN}`,
+      "Client-Id": process.env.TWITCH_CLIENT_ID || "",
     },
   })
     .then((res) => Promise.all([res.status, res.json()]))

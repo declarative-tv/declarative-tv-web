@@ -21,3 +21,6 @@ dce-output
 dist
 *.lock
 *.map
+
+.vercel
+.env
