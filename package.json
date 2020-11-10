@@ -21,7 +21,7 @@
     "bundle:dce": "zephyr -f Main.main",
     "bundle:parcel": "parcel build assets/index.html --public-url '.' --no-source-maps",
     "bundle:optimized": "npm run bundle:build && npm run bundle:dce && npm run bundle:parcel",
-    "bundle": "npm run bundle:build && npm run bundle:parcel"
+    "bundle": "spago build && npm run bundle:parcel"
   },
   "repository": {
     "type": "git",
