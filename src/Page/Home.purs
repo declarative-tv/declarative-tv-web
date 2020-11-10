@@ -9,9 +9,6 @@ import Effect.Aff.Class (class MonadAff)
 import Fpers.Capability.Navigate (class Navigate)
 import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer, getStreamers)
-import Fpers.Component.HTML.Footer (footer)
-import Fpers.Component.HTML.Header (header)
-import Fpers.Data.Route (Route(..))
 import Fpers.Data.Stream (Stream)
 import Fpers.Data.Streamer (Streamer)
 import Halogen as H
@@ -20,6 +17,9 @@ import Halogen.HTML.Properties as HP
 import Network.RemoteData (RemoteData(..))
 import Tailwind as T
 
+-- import Fpers.Data.Route (Route(..))
+-- import Fpers.Component.HTML.Footer (footer)
+-- import Fpers.Component.HTML.Header (header)
 -- import Network.RemoteData (RemoteData(..), _Success, toMaybe)
 -- import Web.Event.Event (preventDefault)
 -- import Web.UIEvent.MouseEvent (MouseEvent, toEvent)
@@ -106,11 +106,9 @@ component =
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
   render { streamersInfo } =
-    HH.div [ HP.classes [ T.container, T.flex, T.flexCol, T.itemsCenter ] ]
-      [ header Home
-      , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed
-      , footer
-      ]
+    HH.div
+      [ HP.classes [ T.container, T.flex, T.flexCol, T.itemsCenter ] ]
+      [ HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed ]
     where
     feed = case streamersInfo of
       NotAsked -> [ HH.text "Loading ..." ]

@@ -1,0 +1,14 @@
+{
+  "env": {
+    "TWITCH_CLIENT_ID": "@twitch-client-di",
+    "TWITCH_TOKEN": "@twitch-token"
+  },
+  "functions": {
+    "api/streamers.ts": {
+      "includeFiles": "api/streamers.ts"
+    },
+    "api/streams.ts": {
+      "includeFiles": "api/streams.ts"
+    }
+  }
+}
