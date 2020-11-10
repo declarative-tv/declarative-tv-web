@@ -27,7 +27,7 @@ main = HA.runHalogenAff do
   _ <- HA.awaitBody
 
   let
-    baseUrl = BaseURL "https://api.twitch.tv"
+    baseUrl = BaseURL "https://fpers.vercel.app"
     logLevel = Dev
 
   nav <- liftEffect makeInterface

@@ -14,8 +14,8 @@ derive instance genericEndpoint :: Generic Endpoint _
 
 endpointCodec :: RouteDuplex' Endpoint
 endpointCodec =
-  root $ prefix "helix"
+  root $ prefix "api"
     $ sum
         { "Streams": "streams" ? { user_login: many <<< string }
-        , "Streamers": "users" ? { login: many <<< string }
+        , "Streamers": "streamers" ? { login: many <<< string }
         }
