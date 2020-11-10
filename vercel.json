@@ -4,11 +4,11 @@
     "TWITCH_TOKEN": "@twitch-token"
   },
   "functions": {
-    "api/streamers.ts": {
-      "includeFiles": "api/streamers.ts"
+    "api/streamers.js": {
+      "includeFiles": "api/streamers.js"
     },
-    "api/streams.ts": {
-      "includeFiles": "api/streams.ts"
+    "api/streams.js": {
+      "includeFiles": "api/streams.js"
     }
   }
 }

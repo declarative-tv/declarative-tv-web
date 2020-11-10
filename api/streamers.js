@@ -1,15 +1,14 @@
-import { NowRequest, NowResponse } from "@vercel/node";
 import fetch from "node-fetch";
 import * as qs from "qs";
 
-export default (req: NowRequest, res: NowResponse) => {
+export default (req, res) => {
   const query = qs.stringify(req.query, {
     arrayFormat: "repeat",
     skipNulls: true,
     addQueryPrefix: false,
   });
 
-  fetch(`https://api.twitch.tv/helix/streams?${query}`, {
+  fetch(`https://api.twitch.tv/helix/users?${query}`, {
     headers: {
       Authorization: `Bearer ${process.env.TOKEN}`,
       "Client-Id": process.env.CLIENT_ID || "",
