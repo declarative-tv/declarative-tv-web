@@ -25,8 +25,8 @@ main =
   HA.runHalogenAff do
     _ <- HA.awaitBody
     let
-      -- baseUrl = BaseURL "https://fpers.vercel.app"
-      baseUrl = BaseURL "http://localhost:3000"
+      baseUrl = BaseURL "https://fpers.vercel.app"
+      -- baseUrl = BaseURL "http://localhost:3000"
 
       logLevel = Dev
     nav <- liftEffect makeInterface
