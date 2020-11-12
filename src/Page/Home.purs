@@ -93,7 +93,7 @@ component =
           , "kerckhove_ts"
           , "quinndougherty92"
           , "totbwf"
-          , "gernaderjake"
+          -- , "gernaderjake"
           ]
       void $ H.fork $ handleAction $ LoadStreamers streamersNames
     LoadStreamers streamersNames -> do
