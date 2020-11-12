@@ -16,7 +16,7 @@
     "prep-prod": "rm -rf dist",
     "serve-dev": "parcel wip/index.html --open",
     "test": "spago test",
-    "build:prod": "npm run prep-prod && npm run bundle",
+    "build:prod": "npm run prep-prod && npm run bundle && cp -R assets/assets dist/",
     "build:prod:with-css": "npm run prep-prod && npm run css:purge && npm run bundle",
     "bundle:build": "spago build --purs-args '--codegen corefn'",
     "bundle:dce": "zephyr -f Main.main",

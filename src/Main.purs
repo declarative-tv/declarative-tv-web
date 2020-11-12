@@ -1,7 +1,6 @@
 module Main where
 
 import Prelude
-
 import Fpers.Api.Request (BaseURL(..))
 import Fpers.AppM (runAppM)
 import Fpers.Component.Router as Router
@@ -22,35 +21,29 @@ import Routing.PushState (makeInterface, matchesWith)
 import Web.DOM.ParentNode (QuerySelector(..))
 
 main :: Effect Unit
-main = HA.runHalogenAff do
+main =
+  HA.runHalogenAff do
+    _ <- HA.awaitBody
+    let
+      -- baseUrl = BaseURL "https://fpers.vercel.app"
+      baseUrl = BaseURL "http://localhost:3000"
 
-  _ <- HA.awaitBody
+      logLevel = Dev
+    nav <- liftEffect makeInterface
+    let
+      environment :: Env
+      environment = { nav, baseUrl, logLevel }
 
-  let
-    baseUrl = BaseURL "https://fpers.vercel.app"
-    logLevel = Dev
-
-  nav <- liftEffect makeInterface
-
-  let
-    environment :: Env
-    environment = { nav, baseUrl, logLevel }
-
-    rootComponent :: H.Component HH.HTML Router.Query {} Void Aff
-    rootComponent = H.hoist (runAppM environment) Router.component
-
-  mbEl <- HU.selectElement $ QuerySelector ".app"
-
-  case mbEl of
-    Just el -> do
-      halogenIO <- runUI rootComponent {} el
-
-      let
-        onRouteChange :: Maybe Route -> Route -> Effect Unit
-        onRouteChange old new =
-          when (old /= Just new) do
-            launchAff_ $ halogenIO.query $ H.tell $ Router.Navigate new
-
-      void $ liftEffect $ matchesWith (parse routeCodec) onRouteChange nav
-
-    Nothing -> liftEffect $ throw "Could not mount app"
+      rootComponent :: H.Component HH.HTML Router.Query {} Void Aff
+      rootComponent = H.hoist (runAppM environment) Router.component
+    mbEl <- HU.selectElement $ QuerySelector ".app"
+    case mbEl of
+      Just el -> do
+        halogenIO <- runUI rootComponent {} el
+        let
+          onRouteChange :: Maybe Route -> Route -> Effect Unit
+          onRouteChange old new =
+            when (old /= Just new) do
+              launchAff_ $ halogenIO.query $ H.tell $ Router.Navigate new
+        void $ liftEffect $ matchesWith (parse routeCodec) onRouteChange nav
+      Nothing -> liftEffect $ throw "Could not mount app"

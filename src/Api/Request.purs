@@ -5,31 +5,20 @@ module Fpers.Api.Request
   , RequestMethod(..)
   , RequestOptions(..)
   , defaultRequest
-  , readClientId
-  , writeClientId
-  , removeClientId
-  , readToken
-  , writeToken
-  , removeToken
   ) where
 
 import Prelude
 
 import Affjax (Request)
 import Affjax.RequestBody as RB
-import Affjax.RequestHeader (RequestHeader(..))
 import Affjax.ResponseFormat as RF
 import Data.Argonaut.Core (Json)
 import Data.Either (Either(..))
 import Data.HTTP.Method (Method(..))
 import Data.Maybe (Maybe(..))
 import Data.Tuple (Tuple(..))
-import Effect (Effect)
 import Fpers.Api.Endpoint (Endpoint, endpointCodec)
 import Routing.Duplex (print)
-import Web.HTML (window)
-import Web.HTML.Window (localStorage)
-import Web.Storage.Storage (getItem, removeItem, setItem)
 
 newtype Token = Token String
 
@@ -68,16 +57,11 @@ type RequestOptions =
   , method :: RequestMethod
   }
 
-defaultRequest :: BaseURL -> Maybe Token -> Maybe ClientId -> RequestOptions -> Request Json
-defaultRequest (BaseURL baseUrl) token clientId { endpoint, method } =
+defaultRequest :: BaseURL -> RequestOptions -> Request Json
+defaultRequest (BaseURL baseUrl) { endpoint, method } =
   { method: Left method
   , url: baseUrl <> print endpointCodec endpoint
-  , headers: case token, clientId of
-      Just (Token t), Just (ClientId id) ->
-        [ RequestHeader "Authorization" $ "Bearer " <> t
-        , RequestHeader "Client-Id" $ id
-        ]
-      _, _ -> []
+  , headers: []
   , content: RB.json <$> body
   , username: Nothing
   , password: Nothing
@@ -90,37 +74,3 @@ defaultRequest (BaseURL baseUrl) token clientId { endpoint, method } =
     Post b -> Tuple POST b
     Put b -> Tuple PUT b
     Delete -> Tuple DELETE Nothing
-
--- | The following functions deal with writing, reading, and deleting tokens and
--- | client-id in local storage at a particular key. They'll be used as part of
--- | our production monad, `Fpers.AppM`.
-
-tokenKey = "token" :: String
-
-readToken :: Effect (Maybe Token)
-readToken = do
-  str <- getItem tokenKey =<< localStorage =<< window
-  pure $ map Token str
-
-writeToken :: Token -> Effect Unit
-writeToken (Token str) =
-  setItem tokenKey str =<< localStorage =<< window
-
-removeToken :: Effect Unit
-removeToken =
-  removeItem tokenKey =<< localStorage =<< window
-
-clientIdKey = "client_id" :: String
-
-readClientId :: Effect (Maybe ClientId)
-readClientId = do
-  str <- getItem clientIdKey =<< localStorage =<< window
-  pure $ map ClientId str
-
-writeClientId :: ClientId -> Effect Unit
-writeClientId (ClientId str) =
-  setItem clientIdKey str =<< localStorage =<< window
-
-removeClientId :: Effect Unit
-removeClientId =
-  removeItem clientIdKey =<< localStorage =<< window

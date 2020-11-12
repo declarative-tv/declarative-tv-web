@@ -17,6 +17,7 @@ node_modules
 .vscode
 # Generated
 output
+public
 dce-output
 dist
 *.lock

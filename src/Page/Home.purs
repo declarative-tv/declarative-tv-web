@@ -1,6 +1,7 @@
 module Fpers.Page.Home where
 
 import Prelude
+
 import Data.Array (sortBy)
 import Data.Foldable (find)
 import Data.Maybe (Maybe(..), maybe)
@@ -9,6 +10,7 @@ import Effect.Aff.Class (class MonadAff)
 import Fpers.Capability.Navigate (class Navigate)
 import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer, getStreamers)
+import Fpers.Component.HTML.Header (header)
 import Fpers.Data.Stream (Stream)
 import Fpers.Data.Streamer (Streamer)
 import Halogen as H
@@ -19,7 +21,6 @@ import Tailwind as T
 
 -- import Fpers.Data.Route (Route(..))
 -- import Fpers.Component.HTML.Footer (footer)
--- import Fpers.Component.HTML.Header (header)
 -- import Network.RemoteData (RemoteData(..), _Success, toMaybe)
 -- import Web.Event.Event (preventDefault)
 -- import Web.UIEvent.MouseEvent (MouseEvent, toEvent)
@@ -82,16 +83,17 @@ component =
     Initialize -> do
       let
         streamersNames =
-          [ "cmdvtv"
-          , "agentultra"
+          [ "agentultra"
           , "avh4"
           , "chiroptical"
+          , "cmdvtv"
           , "cvladfp"
           , "gillchristian"
+          , "identitygs"
           , "kerckhove_ts"
           , "quinndougherty92"
           , "totbwf"
-          -- , "gernaderjake"
+          , "gernaderjake"
           ]
       void $ H.fork $ handleAction $ LoadStreamers streamersNames
     LoadStreamers streamersNames -> do
@@ -106,9 +108,12 @@ component =
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
   render { streamersInfo } =
-    HH.div
-      [ HP.classes [ T.container, T.flex, T.flexCol, T.itemsCenter ] ]
-      [ HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed ]
+    HH.div_
+      [ header
+      , HH.div
+          [ HP.classes [ T.container, T.mxAuto, T.flex, T.flexCol, T.itemsCenter ] ]
+          [ HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed ]
+      ]
     where
     feed = case streamersInfo of
       NotAsked -> [ HH.text "Loading ..." ]
@@ -162,7 +167,7 @@ component =
     onlineStreamer { profile_image_url } { title, user_name, viewer_count, thumbnail_url } =
       HH.div
         [ HP.classes [ T.my6, T.p4, T.border4, T.flex, T.flexCol ] ]
-        [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 408 ]
+        [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 350 ]
         , HH.div
             [ HP.classes [ T.mt6, T.grid, T.gridCols10, T.gap2 ] ]
             [ HH.a
@@ -205,5 +210,5 @@ component =
       where
       src =
         replace (Pattern "{width}") (Replacement "632")
-          $ replace (Pattern "{height}") (Replacement "408")
+          $ replace (Pattern "{height}") (Replacement "350")
           $ thumbnail_url

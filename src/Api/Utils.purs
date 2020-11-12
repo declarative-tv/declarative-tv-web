@@ -11,8 +11,7 @@ import Data.Codec.Argonaut as CA
 import Data.Either (Either(..), hush)
 import Data.Maybe (Maybe(..))
 import Effect.Aff.Class (class MonadAff, liftAff)
-import Effect.Class (liftEffect)
-import Fpers.Api.Request (BaseURL, RequestOptions, defaultRequest, readClientId, readToken)
+import Fpers.Api.Request (BaseURL, RequestOptions, defaultRequest)
 import Fpers.Capability.LogMessages (class LogMessages, logError)
 import Fpers.Capability.Now (class Now)
 
@@ -24,9 +23,7 @@ mkAuthRequest
   -> m (Maybe Json)
 mkAuthRequest opts = do
   { baseUrl } <- ask
-  token <- liftEffect readToken
-  clientId <- liftEffect readClientId
-  response <- liftAff $ request $ defaultRequest baseUrl token clientId opts
+  response <- liftAff $ request $ defaultRequest baseUrl opts
   pure $ hush $ rmap _.body response
 
 decode :: forall m a. LogMessages m => Now m => JsonCodec a -> Maybe Json -> m (Maybe a)
