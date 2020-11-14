@@ -15,6 +15,7 @@ import Fpers.Data.Stream (Stream)
 import Fpers.Data.Streamer (Streamer)
 import Halogen as H
 import Halogen.HTML as HH
+import Halogen.HTML.Properties (classes)
 import Halogen.HTML.Properties as HP
 import Network.RemoteData (RemoteData(..))
 import Tailwind as T
@@ -112,7 +113,18 @@ component =
       [ header
       , HH.div
           [ HP.classes [ T.container, T.mxAuto, T.flex, T.flexCol, T.itemsCenter ] ]
-          [ HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2 ] ] feed ]
+          [ HH.div
+              [ HP.classes [ T.mt6 ] ]
+              [ HH.text "We are a community of Functional and Declarative Programming streamers." ]
+          , HH.a
+              [ HP.href "https://discord.gg/UMdeMUq"
+              , HP.classes [ T.flex, T.itemsCenter, T.textIndigo600, T.mt6 ]
+              ]
+              [ HH.img [ HP.src "/assets/discord.svg", HP.classes [ T.w12 ] ]
+              , HH.text "Join us on Discord"
+              ]
+          , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2, T.mt6 ] ] feed
+          ]
       ]
     where
     feed = case streamersInfo of
@@ -135,7 +147,7 @@ component =
     offlineStreamer :: Streamer -> H.ComponentHTML Action slots m
     offlineStreamer { profile_image_url, display_name, login, description } =
       HH.div
-        [ HP.classes [ T.my6, T.p4, T.border4, T.grid, T.gridCols10, T.gap2 ] ]
+        [ HP.classes [ T.mb6, T.p4, T.border4, T.grid, T.gridCols10, T.gap2 ] ]
         [ HH.a
             [ HP.href $ "https://twitch.tv/" <> login, HP.classes [ T.colSpan1 ] ]
             [ HH.img
@@ -166,7 +178,7 @@ component =
     onlineStreamer :: Streamer -> Stream -> H.ComponentHTML Action slots m
     onlineStreamer { profile_image_url } { title, user_name, viewer_count, thumbnail_url } =
       HH.div
-        [ HP.classes [ T.my6, T.p4, T.border4, T.flex, T.flexCol ] ]
+        [ HP.classes [ T.mb6, T.p4, T.border4, T.flex, T.flexCol ] ]
         [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 350 ]
         , HH.div
             [ HP.classes [ T.mt6, T.grid, T.gridCols10, T.gap2 ] ]
