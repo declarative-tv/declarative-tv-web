@@ -41,8 +41,7 @@ main =
         , "kritzcreek"
         , "quinndougherty92"
         , "totbwf"
-        , "gernaderjake"
-        , "lana_lux"
+        -- , "gernaderjake"
         ]
     nav <- liftEffect makeInterface
     let
