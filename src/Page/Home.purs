@@ -1,37 +1,34 @@
 module Fpers.Page.Home where
 
 import Prelude
-
+import Control.Parallel (parallel, sequential)
 import Data.Array (sortBy)
 import Data.Foldable (find)
-import Data.Maybe (Maybe(..), maybe)
+import Data.Maybe (Maybe(..), fromMaybe, maybe)
 import Data.String (replace, Pattern(..), Replacement(..))
+import Data.Tuple.Nested ((/\))
 import Effect.Aff.Class (class MonadAff)
 import Fpers.Capability.Navigate (class Navigate)
+import Fpers.Capability.Resource.Game (class ManageGame, getGames)
 import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer, getStreamers)
 import Fpers.Component.HTML.Header (header)
+import Fpers.Data.Game (Game)
 import Fpers.Data.Stream (Stream)
 import Fpers.Data.Streamer (Streamer)
 import Halogen as H
 import Halogen.HTML as HH
-import Halogen.HTML.Properties (classes)
 import Halogen.HTML.Properties as HP
 import Network.RemoteData (RemoteData(..))
 import Tailwind as T
 
--- import Fpers.Data.Route (Route(..))
--- import Fpers.Component.HTML.Footer (footer)
--- import Network.RemoteData (RemoteData(..), _Success, toMaybe)
--- import Web.Event.Event (preventDefault)
--- import Web.UIEvent.MouseEvent (MouseEvent, toEvent)
 data Action
   = Initialize
   | LoadStreamers (Array String)
 
 type State
   = { streamersInfo :: RemoteData String (Array StreamerInfo)
-    , page :: Int
+    , games :: Array Game
     }
 
 type StreamerInfo
@@ -59,6 +56,7 @@ component ::
   forall q o m.
   MonadAff m =>
   Navigate m =>
+  ManageGame m =>
   ManageStream m =>
   ManageStreamer m =>
   H.Component HH.HTML q {} o m
@@ -76,7 +74,7 @@ component =
   where
   initialState _ =
     { streamersInfo: NotAsked
-    , page: 1
+    , games: []
     }
 
   handleAction :: forall slots. Action -> H.HalogenM State Action slots o m Unit
@@ -99,16 +97,22 @@ component =
       void $ H.fork $ handleAction $ LoadStreamers streamersNames
     LoadStreamers streamersNames -> do
       H.modify_ _ { streamersInfo = Loading }
-      streamers <- getStreamers streamersNames
-      streams <- getStreams streamersNames
+      (streamers /\ streams) <-
+        sequential $ (/\)
+          <$> parallel (getStreamers streamersNames)
+          <*> parallel (getStreams streamersNames)
       let
         mbStreamersInfo = sortBy liveFirst <$> (zipStreamers <$> streamers <*> streams)
 
         streamersInfo = maybe (Failure "Could not fetch streamers information") Success mbStreamersInfo
       H.modify_ _ { streamersInfo = streamersInfo }
+      games <- case map _.game_id <$> streams of
+        Just ids -> getGames ids
+        Nothing -> pure Nothing
+      H.modify_ _ { games = fromMaybe [] games }
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
-  render { streamersInfo } =
+  render { streamersInfo, games } =
     HH.div_
       [ header
       , HH.div
@@ -176,7 +180,7 @@ component =
         ]
 
     onlineStreamer :: Streamer -> Stream -> H.ComponentHTML Action slots m
-    onlineStreamer { profile_image_url } { title, user_name, viewer_count, thumbnail_url } =
+    onlineStreamer { profile_image_url } { game_id, title, user_name, viewer_count, thumbnail_url } =
       HH.div
         [ HP.classes [ T.mb6, T.p4, T.border4, T.flex, T.flexCol ] ]
         [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 350 ]
@@ -216,6 +220,20 @@ component =
                         ]
                     ]
                     [ HH.text title ]
+                , case find ((_ == game_id) <<< _.id) games of
+                    Nothing -> HH.text ""
+                    Just { name } ->
+                      HH.a
+                        [ HP.classes
+                            [ T.textIndigo600
+                            , T.block
+                            , T.hoverUnderline
+                            , T.leadingNone
+                            , T.mt2
+                            ]
+                        , HP.href $ "https://twitch.tv/directory/game/" <> name
+                        ]
+                        [ HH.text name ]
                 ]
             ]
         ]

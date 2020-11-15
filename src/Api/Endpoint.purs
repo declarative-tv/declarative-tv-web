@@ -9,6 +9,7 @@ import Routing.Duplex.Generic.Syntax ((?))
 data Endpoint
   = Streams { user_login :: Array String }
   | Streamers { login :: Array String }
+  | Games { id :: Array String }
 
 derive instance genericEndpoint :: Generic Endpoint _
 
@@ -18,4 +19,5 @@ endpointCodec =
     $ sum
         { "Streams": "streams" ? { user_login: many <<< string }
         , "Streamers": "streamers" ? { login: many <<< string }
+        , "Games": "games" ? { id: many <<< string }
         }

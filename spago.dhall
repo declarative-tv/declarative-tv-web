@@ -14,6 +14,7 @@
   , "halogen-formless"
   , "nonempty"
   , "now"
+  , "parallel"
   , "precise-datetime"
   , "prelude"
   , "remotedata"

@@ -1,6 +1,7 @@
 module Fpers.AppM where
 
 import Prelude
+
 import Control.Monad.Reader.Trans (class MonadAsk, ReaderT, ask, asks, runReaderT)
 import Data.Codec.Argonaut.Compat as CAC
 import Data.Codec.Argonaut.Record as CAR
@@ -15,8 +16,10 @@ import Fpers.Api.Utils (decode, mkAuthRequest)
 import Fpers.Capability.LogMessages (class LogMessages)
 import Fpers.Capability.Navigate (class Navigate, locationState)
 import Fpers.Capability.Now (class Now)
+import Fpers.Capability.Resource.Game (class ManageGame)
 import Fpers.Capability.Resource.Stream (class ManageStream)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer)
+import Fpers.Data.Game (gameCodec)
 import Fpers.Data.Log as Log
 import Fpers.Data.Route as Route
 import Fpers.Data.Stream (streamCodec)
@@ -74,3 +77,9 @@ instance manageStreamerAppM :: ManageStreamer AppM where
     mbJson <- mkAuthRequest { endpoint: Streamers { login: streamersNames }, method: Get }
     map (map _.data)
       $ decode (CAR.object "Streamers" { "data": CAC.array streamerCodec }) mbJson
+
+instance manageGameAppM :: ManageGame AppM where
+  getGames gamesIds = do
+    mbJson <- mkAuthRequest { endpoint: Games { id: gamesIds }, method: Get }
+    map (map _.data)
+      $ decode (CAR.object "Games" { "data": CAC.array gameCodec }) mbJson

@@ -7,6 +7,7 @@ import Fpers.Capability.Navigate (class Navigate, navigate, locationState)
 import Fpers.Capability.Now (class Now)
 import Fpers.Capability.Resource.Stream (class ManageStream)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer)
+import Fpers.Capability.Resource.Game (class ManageGame)
 import Fpers.Component.Utils (OpaqueSlot)
 import Fpers.Data.Route (Route(..), routeCodec)
 import Fpers.Page.Home as Home
@@ -36,6 +37,7 @@ component
   => Now m
   => LogMessages m
   => Navigate m
+  => ManageGame m
   => ManageStream m
   => ManageStreamer m
   => H.Component HH.HTML Query {} Void m
