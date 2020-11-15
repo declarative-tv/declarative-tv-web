@@ -26,13 +26,28 @@ main =
     _ <- HA.awaitBody
     let
       baseUrl = BaseURL "https://fpers.vercel.app"
-      -- baseUrl = BaseURL "http://localhost:3000"
 
       logLevel = Dev
+
+      streamersNames =
+        [ "agentultra"
+        , "avh4"
+        , "chiroptical"
+        , "cmdvtv"
+        , "cvladfp"
+        , "gillchristian"
+        , "identitygs"
+        , "kerckhove_ts"
+        , "kritzcreek"
+        , "quinndougherty92"
+        , "totbwf"
+        , "gernaderjake"
+        , "lana_lux"
+        ]
     nav <- liftEffect makeInterface
     let
       environment :: Env
-      environment = { nav, baseUrl, logLevel }
+      environment = { nav, baseUrl, logLevel, streamersNames }
 
       rootComponent :: H.Component HH.HTML Router.Query {} Void Aff
       rootComponent = H.hoist (runAppM environment) Router.component

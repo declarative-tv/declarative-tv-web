@@ -9,6 +9,7 @@ type Env =
   { nav :: PushStateInterface
   , logLevel :: LogLevel
   , baseUrl :: BaseURL
+  , streamersNames :: Array String
   }
 
 data LogLevel = Dev | Prod

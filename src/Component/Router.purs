@@ -1,25 +1,26 @@
 module Fpers.Component.Router where
 
 import Prelude
-
-import Fpers.Capability.LogMessages (class LogMessages)
-import Fpers.Capability.Navigate (class Navigate, navigate, locationState)
-import Fpers.Capability.Now (class Now)
-import Fpers.Capability.Resource.Stream (class ManageStream)
-import Fpers.Capability.Resource.Streamer (class ManageStreamer)
-import Fpers.Capability.Resource.Game (class ManageGame)
-import Fpers.Component.Utils (OpaqueSlot)
-import Fpers.Data.Route (Route(..), routeCodec)
-import Fpers.Page.Home as Home
+import Control.Monad.Reader (class MonadAsk)
 import Data.Either (hush)
 import Data.Maybe (Maybe(..), fromMaybe)
 import Data.Symbol (SProxy(..))
 import Effect.Aff.Class (class MonadAff)
+import Fpers.Capability.LogMessages (class LogMessages)
+import Fpers.Capability.Navigate (class Navigate, navigate, locationState)
+import Fpers.Capability.Now (class Now)
+import Fpers.Capability.Resource.Game (class ManageGame)
+import Fpers.Capability.Resource.Stream (class ManageStream)
+import Fpers.Capability.Resource.Streamer (class ManageStreamer)
+import Fpers.Component.Utils (OpaqueSlot)
+import Fpers.Data.Route (Route(..), routeCodec)
+import Fpers.Page.Home as Home
 import Halogen as H
 import Halogen.HTML as HH
 import Routing.Duplex as RD
 
-type State = { route :: Maybe Route }
+type State
+  = { route :: Maybe Route }
 
 data Query a
   = Navigate Route a
@@ -27,29 +28,33 @@ data Query a
 data Action
   = Initialize
 
-type ChildSlots =
-  ( home :: OpaqueSlot Unit
-  )
+type ChildSlots
+  = ( home :: OpaqueSlot Unit
+    )
 
-component
-  :: forall m
-   . MonadAff m
-  => Now m
-  => LogMessages m
-  => Navigate m
-  => ManageGame m
-  => ManageStream m
-  => ManageStreamer m
-  => H.Component HH.HTML Query {} Void m
-component = H.mkComponent
-  { initialState: \_ -> { route: Nothing }
-  , render
-  , eval: H.mkEval $ H.defaultEval
-      { handleQuery = handleQuery
-      , handleAction = handleAction
-      , initialize = Just Initialize
-      }
-  }
+component ::
+  forall m r.
+  MonadAff m =>
+  Now m =>
+  LogMessages m =>
+  Navigate m =>
+  MonadAsk { streamersNames :: Array String | r } m =>
+  ManageGame m =>
+  ManageStream m =>
+  ManageStreamer m =>
+  H.Component HH.HTML Query {} Void m
+component =
+  H.mkComponent
+    { initialState: \_ -> { route: Nothing }
+    , render
+    , eval:
+        H.mkEval
+          $ H.defaultEval
+              { handleQuery = handleQuery
+              , handleAction = handleAction
+              , initialize = Just Initialize
+              }
+    }
   where
   handleAction :: Action -> H.HalogenM State Action ChildSlots Void m Unit
   handleAction = case _ of

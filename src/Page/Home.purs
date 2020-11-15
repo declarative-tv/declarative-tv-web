@@ -1,8 +1,9 @@
 module Fpers.Page.Home where
 
 import Prelude
+import Control.Monad.Reader (class MonadAsk, ask)
 import Control.Parallel (parallel, sequential)
-import Data.Array (sortBy)
+import Data.Array (sortBy, (:))
 import Data.Foldable (find)
 import Data.Maybe (Maybe(..), fromMaybe, maybe)
 import Data.String (replace, Pattern(..), Replacement(..))
@@ -37,12 +38,12 @@ type StreamerInfo
     }
 
 zipStreamers :: Array Streamer -> Array Stream -> Array StreamerInfo
-zipStreamers streamers streams = map (go streams) streamers
+zipStreamers streamers streams = map go streamers
   where
-  go :: Array Stream -> Streamer -> StreamerInfo
-  go ss streamer =
+  go :: Streamer -> StreamerInfo
+  go streamer =
     { streamer
-    , stream: find (\{ user_name } -> user_name == streamer.display_name) ss
+    , stream: find ((_ == streamer.display_name) <<< _.user_name) streams
     }
 
 liveFirst :: StreamerInfo -> StreamerInfo -> Ordering
@@ -53,9 +54,10 @@ liveFirst a b = case a.stream, b.stream of
   _, _ -> compare a.streamer.login b.streamer.login
 
 component ::
-  forall q o m.
-  MonadAff m =>
+  forall q o r m.
   Navigate m =>
+  MonadAff m =>
+  MonadAsk { streamersNames :: Array String | r } m =>
   ManageGame m =>
   ManageStream m =>
   ManageStreamer m =>
@@ -72,28 +74,12 @@ component =
               }
     }
   where
-  initialState _ =
-    { streamersInfo: NotAsked
-    , games: []
-    }
+  initialState _ = { streamersInfo: NotAsked, games: [] }
 
   handleAction :: forall slots. Action -> H.HalogenM State Action slots o m Unit
   handleAction = case _ of
     Initialize -> do
-      let
-        streamersNames =
-          [ "agentultra"
-          , "avh4"
-          , "chiroptical"
-          , "cmdvtv"
-          , "cvladfp"
-          , "gillchristian"
-          , "identitygs"
-          , "kerckhove_ts"
-          , "quinndougherty92"
-          , "totbwf"
-          -- , "gernaderjake"
-          ]
+      { streamersNames } <- ask
       void $ H.fork $ handleAction $ LoadStreamers streamersNames
     LoadStreamers streamersNames -> do
       H.modify_ _ { streamersInfo = Loading }
@@ -191,22 +177,41 @@ component =
                 [ HH.img [ HP.classes [ T.roundedFull, T.h12, T.w12 ], HP.src profile_image_url ]
                 ]
             , HH.div [ HP.classes [ T.colSpan9 ] ]
-                [ HH.a
-                    [ HP.href $ "https://twitch.tv/" <> user_name
-                    , HP.classes
-                        [ T.flex
-                        , T.itemsCenter
-                        , T.textIndigo700
-                        , T.fontBold
-                        , T.block
-                        , T.textLg
-                        , T.leadingNone
-                        , T.fontSemibold
-                        , T.textGray900
-                        , T.hoverUnderline
-                        ]
-                    ]
-                    [ HH.div [ HP.classes [ T.bgRed600, T.w3, T.h3, T.roundedFull, T.mr1 ] ] [], HH.text user_name ]
+                [ HH.div
+                    [ HP.classes [ T.flex ] ]
+                    $ ( HH.a
+                          [ HP.href $ "https://twitch.tv/" <> user_name
+                          , HP.classes
+                              [ T.flex
+                              , T.itemsCenter
+                              , T.block
+                              , T.textIndigo700
+                              , T.textLg
+                              , T.fontBold
+                              , T.leadingNone
+                              , T.hoverUnderline
+                              ]
+                          ]
+                          [ HH.div [ HP.classes [ T.bgRed600, T.w3, T.h3, T.roundedFull, T.mr2 ] ] []
+                          , HH.text user_name
+                          ]
+                      )
+                    : case mbGame of
+                        Nothing -> []
+                        Just { name } ->
+                          [ HH.div [ HP.classes [ T.mx2, T.leadingNone, T.textLg ] ] [ HH.text "•" ]
+                          , HH.a
+                              [ HP.classes
+                                  [ T.block
+                                  , T.textIndigo600
+                                  , T.textLg
+                                  , T.leadingNone
+                                  , T.hoverUnderline
+                                  ]
+                              , HP.href $ "https://twitch.tv/directory/game/" <> name
+                              ]
+                              [ HH.text name ]
+                          ]
                 , HH.a
                     [ HP.href $ "https://twitch.tv/" <> user_name
                     , HP.classes
@@ -220,24 +225,12 @@ component =
                         ]
                     ]
                     [ HH.text title ]
-                , case find ((_ == game_id) <<< _.id) games of
-                    Nothing -> HH.text ""
-                    Just { name } ->
-                      HH.a
-                        [ HP.classes
-                            [ T.textIndigo600
-                            , T.block
-                            , T.hoverUnderline
-                            , T.leadingNone
-                            , T.mt2
-                            ]
-                        , HP.href $ "https://twitch.tv/directory/game/" <> name
-                        ]
-                        [ HH.text name ]
                 ]
             ]
         ]
       where
+      mbGame = find ((_ == game_id) <<< _.id) games
+
       src =
         replace (Pattern "{width}") (Replacement "632")
           $ replace (Pattern "{height}") (Replacement "350")
