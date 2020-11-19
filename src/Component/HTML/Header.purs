@@ -15,7 +15,9 @@ header =
             , T.flex
             , T.justifyCenter
             , T.itemsCenter
-            , T.py2
+            , T.pt10
+            , T.pb2
+            , T.textGray800
             ]
         ]
         [ HH.img
@@ -23,7 +25,7 @@ header =
             , HP.src "/assets/logo.png"
             ]
         , HH.h1
-            [ HP.classes [ T.text2xl ] ]
+            [ HP.classes [ T.text3xl, T.fontBlack, T.fontSans ] ]
             [ HH.text "Declarative Programming Streamers" ]
         ]
     ]

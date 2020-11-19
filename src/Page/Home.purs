@@ -105,16 +105,41 @@ component =
       , HH.div
           [ HP.classes [ T.container, T.mxAuto, T.flex, T.flexCol, T.itemsCenter ] ]
           [ HH.div
-              [ HP.classes [ T.mt6 ] ]
-              [ HH.text "We are a community of Functional and Declarative Programming streamers." ]
-          , HH.a
-              [ HP.href "https://discord.gg/UMdeMUq"
-              , HP.classes [ T.flex, T.itemsCenter, T.textIndigo600, T.mt6 ]
+              [ HP.classes
+                  [ T.flex
+                  , T.flexCol
+                  , T.itemsCenter
+                  , T.wFull
+                  , T.maxW2xl
+                  , T.mx2
+                  , T.mt8
+                  , T.p4
+                  , T.shadowMd
+                  , T.hoverShadowLg
+                  , T.bgWhite
+                  ]
               ]
-              [ HH.img [ HP.src "/assets/discord.svg", HP.classes [ T.w16 ] ]
-              , HH.text "Join us on Discord"
+              [ HH.div
+                  [ HP.classes [ T.textGray800 ] ]
+                  [ HH.text "We are a community of Functional and Declarative Programming streamers." ]
+              , HH.div [ HP.classes [ T.flex ] ]
+                  [ HH.a
+                      [ HP.href "https://discord.gg/UMdeMUq"
+                      , HP.classes [ T.flex, T.itemsCenter, T.textIndigo600, T.mt6, T.mr8 ]
+                      ]
+                      [ HH.img [ HP.src "/assets/discord.svg", HP.classes [ T.w16, T.mr2 ] ]
+                      , HH.text "Join us on Discord"
+                      ]
+                  , HH.a
+                      [ HP.href "https://github.com/chiroptical/declarative-programming-streams"
+                      , HP.classes [ T.flex, T.itemsCenter, T.mt6 ]
+                      ]
+                      [ HH.img [ HP.src "/assets/github.png", HP.classes [ T.w12, T.mr2, T.textGray800 ] ]
+                      , HH.text "List your stream"
+                      ]
+                  ]
               ]
-          , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2, T.mt6 ] ] feed
+          , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2, T.mt8 ] ] feed
           ]
       ]
     where
@@ -192,7 +217,10 @@ component =
                               , T.hoverUnderline
                               ]
                           ]
-                          [ HH.div [ HP.classes [ T.bgRed600, T.w3, T.h3, T.roundedFull, T.mr2 ] ] []
+                          [ HH.span [ HP.classes [ T.relative, T.flex, T.h3, T.w3, T.mr2 ] ]
+                              [ HH.span [ HP.classes [ T.animatePing, T.absolute, T.inlineFlex, T.wFull, T.hFull, T.roundedFull, T.bgRed700, T.opacity75 ] ] []
+                              , HH.span [ HP.classes [ T.relative, T.inlineFlex, T.roundedFull, T.w3, T.h3, T.bgRed600 ] ] []
+                              ]
                           , HH.text user_name
                           ]
                       )
