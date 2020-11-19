@@ -99,7 +99,8 @@ component =
 
   render :: forall slots. State -> H.ComponentHTML Action slots m
   render { streamersInfo, games } =
-    HH.div_
+    HH.div
+      [ HP.classes [ T.minHScreen, T.bgGray200 ] ]
       [ header
       , HH.div
           [ HP.classes [ T.container, T.mxAuto, T.flex, T.flexCol, T.itemsCenter ] ]
@@ -110,7 +111,7 @@ component =
               [ HP.href "https://discord.gg/UMdeMUq"
               , HP.classes [ T.flex, T.itemsCenter, T.textIndigo600, T.mt6 ]
               ]
-              [ HH.img [ HP.src "/assets/discord.svg", HP.classes [ T.w12 ] ]
+              [ HH.img [ HP.src "/assets/discord.svg", HP.classes [ T.w16 ] ]
               , HH.text "Join us on Discord"
               ]
           , HH.div [ HP.classes [ T.wFull, T.maxW2xl, T.mx2, T.mt6 ] ] feed
@@ -118,8 +119,7 @@ component =
       ]
     where
     feed = case streamersInfo of
-      NotAsked -> [ HH.text "Loading ..." ]
-      Loading -> [ HH.text "Loading ..." ]
+      Success ss -> map streamerInfo ss
       Failure msg ->
         [ HH.div
             [ HP.classes [ T.p4, T.border4, T.borderRed600, T.bgRed200, T.textRed900 ] ]
@@ -127,7 +127,7 @@ component =
             , HH.p_ [ HH.text msg ]
             ]
         ]
-      Success ss -> map streamerInfo ss
+      _ -> [ HH.div [ HP.classes [ T.textCenter ] ] [ HH.text "Loading ..." ] ]
 
     streamerInfo :: StreamerInfo -> H.ComponentHTML Action slots m
     streamerInfo { streamer, stream } = case stream of
@@ -137,7 +137,7 @@ component =
     offlineStreamer :: Streamer -> H.ComponentHTML Action slots m
     offlineStreamer { profile_image_url, display_name, login, description } =
       HH.div
-        [ HP.classes [ T.mb6, T.p4, T.border4, T.grid, T.gridCols10, T.gap2 ] ]
+        [ HP.classes [ T.mb6, T.p4, T.shadowMd, T.hoverShadowLg, T.bgWhite, T.grid, T.gridCols10, T.gap2 ] ]
         [ HH.a
             [ HP.href $ "https://twitch.tv/" <> login, HP.classes [ T.colSpan1 ] ]
             [ HH.img
@@ -168,8 +168,8 @@ component =
     onlineStreamer :: Streamer -> Stream -> H.ComponentHTML Action slots m
     onlineStreamer { profile_image_url } { game_id, title, user_name, viewer_count, thumbnail_url } =
       HH.div
-        [ HP.classes [ T.mb6, T.p4, T.border4, T.flex, T.flexCol ] ]
-        [ HH.img [ HP.classes [ T.wFull ], HP.src src, HP.width 632, HP.height 350 ]
+        [ HP.classes [ T.mb6, T.p4, T.shadowMd, T.hoverShadowLg, T.bgWhite, T.flex, T.flexCol ] ]
+        [ HH.img [ HP.classes [ T.wFull ], HP.src thumbnail, HP.width 632, HP.height 350 ]
         , HH.div
             [ HP.classes [ T.mt6, T.grid, T.gridCols10, T.gap2 ] ]
             [ HH.a
@@ -231,7 +231,7 @@ component =
       where
       mbGame = find ((_ == game_id) <<< _.id) games
 
-      src =
+      thumbnail =
         replace (Pattern "{width}") (Replacement "632")
           $ replace (Pattern "{height}") (Replacement "350")
           $ thumbnail_url
