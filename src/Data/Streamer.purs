@@ -3,19 +3,22 @@ module Fpers.Data.Streamer where
 import Data.Codec.Argonaut (JsonCodec)
 import Data.Codec.Argonaut as CA
 import Data.Codec.Argonaut.Record as CAR
+import Data.Codec.Argonaut.Compat as CAC
 
 type Streamer
-  = { login :: String
-    , display_name :: String
-    , description :: String
-    , profile_image_url :: String
+  = { name :: String
+    , channel :: String
+    , speaking :: Array String
+    , languages :: Array String
+    , schedule :: String
     }
 
 streamerCodec :: JsonCodec Streamer
 streamerCodec =
   CAR.object "Streamer"
-    { login: CA.string
-    , display_name: CA.string
-    , description: CA.string
-    , profile_image_url: CA.string
+    { name: CA.string
+    , channel: CA.string
+    , speaking: CAC.array CA.string
+    , languages: CAC.array CA.string
+    , schedule: CA.string
     }

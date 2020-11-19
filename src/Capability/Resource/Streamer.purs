@@ -5,8 +5,11 @@ import Fpers.Data.Streamer (Streamer)
 import Data.Maybe (Maybe)
 import Halogen (HalogenM, lift)
 
-class Monad m <= ManageStreamer m where
-  getStreamers :: Array String -> m (Maybe (Array Streamer))
+class
+  Monad m <= ManageStreamer m where
+  getStreamers :: m (Maybe (Array Streamer))
 
-instance manageStreamHalogenM :: ManageStreamer m => ManageStreamer (HalogenM st act slots msg m) where
-  getStreamers = lift <<< getStreamers
+instance manageStreamersHalogenM ::
+  ManageStreamer m =>
+  ManageStreamer (HalogenM st act slots msg m) where
+  getStreamers = lift getStreamers

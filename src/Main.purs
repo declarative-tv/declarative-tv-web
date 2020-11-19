@@ -29,24 +29,11 @@ main =
 
       logLevel = Dev
 
-      streamersNames =
-        [ "agentultra"
-        , "avh4"
-        , "chiroptical"
-        , "cmdvtv"
-        , "cvladfp"
-        , "gillchristian"
-        , "identitygs"
-        , "kerckhove_ts"
-        , "kritzcreek"
-        , "quinndougherty92"
-        , "totbwf"
-        -- , "gernaderjake"
-        ]
+      streamersUrl = "https://raw.githubusercontent.com/gillchristian/declarative-programming-streams/feat/generated-readme/streamers.json"
     nav <- liftEffect makeInterface
     let
       environment :: Env
-      environment = { nav, baseUrl, logLevel, streamersNames }
+      environment = { nav, baseUrl, logLevel, streamersUrl }
 
       rootComponent :: H.Component HH.HTML Router.Query {} Void Aff
       rootComponent = H.hoist (runAppM environment) Router.component

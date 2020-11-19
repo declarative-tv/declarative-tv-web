@@ -2,6 +2,7 @@ module Fpers.Api.Request
   ( Token -- constructor and decoders not exported
   , ClientId -- constructor and decoders not exported
   , BaseURL(..)
+  , RequestEndpoint(..)
   , RequestMethod(..)
   , RequestOptions(..)
   , defaultRequest
@@ -20,11 +21,13 @@ import Data.Tuple (Tuple(..))
 import Fpers.Api.Endpoint (Endpoint, endpointCodec)
 import Routing.Duplex (print)
 
-newtype Token = Token String
+newtype Token
+  = Token String
 
 -- | No `newtype` instance allowed! That would allow us to use the `wrap` and
 -- | `unwrap` functions to access the string within the `Token` constructor.
 derive instance eqToken :: Eq Token
+
 derive instance ordToken :: Ord Token
 
 -- | We won't derive a `Show` instance, either, because we don't ever want to
@@ -32,11 +35,13 @@ derive instance ordToken :: Ord Token
 instance showToken :: Show Token where
   show (Token _) = "Token {- token -}"
 
-newtype ClientId = ClientId String
+newtype ClientId
+  = ClientId String
 
 -- | No `newtype` instance allowed! That would allow us to use the `wrap` and
 -- | `unwrap` functions to access the string within the `ClientId` constructor.
 derive instance eqClientId :: Eq ClientId
+
 derive instance ordClientId :: Ord ClientId
 
 -- | We won't derive a `Show` instance, either, because we don't ever want to
@@ -44,7 +49,8 @@ derive instance ordClientId :: Ord ClientId
 instance showClientId :: Show ClientId where
   show (ClientId _) = "ClientId {- client-id -}"
 
-newtype BaseURL = BaseURL String
+newtype BaseURL
+  = BaseURL String
 
 data RequestMethod
   = Get
@@ -52,15 +58,19 @@ data RequestMethod
   | Put (Maybe Json)
   | Delete
 
-type RequestOptions =
-  { endpoint :: Endpoint
-  , method :: RequestMethod
-  }
+data RequestEndpoint
+  = API Endpoint
+  | External String
+
+type RequestOptions
+  = { endpoint :: RequestEndpoint
+    , method :: RequestMethod
+    }
 
 defaultRequest :: BaseURL -> RequestOptions -> Request Json
 defaultRequest (BaseURL baseUrl) { endpoint, method } =
   { method: Left method
-  , url: baseUrl <> print endpointCodec endpoint
+  , url: url
   , headers: []
   , content: RB.json <$> body
   , username: Nothing
@@ -69,6 +79,10 @@ defaultRequest (BaseURL baseUrl) { endpoint, method } =
   , responseFormat: RF.json
   }
   where
+  url = case endpoint of
+    API e -> baseUrl <> print endpointCodec e
+    External externalUrl -> externalUrl
+
   Tuple method body = case method of
     Get -> Tuple GET Nothing
     Post b -> Tuple POST b

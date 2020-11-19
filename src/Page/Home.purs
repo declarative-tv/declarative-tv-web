@@ -1,7 +1,6 @@
 module Fpers.Page.Home where
 
 import Prelude
-import Control.Monad.Reader (class MonadAsk, ask)
 import Control.Parallel (parallel, sequential)
 import Data.Array (sortBy, (:))
 import Data.Foldable (find)
@@ -13,10 +12,11 @@ import Fpers.Capability.Navigate (class Navigate)
 import Fpers.Capability.Resource.Game (class ManageGame, getGames)
 import Fpers.Capability.Resource.Stream (class ManageStream, getStreams)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer, getStreamers)
+import Fpers.Capability.Resource.TwitchStreamer (class ManageTwitchStreamer, getTwitchStreamers)
 import Fpers.Component.HTML.Header (header)
 import Fpers.Data.Game (Game)
 import Fpers.Data.Stream (Stream)
-import Fpers.Data.Streamer (Streamer)
+import Fpers.Data.TwitchStreamer (TwitchStreamer)
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
@@ -25,7 +25,8 @@ import Tailwind as T
 
 data Action
   = Initialize
-  | LoadStreamers (Array String)
+  | LoadStreamers
+  | LoadTwitchData (Array String)
 
 type State
   = { streamersInfo :: RemoteData String (Array StreamerInfo)
@@ -33,14 +34,14 @@ type State
     }
 
 type StreamerInfo
-  = { streamer :: Streamer
+  = { streamer :: TwitchStreamer
     , stream :: Maybe Stream
     }
 
-zipStreamers :: Array Streamer -> Array Stream -> Array StreamerInfo
+zipStreamers :: Array TwitchStreamer -> Array Stream -> Array StreamerInfo
 zipStreamers streamers streams = map go streamers
   where
-  go :: Streamer -> StreamerInfo
+  go :: TwitchStreamer -> StreamerInfo
   go streamer =
     { streamer
     , stream: find ((_ == streamer.display_name) <<< _.user_name) streams
@@ -54,13 +55,13 @@ liveFirst a b = case a.stream, b.stream of
   _, _ -> compare a.streamer.login b.streamer.login
 
 component ::
-  forall q o r m.
+  forall q o m.
   Navigate m =>
   MonadAff m =>
-  MonadAsk { streamersNames :: Array String | r } m =>
   ManageGame m =>
   ManageStream m =>
   ManageStreamer m =>
+  ManageTwitchStreamer m =>
   H.Component HH.HTML q {} o m
 component =
   H.mkComponent
@@ -78,15 +79,18 @@ component =
 
   handleAction :: forall slots. Action -> H.HalogenM State Action slots o m Unit
   handleAction = case _ of
-    Initialize -> do
-      { streamersNames } <- ask
-      void $ H.fork $ handleAction $ LoadStreamers streamersNames
-    LoadStreamers streamersNames -> do
+    Initialize -> void $ H.fork $ handleAction LoadStreamers
+    LoadStreamers -> do
+      mbStreamers <- getStreamers
+      case mbStreamers of
+        Nothing -> H.modify_ _ { streamersInfo = Failure "Could not fetch streamers information" }
+        Just streamers -> void $ H.fork $ handleAction $ LoadTwitchData (_.name <$> streamers)
+    LoadTwitchData names -> do
       H.modify_ _ { streamersInfo = Loading }
       (streamers /\ streams) <-
         sequential $ (/\)
-          <$> parallel (getStreamers streamersNames)
-          <*> parallel (getStreams streamersNames)
+          <$> parallel (getTwitchStreamers names)
+          <*> parallel (getStreams names)
       let
         mbStreamersInfo = sortBy liveFirst <$> (zipStreamers <$> streamers <*> streams)
 
@@ -159,7 +163,7 @@ component =
       Just s -> onlineStreamer streamer s
       Nothing -> offlineStreamer streamer
 
-    offlineStreamer :: Streamer -> H.ComponentHTML Action slots m
+    offlineStreamer :: TwitchStreamer -> H.ComponentHTML Action slots m
     offlineStreamer { profile_image_url, display_name, login, description } =
       HH.div
         [ HP.classes [ T.mb6, T.p4, T.shadowMd, T.hoverShadowLg, T.bgWhite, T.grid, T.gridCols10, T.gap2 ] ]
@@ -190,7 +194,7 @@ component =
             ]
         ]
 
-    onlineStreamer :: Streamer -> Stream -> H.ComponentHTML Action slots m
+    onlineStreamer :: TwitchStreamer -> Stream -> H.ComponentHTML Action slots m
     onlineStreamer { profile_image_url } { game_id, title, user_name, viewer_count, thumbnail_url } =
       HH.div
         [ HP.classes [ T.mb6, T.p4, T.shadowMd, T.hoverShadowLg, T.bgWhite, T.flex, T.flexCol ] ]

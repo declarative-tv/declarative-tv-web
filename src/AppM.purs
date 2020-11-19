@@ -11,7 +11,7 @@ import Effect.Class (class MonadEffect, liftEffect)
 import Effect.Console as Console
 import Effect.Now as Now
 import Fpers.Api.Endpoint (Endpoint(..))
-import Fpers.Api.Request (RequestMethod(..))
+import Fpers.Api.Request (RequestMethod(..), RequestEndpoint(..))
 import Fpers.Api.Utils (decode, mkAuthRequest)
 import Fpers.Capability.LogMessages (class LogMessages)
 import Fpers.Capability.Navigate (class Navigate, locationState)
@@ -19,11 +19,13 @@ import Fpers.Capability.Now (class Now)
 import Fpers.Capability.Resource.Game (class ManageGame)
 import Fpers.Capability.Resource.Stream (class ManageStream)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer)
+import Fpers.Capability.Resource.TwitchStreamer (class ManageTwitchStreamer)
 import Fpers.Data.Game (gameCodec)
 import Fpers.Data.Log as Log
 import Fpers.Data.Route as Route
 import Fpers.Data.Stream (streamCodec)
 import Fpers.Data.Streamer (streamerCodec)
+import Fpers.Data.TwitchStreamer (twitchStreamerCodec)
 import Fpers.Env (Env, LogLevel(..))
 import Routing.Duplex (print)
 import Type.Equality (class TypeEquals, from)
@@ -68,18 +70,24 @@ instance navigateAppM :: Navigate AppM where
 
 instance manageStreamAppM :: ManageStream AppM where
   getStreams streamersNames = do
-    mbJson <- mkAuthRequest { endpoint: Streams { user_login: streamersNames }, method: Get }
+    mbJson <- mkAuthRequest { endpoint: API $ Streams { user_login: streamersNames }, method: Get }
     map (map _.data)
       $ decode (CAR.object "Streams" { "data": CAC.array streamCodec }) mbJson
 
 instance manageStreamerAppM :: ManageStreamer AppM where
-  getStreamers streamersNames = do
-    mbJson <- mkAuthRequest { endpoint: Streamers { login: streamersNames }, method: Get }
+  getStreamers = do
+    url <- asks _.streamersUrl
+    mbJson <- mkAuthRequest { endpoint: External url, method: Get }
+    decode (CAC.array streamerCodec) mbJson
+
+instance manageTwitchStreamerAppM :: ManageTwitchStreamer AppM where
+  getTwitchStreamers streamersNames = do
+    mbJson <- mkAuthRequest { endpoint: API $ Streamers { login: streamersNames }, method: Get }
     map (map _.data)
-      $ decode (CAR.object "Streamers" { "data": CAC.array streamerCodec }) mbJson
+      $ decode (CAR.object "TwitchStreamers" { "data": CAC.array twitchStreamerCodec }) mbJson
 
 instance manageGameAppM :: ManageGame AppM where
   getGames gamesIds = do
-    mbJson <- mkAuthRequest { endpoint: Games { id: gamesIds }, method: Get }
+    mbJson <- mkAuthRequest { endpoint: API $ Games { id: gamesIds }, method: Get }
     map (map _.data)
       $ decode (CAR.object "Games" { "data": CAC.array gameCodec }) mbJson

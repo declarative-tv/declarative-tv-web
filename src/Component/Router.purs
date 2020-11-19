@@ -1,7 +1,6 @@
 module Fpers.Component.Router where
 
 import Prelude
-import Control.Monad.Reader (class MonadAsk)
 import Data.Either (hush)
 import Data.Maybe (Maybe(..), fromMaybe)
 import Data.Symbol (SProxy(..))
@@ -12,6 +11,7 @@ import Fpers.Capability.Now (class Now)
 import Fpers.Capability.Resource.Game (class ManageGame)
 import Fpers.Capability.Resource.Stream (class ManageStream)
 import Fpers.Capability.Resource.Streamer (class ManageStreamer)
+import Fpers.Capability.Resource.TwitchStreamer (class ManageTwitchStreamer)
 import Fpers.Component.Utils (OpaqueSlot)
 import Fpers.Data.Route (Route(..), routeCodec)
 import Fpers.Page.Home as Home
@@ -33,15 +33,15 @@ type ChildSlots
     )
 
 component ::
-  forall m r.
+  forall m.
   MonadAff m =>
   Now m =>
   LogMessages m =>
   Navigate m =>
-  MonadAsk { streamersNames :: Array String | r } m =>
   ManageGame m =>
   ManageStream m =>
   ManageStreamer m =>
+  ManageTwitchStreamer m =>
   H.Component HH.HTML Query {} Void m
 component =
   H.mkComponent
