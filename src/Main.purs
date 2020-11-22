@@ -29,7 +29,7 @@ main =
 
       logLevel = Dev
 
-      streamersUrl = "https://raw.githubusercontent.com/gillchristian/declarative-programming-streams/feat/generated-readme/streamers.json"
+      streamersUrl = "https://raw.githubusercontent.com/chiroptical/declarative-programming-streams/master/streamers.json"
     nav <- liftEffect makeInterface
     let
       environment :: Env
