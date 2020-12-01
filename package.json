@@ -17,7 +17,6 @@
     "css:gen:available": "twpurs gen-available-classes --css wip/tailwind.css",
     "css:lock": "twpurs gen-purs",
     "css:purge": "twpurs gen-css -o assets/tailwind.css",
-    "postinstall": "spago install",
     "prep-prod": "rm -rf dist",
     "serve-dev": "parcel wip/index.html --open",
     "test": "spago test",
