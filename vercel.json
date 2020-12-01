@@ -4,6 +4,9 @@
     "TWITCH_TOKEN": "@twitch-token"
   },
   "functions": {
+    "api/games.js": {
+      "includeFiles": "api/games.js"
+    },
     "api/streamers.js": {
       "includeFiles": "api/streamers.js"
     },

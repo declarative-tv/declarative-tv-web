@@ -3,13 +3,13 @@ module Tailwind where
 
 import Halogen.HTML.Core (ClassName(..))
 
--- | container
-container :: ClassName
-container = ClassName "container"
+-- | absolute
+absolute :: ClassName
+absolute = ClassName "absolute"
 
--- | bgWhite
-bgWhite :: ClassName
-bgWhite = ClassName "bg-white"
+-- | animatePing
+animatePing :: ClassName
+animatePing = ClassName "animate-ping"
 
 -- | bgGray200
 bgGray200 :: ClassName
@@ -31,49 +31,53 @@ bgRed600 = ClassName "bg-red-600"
 bgRed700 :: ClassName
 bgRed700 = ClassName "bg-red-700"
 
--- | borderRed600
-borderRed600 :: ClassName
-borderRed600 = ClassName "border-red-600"
-
--- | roundedMd
-roundedMd :: ClassName
-roundedMd = ClassName "rounded-md"
-
--- | roundedFull
-roundedFull :: ClassName
-roundedFull = ClassName "rounded-full"
-
--- | border4
-border4 :: ClassName
-border4 = ClassName "border-4"
+-- | bgWhite
+bgWhite :: ClassName
+bgWhite = ClassName "bg-white"
 
 -- | block
 block :: ClassName
 block = ClassName "block"
 
+-- | border4
+border4 :: ClassName
+border4 = ClassName "border-4"
+
+-- | borderRed600
+borderRed600 :: ClassName
+borderRed600 = ClassName "border-red-600"
+
+-- | breakNormal
+breakNormal :: ClassName
+breakNormal = ClassName "break-normal"
+
+-- | colSpan1
+colSpan1 :: ClassName
+colSpan1 = ClassName "col-span-1"
+
+-- | colSpan9
+colSpan9 :: ClassName
+colSpan9 = ClassName "col-span-9"
+
+-- | container
+container :: ClassName
+container = ClassName "container"
+
 -- | flex
 flex :: ClassName
 flex = ClassName "flex"
-
--- | inlineFlex
-inlineFlex :: ClassName
-inlineFlex = ClassName "inline-flex"
-
--- | grid
-grid :: ClassName
-grid = ClassName "grid"
 
 -- | flexCol
 flexCol :: ClassName
 flexCol = ClassName "flex-col"
 
--- | itemsCenter
-itemsCenter :: ClassName
-itemsCenter = ClassName "items-center"
+-- | fontBlack
+fontBlack :: ClassName
+fontBlack = ClassName "font-black"
 
--- | justifyCenter
-justifyCenter :: ClassName
-justifyCenter = ClassName "justify-center"
+-- | fontBold
+fontBold :: ClassName
+fontBold = ClassName "font-bold"
 
 -- | fontSans
 fontSans :: ClassName
@@ -83,41 +87,89 @@ fontSans = ClassName "font-sans"
 fontSemibold :: ClassName
 fontSemibold = ClassName "font-semibold"
 
--- | fontBold
-fontBold :: ClassName
-fontBold = ClassName "font-bold"
+-- | gap2
+gap2 :: ClassName
+gap2 = ClassName "gap-2"
 
--- | fontBlack
-fontBlack :: ClassName
-fontBlack = ClassName "font-black"
+-- | grid
+grid :: ClassName
+grid = ClassName "grid"
 
--- | h3
-h3 :: ClassName
-h3 = ClassName "h-3"
+-- | gridCols10
+gridCols10 :: ClassName
+gridCols10 = ClassName "grid-cols-10"
 
 -- | h12
 h12 :: ClassName
 h12 = ClassName "h-12"
 
+-- | h3
+h3 :: ClassName
+h3 = ClassName "h-3"
+
 -- | hFull
 hFull :: ClassName
 hFull = ClassName "h-full"
 
--- | textSm
-textSm :: ClassName
-textSm = ClassName "text-sm"
+-- | hoverShadowLg
+hoverShadowLg :: ClassName
+hoverShadowLg = ClassName "hover:shadow-lg"
 
--- | textLg
-textLg :: ClassName
-textLg = ClassName "text-lg"
+-- | hoverUnderline
+hoverUnderline :: ClassName
+hoverUnderline = ClassName "hover:underline"
 
--- | text3xl
-text3xl :: ClassName
-text3xl = ClassName "text-3xl"
+-- | inlineFlex
+inlineFlex :: ClassName
+inlineFlex = ClassName "inline-flex"
+
+-- | itemsCenter
+itemsCenter :: ClassName
+itemsCenter = ClassName "items-center"
+
+-- | justifyCenter
+justifyCenter :: ClassName
+justifyCenter = ClassName "justify-center"
 
 -- | leadingNone
 leadingNone :: ClassName
 leadingNone = ClassName "leading-none"
+
+-- | maxW2xl
+maxW2xl :: ClassName
+maxW2xl = ClassName "max-w-2xl"
+
+-- | mb6
+mb6 :: ClassName
+mb6 = ClassName "mb-6"
+
+-- | minHScreen
+minHScreen :: ClassName
+minHScreen = ClassName "min-h-screen"
+
+-- | mr1
+mr1 :: ClassName
+mr1 = ClassName "mr-1"
+
+-- | mr2
+mr2 :: ClassName
+mr2 = ClassName "mr-2"
+
+-- | mr8
+mr8 :: ClassName
+mr8 = ClassName "mr-8"
+
+-- | mt2
+mt2 :: ClassName
+mt2 = ClassName "mt-2"
+
+-- | mt6
+mt6 :: ClassName
+mt6 = ClassName "mt-6"
+
+-- | mt8
+mt8 :: ClassName
+mt8 = ClassName "mt-8"
 
 -- | mx2
 mx2 :: ClassName
@@ -126,42 +178,6 @@ mx2 = ClassName "mx-2"
 -- | mxAuto
 mxAuto :: ClassName
 mxAuto = ClassName "mx-auto"
-
--- | mr1
-mr1 :: ClassName
-mr1 = ClassName "mr-1"
-
--- | mt2
-mt2 :: ClassName
-mt2 = ClassName "mt-2"
-
--- | mr2
-mr2 :: ClassName
-mr2 = ClassName "mr-2"
-
--- | mt6
-mt6 :: ClassName
-mt6 = ClassName "mt-6"
-
--- | mb6
-mb6 :: ClassName
-mb6 = ClassName "mb-6"
-
--- | mt8
-mt8 :: ClassName
-mt8 = ClassName "mt-8"
-
--- | mr8
-mr8 :: ClassName
-mr8 = ClassName "mr-8"
-
--- | maxW2xl
-maxW2xl :: ClassName
-maxW2xl = ClassName "max-w-2xl"
-
--- | minHScreen
-minHScreen :: ClassName
-minHScreen = ClassName "min-h-screen"
 
 -- | opacity75
 opacity75 :: ClassName
@@ -179,21 +195,25 @@ pb2 = ClassName "pb-2"
 pt10 :: ClassName
 pt10 = ClassName "pt-10"
 
--- | absolute
-absolute :: ClassName
-absolute = ClassName "absolute"
-
 -- | relative
 relative :: ClassName
 relative = ClassName "relative"
+
+-- | roundedFull
+roundedFull :: ClassName
+roundedFull = ClassName "rounded-full"
+
+-- | roundedMd
+roundedMd :: ClassName
+roundedMd = ClassName "rounded-md"
 
 -- | shadowMd
 shadowMd :: ClassName
 shadowMd = ClassName "shadow-md"
 
--- | hoverShadowLg
-hoverShadowLg :: ClassName
-hoverShadowLg = ClassName "hover:shadow-lg"
+-- | text3xl
+text3xl :: ClassName
+text3xl = ClassName "text-3xl"
 
 -- | textCenter
 textCenter :: ClassName
@@ -211,10 +231,6 @@ textGray800 = ClassName "text-gray-800"
 textGray900 :: ClassName
 textGray900 = ClassName "text-gray-900"
 
--- | textRed900
-textRed900 :: ClassName
-textRed900 = ClassName "text-red-900"
-
 -- | textIndigo600
 textIndigo600 :: ClassName
 textIndigo600 = ClassName "text-indigo-600"
@@ -223,17 +239,17 @@ textIndigo600 = ClassName "text-indigo-600"
 textIndigo700 :: ClassName
 textIndigo700 = ClassName "text-indigo-700"
 
--- | hoverUnderline
-hoverUnderline :: ClassName
-hoverUnderline = ClassName "hover:underline"
+-- | textLg
+textLg :: ClassName
+textLg = ClassName "text-lg"
 
--- | breakNormal
-breakNormal :: ClassName
-breakNormal = ClassName "break-normal"
+-- | textRed900
+textRed900 :: ClassName
+textRed900 = ClassName "text-red-900"
 
--- | w3
-w3 :: ClassName
-w3 = ClassName "w-3"
+-- | textSm
+textSm :: ClassName
+textSm = ClassName "text-sm"
 
 -- | w12
 w12 :: ClassName
@@ -243,27 +259,11 @@ w12 = ClassName "w-12"
 w16 :: ClassName
 w16 = ClassName "w-16"
 
+-- | w3
+w3 :: ClassName
+w3 = ClassName "w-3"
+
 -- | wFull
 wFull :: ClassName
 wFull = ClassName "w-full"
-
--- | gap2
-gap2 :: ClassName
-gap2 = ClassName "gap-2"
-
--- | gridCols10
-gridCols10 :: ClassName
-gridCols10 = ClassName "grid-cols-10"
-
--- | colSpan1
-colSpan1 :: ClassName
-colSpan1 = ClassName "col-span-1"
-
--- | colSpan9
-colSpan9 :: ClassName
-colSpan9 = ClassName "col-span-9"
-
--- | animatePing
-animatePing :: ClassName
-animatePing = ClassName "animate-ping"
 
