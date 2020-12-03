@@ -1,5 +1,6 @@
 module Fpers.Data.Stream where
 
+import Data.Maybe (Maybe)
 import Data.Codec.Argonaut (JsonCodec)
 import Data.Codec.Argonaut as CA
 import Data.Codec.Argonaut.Compat as CAC
@@ -13,7 +14,7 @@ type Stream =
   , viewer_count :: Int
   , started_at :: String
   , thumbnail_url :: String
-  , tag_ids :: Array String
+  , tag_ids :: Maybe (Array String)
   }
 
 streamCodec :: JsonCodec Stream
@@ -26,5 +27,5 @@ streamCodec =
     , viewer_count: CA.int
     , started_at: CA.string
     , thumbnail_url: CA.string
-    , tag_ids: CAC.array CA.string
+    , tag_ids: CAC.maybe (CAC.array CA.string)
     }
