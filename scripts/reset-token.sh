@@ -5,4 +5,4 @@ url="https://id.twitch.tv/oauth2/token?client_id=$client_id&client_secret=$clien
 
 vercel secrets rm twitch-token
 
-vercel secrets add twitch-token $(curl -XPOST "$url" | jq '.access_token')
+vercel secrets add twitch-token $(curl -XPOST "$url" | jq -r '.access_token')
