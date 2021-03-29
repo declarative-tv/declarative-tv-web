@@ -1,8 +1,4 @@
 {
-  "env": {
-    "TWITCH_CLIENT_ID": "@twitch-client-id",
-    "TWITCH_TOKEN": "@twitch-token"
-  },
   "functions": {
     "api/games.js": {
       "includeFiles": "api/games.js"
