@@ -21,9 +21,6 @@ const allowCors = (fn) => (req, res) => {
 };
 
 export default allowCors((req, res) => {
-  console.log({TWITCH_TOKEN: process.env.TWITCH_TOKEN})
-  console.log({TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID})
-
   const query = qs.stringify(req.query, {
     arrayFormat: "repeat",
     skipNulls: true,
