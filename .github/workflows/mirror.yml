@@ -1,0 +1,37 @@
+name: 'Mirror'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push_mirror:
+    name: 'Notify Subilo'
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Check if origin
+      id: origin-check
+      shell: bash
+      run: |
+        if [ "${{ secrets.is_origin }}" == 'true' ]; then
+          echo "is_origin=true" >> $GITHUB_OUTPUT;
+        else
+          echo "is_origin=false" >> $GITHUB_OUTPUT;
+        fi
+
+    - name: Notify Subilo
+      if: ${{ steps.origin-check.outputs.is_origin == 'true' }}
+      shell: bash
+      run: |
+        curl -v -d '{ "name": "declarative_tv" }' \
+          -H "Authorization: Bearer $TOKEN" \
+          -H "Content-Type: application/json" \
+          -X POST "$WEBHOOK"
+        exit $?
+      env:
+        WEBHOOK: ${{ secrets.deploy_webhook }}
+        TOKEN: ${{ secrets.deploy_token }}
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
